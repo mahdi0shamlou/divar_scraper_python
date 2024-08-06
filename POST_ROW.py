@@ -2,6 +2,16 @@ import requests
 import sqlite3
 import json
 
+
+class PostRow:
+    def __init__(self, url: str, data: str):
+        self.URL = url
+        self.DATA = data
+
+    def get_post_rows(self):
+        return
+
+
 # Define the URL to scrape
 URL = 'https://api.divar.ir/v8/postlist/w/search'
 DATA = '{"city_ids":["1"],"source_view":"CATEGORY","search_data":{"form_data":{"data":{"category":{"str":{"value":"apartment-sell"}},"districts":{"repeated_string":{"value":["992"]}}}}}}'
