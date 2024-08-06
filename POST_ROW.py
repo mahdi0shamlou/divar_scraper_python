@@ -1,43 +1,47 @@
 import requests
-import sqlite3
 import json
 
 
-class PostRow:
-    def __init__(self, url: str, data: str):
-        self.URL = url
-        self.DATA = data
+class DataFetcher:
+    def __init__(self, url, data):
+        # Initialize with URL and data payload for requests
+        self.url = url
+        self.data = data
 
-    def get_post_rows(self):
-        return
-
-
-# Define the URL to scrape
-URL = 'https://api.divar.ir/v8/postlist/w/search'
-DATA = '{"city_ids":["1"],"source_view":"CATEGORY","search_data":{"form_data":{"data":{"category":{"str":{"value":"apartment-sell"}},"districts":{"repeated_string":{"value":["992"]}}}}}}'
-
-
-def fetch_json_data(url, data):
-    response = requests.post(url, data=data)
-    print(response.text)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        response.raise_for_status()
+    def fetch_json_data(self):
+        # Send POST request and fetch JSON response
+        response = requests.post(self.url, data=self.data)
+        response.raise_for_status()  # Raise an error for bad HTTP responses
+        return response.json()  # Return JSON data
 
 
-def main():
-    json_data = fetch_json_data(URL, DATA)
-    # Extract post_token from each POST_ROW
-    post_tokens = [
-        item['data']['action']['payload']['token']
-        for item in json_data.get('list_widgets', [])
-        if item.get('widget_type') == 'POST_ROW'
-    ]
-    print(post_tokens)
-    #Save to database
-    #save_to_db(DB_FILENAME, post_tokens)
-    #print(f"Saved {len(post_tokens)} post tokens to the database.")
+class PostTokenExtractor:
+    @staticmethod
+    def extract_post_tokens(json_data):
+        # Extract post tokens from the JSON response
+        return [
+            item['data']['action']['payload']['token']
+            for item in json_data.get('list_widgets', [])
+            if item.get('widget_type') == 'POST_ROW'
+        ]
+
+
+class Application:
+    def __init__(self, url, data):
+        # Initialize DataFetcher and PostTokenExtractor
+        self.fetcher = DataFetcher(url, data)
+        self.extractor = PostTokenExtractor()
+
+    def run(self):
+        # Fetch JSON data and extract post tokens
+        json_data = self.fetcher.fetch_json_data()
+        post_tokens = self.extractor.extract_post_tokens(json_data)
+        print(post_tokens)  # Print the extracted post tokens
+
 
 if __name__ == '__main__':
-    main()
+    URL = 'https://api.divar.ir/v8/postlist/w/search'
+    DATA = '{"city_ids":["1"],"source_view":"CATEGORY","search_data":{"form_data":{"data":{"category":{"str":{"value":"apartment-sell"}},"districts":{"repeated_string":{"value":["992"]}}}}}}'
+
+    app = Application(URL, DATA)
+    app.run()
