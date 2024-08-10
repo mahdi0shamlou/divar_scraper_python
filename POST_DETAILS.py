@@ -1,13 +1,27 @@
 import requests
 from DataBase_manager import *
-from datetime import datetime
-import time
+
+
+class PostExtractor:
+    @staticmethod
+    def extract_post_data(json_data):
+        """
+        this methode extract only descriptions
+        :param json_data:
+        :return:
+        """
+        posts = []
+        for item in json_data.get('sections', []):
+            if item.get('section_name') == 'DESCRIPTION':
+                data = item.get('widgets', {})
+                posts.append(data)
+        return posts
 
 
 class DataFetcher:
     def __init__(self, url):
         self.url = url
-        #self.data = data
+        # self.data = data
 
     def fetch_json_data(self):
         response = requests.get(self.url)
