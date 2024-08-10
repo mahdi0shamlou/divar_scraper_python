@@ -34,6 +34,7 @@ class DatabaseManager:
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     token TEXT UNIQUE,
                     desc TEXT,
+                    all_data TEXT,
                     added INTEGER
                 )
             ''')
@@ -42,6 +43,7 @@ class DatabaseManager:
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     token TEXT UNIQUE,
                     desc TEXT,
+                    all_data TEXT,
                     added INTEGER
                 )
             ''')
@@ -76,8 +78,8 @@ class DatabaseManager:
             cursor = conn.cursor()
             try:
                 cursor.execute('''
-                    INSERT INTO posts_details_personal (token, desc, added) 
-                    VALUES (?, ?, ?)
+                    INSERT INTO posts_details_personal (token, desc, all_data, added) 
+                    VALUES (?, ?, ?, ?)
                 ''', posts)
             except sqlite3.IntegrityError:
                 # Handle the case where the token already exists (do nothing or log if necessary)
@@ -110,8 +112,8 @@ class DatabaseManager:
             cursor = conn.cursor()
             try:
                 cursor.execute('''
-                    INSERT INTO posts_details_moshaver (token, desc, added) 
-                    VALUES (?, ?, ?)
+                    INSERT INTO posts_details_moshaver (token, desc, all_data, added) 
+                    VALUES (?, ?, ?, ?)
                 ''', posts)
             except sqlite3.IntegrityError:
                 # Handle the case where the token already exists (do nothing or log if necessary)

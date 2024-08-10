@@ -1,6 +1,7 @@
 import requests
 from DataBase_manager import *
 import time
+import json
 
 class PostExtractor:
     @staticmethod
@@ -30,7 +31,7 @@ class DataFetcher:
         response = requests.get(url_for_request)
         print(f'\t {response.status_code}')
         #response.raise_for_status()
-        return response.json(), response.status_code
+        return response.json(), response.status_code, json.dumps(response.json())
 
 
 class StringChecker:
@@ -58,13 +59,13 @@ class Application:
     def run(self, LIST_CHEKC):
         tokens = self.db_manager.get_all_tokens_not_added() # this method get a token from table for getting details
         print(f'\t this is token for search and getting details : {tokens}')
-        json_data, status_code = self.fetcher.fetch_json_data(tokens) # this methode send request
+        json_data, status_code, all_data = self.fetcher.fetch_json_data(tokens) # this methode send request
         if status_code == 404:
             self.db_manager.update_post_data_in_posts(((tokens[0],)))
         desck = self.extractor.extract_post_data(json_data) # this methode get desck from response of above methode
         desck_resualt = StringChecker.contains_any_first(desck[0], LIST_CHEKC) # this methode check if desck is valid or not
         print(f'\t this is reault of validtiy : {not desck_resualt}')
-        post = ((tokens[0], desck[0], 0))
+        post = ((tokens[0], desck[0], all_data, 0))
         if desck_resualt==False: # this conditon check desck is valid or not
             self.db_manager.save_post_data_details_personal(post) # this methode insert data into personal table
             self.db_manager.update_post_data_in_posts(((tokens[0],))) # this methode update row in posts table for dont get duplicat
@@ -86,6 +87,6 @@ if __name__ == '__main__':
         except Exception as e:
             print(f'this is Eception : {e}')
         finally:
-            #time.sleep(3)
+            time.sleep(30)
             pass
 
