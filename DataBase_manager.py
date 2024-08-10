@@ -25,6 +25,14 @@ class DatabaseManager:
                     added INTEGER
                 )
             ''')
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS posts_details_personal (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    token TEXT UNIQUE,
+                    desc TEXT,
+                    added INTEGER
+                )
+            ''')
             conn.commit()
 
     def save_post_data(self, posts):
@@ -35,6 +43,20 @@ class DatabaseManager:
                     cursor.execute('''
                         INSERT INTO posts (token, title, district, city, image_url, bottom_description, middle_description, red_text, image_count, timestamp, added) 
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    ''', post)
+                except sqlite3.IntegrityError:
+                    # Handle the case where the token already exists (do nothing or log if necessary)
+                    print(f"Token {post[0]} already exists in the database.")
+            conn.commit()
+            
+    def save_post_data_details_personal(self, posts):
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            for post in posts:
+                try:
+                    cursor.execute('''
+                        INSERT INTO posts_details_personal (token, desc, added) 
+                        VALUES (?, ?, ?)
                     ''', post)
                 except sqlite3.IntegrityError:
                     # Handle the case where the token already exists (do nothing or log if necessary)

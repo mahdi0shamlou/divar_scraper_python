@@ -61,12 +61,11 @@ class Application:
         desck_resualt = StringChecker.contains_any_first(desck[0], LIST_CHEKC)
         print(desck)
         print(desck_resualt)
-        # print(f"Saved/Checked {len(posts)} posts into the database.")
 
 
 if __name__ == '__main__':
     URL = 'https://api.divar.ir/v8/posts-v2/web/'
     DB_FILENAME = 'posts.db'
-    LIST_CHEKC = ['کوچه']
+    LIST_CHEKC = ['مشاور']
     app = Application(URL, DB_FILENAME)
     app.run(LIST_CHEKC)
