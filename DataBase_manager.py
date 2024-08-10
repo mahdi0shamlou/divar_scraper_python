@@ -36,6 +36,11 @@ class DatabaseManager:
             conn.commit()
 
     def save_post_data(self, posts):
+        """
+        this methode insert data to posts table and this is main methode for post_row service
+        :param posts:
+        :return:
+        """
         with sqlite3.connect(self.db_filename) as conn:
             cursor = conn.cursor()
             for post in posts:
@@ -50,6 +55,11 @@ class DatabaseManager:
             conn.commit()
 
     def save_post_data_details_personal(self, posts):
+        """
+        this methode insert into table posts_details_personal
+        :param posts:
+        :return:
+        """
         with sqlite3.connect(self.db_filename) as conn:
             cursor = conn.cursor()
             try:
@@ -63,6 +73,12 @@ class DatabaseManager:
             conn.commit()
 
     def update_post_data_in_posts(self, token):
+        """
+        this methode update a row in table posts find row from input token
+        this mehtode use for update that we dont get duplicate token for get details resault
+        :param token:
+        :return:
+        """
         with sqlite3.connect(self.db_filename) as conn:
             cursor = conn.cursor()
             try:
@@ -73,6 +89,10 @@ class DatabaseManager:
             conn.commit()
 
     def get_all_tokens(self):
+        """
+        this methode get all token this methode use for get len of table posts
+        :return:
+        """
         with sqlite3.connect(self.db_filename) as conn:
             cursor = conn.cursor()
             cursor.execute('SELECT token FROM posts')
@@ -81,6 +101,7 @@ class DatabaseManager:
 
     def get_all_tokens_not_added(self):
         """
+        this methode use for get a token for onther service for get details like post_details service
         :return: Tokens that not added yet
         """
         with sqlite3.connect(self.db_filename) as conn:
