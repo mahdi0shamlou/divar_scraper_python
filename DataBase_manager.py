@@ -37,6 +37,14 @@ class DatabaseManager:
                     added INTEGER
                 )
             ''')
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS posts_details_moshaver (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    token TEXT UNIQUE,
+                    desc TEXT,
+                    added INTEGER
+                )
+            ''')
             conn.commit()
 
     def save_post_data(self, posts):
@@ -90,6 +98,24 @@ class DatabaseManager:
             except sqlite3.IntegrityError:
                 # Handle the case where the token already exists (do nothing or log if necessary)
                 print(f"Token token already exists in the database.")
+            conn.commit()
+
+    def save_post_data_details_moshaver(self, posts):
+        """
+        this methode insert into table posts_details_personal
+        :param posts:
+        :return:
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            try:
+                cursor.execute('''
+                    INSERT INTO posts_details_moshaver (token, desc, added) 
+                    VALUES (?, ?, ?)
+                ''', posts)
+            except sqlite3.IntegrityError:
+                # Handle the case where the token already exists (do nothing or log if necessary)
+                print(f"Token {posts[0]} already exists in the database.")
             conn.commit()
 
     def get_all_tokens(self):

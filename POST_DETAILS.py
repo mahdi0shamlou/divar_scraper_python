@@ -55,32 +55,33 @@ class Application:
         self.db_manager = DatabaseManager(db_filename)
 
     def run(self, LIST_CHEKC):
-        tokens = self.db_manager.get_all_tokens_not_added()
-        json_data = self.fetcher.fetch_json_data(tokens)
-        desck = self.extractor.extract_post_data(json_data)
-        desck_resualt = StringChecker.contains_any_first(desck[0], LIST_CHEKC)
+        tokens = self.db_manager.get_all_tokens_not_added() # this method get a token from table for getting details
+        print(f'\t this is token for search and getting details : {tokens}')
+        json_data = self.fetcher.fetch_json_data(tokens) # this methode send request
+        desck = self.extractor.extract_post_data(json_data) # this methode get desck from response of above methode
+        # print(f'\t this is desck of that token : {desck[0]}')
+        desck_resualt = StringChecker.contains_any_first(desck[0], LIST_CHEKC) # this methode check if desck is valid or not
+        print(f'\t this is reault of validtiy : {not desck_resualt}')
         post = ((tokens[0], desck[0], 0))
-        if desck_resualt==False:
-            self.db_manager.save_post_data_details_personal(post)
-            self.db_manager.update_post_data_in_posts(((tokens[0],)))
+        if desck_resualt==False: # this conditon check desck is valid or not
+            self.db_manager.save_post_data_details_personal(post) # this methode insert data into personal table
+            self.db_manager.update_post_data_in_posts(((tokens[0],))) # this methode update row in posts table for dont get duplicat
         else:
-            self.db_manager.update_post_data_in_posts(((tokens[0],)))
+            self.db_manager.save_post_data_details_moshaver(post) # this methode insert data into moshaver table
+            self.db_manager.update_post_data_in_posts(((tokens[0],))) # this methode update row in posts table for dont get duplicat
 
-
-        print(desck)
-        print(desck_resualt)
 
 
 if __name__ == '__main__':
     URL = 'https://api.divar.ir/v8/posts-v2/web/'
     DB_FILENAME = 'posts.db'
-    LIST_CHEKC = ['مشاور']
+    LIST_CHEKC = ['مشاور', 'املاک', 'مسکن'] # this list for useing for check validity
     app = Application(URL, DB_FILENAME)
     while True:
         try:
+            print('Start of geting detials of service')
             app.run(LIST_CHEKC)
-            print('asadsdasd')
-            #print(f'this is len of db : {len(dbs.get_all_tokens())}')
+            print('End of geting detials of service')
         except Exception as e:
             print(f'this is Eception : {e}')
         finally:
