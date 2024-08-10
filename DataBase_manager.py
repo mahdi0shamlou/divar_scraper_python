@@ -7,6 +7,10 @@ class DatabaseManager:
         self._initialize_database()
 
     def _initialize_database(self):
+        """
+        this mehtode create table we need
+        :return:
+        """
         with sqlite3.connect(self.db_filename) as conn:
             cursor = conn.cursor()
             cursor.execute('''

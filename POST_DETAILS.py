@@ -1,6 +1,6 @@
 import requests
 from DataBase_manager import *
-
+import time
 
 class PostExtractor:
     @staticmethod
@@ -26,8 +26,8 @@ class DataFetcher:
         # self.data = data
 
     def fetch_json_data(self, token):
-        self.url = self.url + token[0]
-        response = requests.get(self.url)
+        url_for_request = self.url + token[0]
+        response = requests.get(url_for_request)
         response.raise_for_status()
         return response.json()
 
@@ -63,9 +63,9 @@ class Application:
         if desck_resualt==False:
             self.db_manager.save_post_data_details_personal(post)
             self.db_manager.update_post_data_in_posts(((tokens[0],)))
-            pass
         else:
-            pass
+            self.db_manager.update_post_data_in_posts(((tokens[0],)))
+
 
         print(desck)
         print(desck_resualt)
@@ -76,4 +76,13 @@ if __name__ == '__main__':
     DB_FILENAME = 'posts.db'
     LIST_CHEKC = ['مشاور']
     app = Application(URL, DB_FILENAME)
-    app.run(LIST_CHEKC)
+    while True:
+        try:
+            app.run(LIST_CHEKC)
+            print('asadsdasd')
+            #print(f'this is len of db : {len(dbs.get_all_tokens())}')
+        except Exception as e:
+            print(f'this is Eception : {e}')
+        finally:
+            time.sleep(3)
+
