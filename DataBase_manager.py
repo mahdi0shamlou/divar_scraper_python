@@ -49,9 +49,15 @@ class DatabaseManager:
         return [token[0] for token in tokens]
 
     def get_all_tokens_not_added(self):
+        """
+        :return: Tokens that not added yet
+        """
         with sqlite3.connect(self.db_filename) as conn:
             cursor = conn.cursor()
-            cursor.execute('SELECT token FROM posts WHERE added = 0')
+            cursor.execute('SELECT token FROM posts WHERE added = 0 limit 1')
             tokens = cursor.fetchall()
         return [token[0] for token in tokens]
+
+
+
 
