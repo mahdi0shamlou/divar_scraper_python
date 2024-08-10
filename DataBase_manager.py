@@ -140,6 +140,3 @@ class DatabaseManager:
             tokens = cursor.fetchall()
         return [token[0] for token in tokens]
 
-
-
-
