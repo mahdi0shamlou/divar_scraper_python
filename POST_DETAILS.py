@@ -59,6 +59,14 @@ class Application:
         json_data = self.fetcher.fetch_json_data(tokens)
         desck = self.extractor.extract_post_data(json_data)
         desck_resualt = StringChecker.contains_any_first(desck[0], LIST_CHEKC)
+        post = ((tokens[0], desck[0], 0))
+        if desck_resualt==False:
+            self.db_manager.save_post_data_details_personal(post)
+            self.db_manager.update_post_data_in_posts(((tokens[0],)))
+            pass
+        else:
+            pass
+
         print(desck)
         print(desck_resualt)
 

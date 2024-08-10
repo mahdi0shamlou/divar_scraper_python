@@ -48,19 +48,28 @@ class DatabaseManager:
                     # Handle the case where the token already exists (do nothing or log if necessary)
                     print(f"Token {post[0]} already exists in the database.")
             conn.commit()
-            
+
     def save_post_data_details_personal(self, posts):
         with sqlite3.connect(self.db_filename) as conn:
             cursor = conn.cursor()
-            for post in posts:
-                try:
-                    cursor.execute('''
-                        INSERT INTO posts_details_personal (token, desc, added) 
-                        VALUES (?, ?, ?)
-                    ''', post)
-                except sqlite3.IntegrityError:
-                    # Handle the case where the token already exists (do nothing or log if necessary)
-                    print(f"Token {post[0]} already exists in the database.")
+            try:
+                cursor.execute('''
+                    INSERT INTO posts_details_personal (token, desc, added) 
+                    VALUES (?, ?, ?)
+                ''', posts)
+            except sqlite3.IntegrityError:
+                # Handle the case where the token already exists (do nothing or log if necessary)
+                print(f"Token {posts[0]} already exists in the database.")
+            conn.commit()
+
+    def update_post_data_in_posts(self, token):
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            try:
+                cursor.execute('UPDATE posts SET added = 1 WHERE token = ?', token)
+            except sqlite3.IntegrityError:
+                # Handle the case where the token already exists (do nothing or log if necessary)
+                print(f"Token token already exists in the database.")
             conn.commit()
 
     def get_all_tokens(self):
