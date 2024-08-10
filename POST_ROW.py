@@ -37,7 +37,7 @@ class PostExtractor:
                 timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
                 posts.append((token, title, district, city, image_url, bottom_description, middle_description, red_text,
-                              image_count, timestamp))
+                              image_count, timestamp, 0))
 
         return posts
 
@@ -62,7 +62,8 @@ class DatabaseManager:
                     middle_description TEXT,
                     red_text TEXT,
                     image_count INTEGER,
-                    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+                    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    added INTEGER
                 )
             ''')
             conn.commit()
@@ -73,8 +74,8 @@ class DatabaseManager:
             for post in posts:
                 try:
                     cursor.execute('''
-                        INSERT INTO posts (token, title, district, city, image_url, bottom_description, middle_description, red_text, image_count, timestamp) 
-                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        INSERT INTO posts (token, title, district, city, image_url, bottom_description, middle_description, red_text, image_count, timestamp, added) 
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                     ''', post)
                 except sqlite3.IntegrityError:
                     # Handle the case where the token already exists (do nothing or log if necessary)
