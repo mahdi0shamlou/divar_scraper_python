@@ -78,7 +78,7 @@ class TestDatabaseManager(unittest.TestCase):
         posts = [
             ("123", "Test Title", "District", "City", "http://example.com/image.jpg",
              "Bottom description", "Middle description", "Red text", 3,
-             datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+             datetime.now().strftime('%Y-%m-%d %H:%M:%S'), 0)
         ]
         self.db_manager.save_post_data(posts)
 
