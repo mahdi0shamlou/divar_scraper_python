@@ -205,7 +205,7 @@ class DatabaseManager:
     # -----------------------------
     # this section for get Post_sender service
     # -----------------------------
-    def get_post_personal_for_send_post(self):
+    def get_number_personal_for_post_sender(self):
         """
         this methode use for get a token and phone number for onther service for send post like post_sender service
         :return: Tokens that not added yet
@@ -215,6 +215,22 @@ class DatabaseManager:
             cursor.execute('SELECT token,number FROM personal_number WHERE added = 0 limit 1')
             items = cursor.fetchall()
         return [item for item in items]
+
+    def update_number_personal_for_post_sender(self, token):
+        """
+        this methode update a row in table posts find row from input token
+        this mehtode use for update that we dont get duplicate token for get number resault
+        :param token:
+        :return:
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            try:
+                cursor.execute('UPDATE personal_number SET added = 1 WHERE token = ?', token)
+            except sqlite3.IntegrityError:
+                # Handle the case where the token already exists (do nothing or log if necessary)
+                print(f"Token token already exists in the database.")
+            conn.commit()
 
     # -----------------------------
     # -----------------------------
