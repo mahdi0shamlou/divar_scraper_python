@@ -141,6 +141,25 @@ class DatabaseManager:
             tokens = cursor.fetchall()
         return [token[0] for token in tokens]
 
+    def save_number_of_personal(self, posts):
+        """
+        this methode insert into table personal number
+        :param posts:
+        :return:
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            try:
+                cursor.execute('''
+                    INSERT INTO personal_number (token, all_data, number, added) 
+                    VALUES (?, ?, ?, ?)
+                ''', posts)
+            except sqlite3.IntegrityError:
+                # Handle the case where the token already exists (do nothing or log if necessary)
+                print(f"Token {posts[0]} already exists in the database.")
+            conn.commit()
+
+
     # -----------------------------
     # -----------------------------
     def save_post_data_details_moshaver(self, posts):
