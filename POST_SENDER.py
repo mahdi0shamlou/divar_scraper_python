@@ -40,8 +40,6 @@ class Application:
             time.sleep(300)
 
 
-
-
 if __name__ == "__main__":
     URL = 'https://arkafile.org/admin/file/store_divar_ads'
     DB_FILENAME = 'posts.db'
