@@ -110,6 +110,9 @@ class DatabaseManager:
                 # Handle the case where the token already exists (do nothing or log if necessary)
                 print(f"Token token already exists in the database.")
             conn.commit()
+    # -----------------------------
+    # this section for get number service
+    # -----------------------------
 
     def update_post_personal_details(self, token):
         """
@@ -127,6 +130,19 @@ class DatabaseManager:
                 print(f"Token token already exists in the database.")
             conn.commit()
 
+    def get_one_token_from_personal_details(self):
+        """
+        this methode use for get a token for onther service for get details like personal_number service
+        :return: Tokens that not added yet
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            cursor.execute('SELECT token FROM posts_details_personal WHERE added = 0 limit 1')
+            tokens = cursor.fetchall()
+        return [token[0] for token in tokens]
+
+    # -----------------------------
+    # -----------------------------
     def save_post_data_details_moshaver(self, posts):
         """
         this methode insert into table posts_details_personal
