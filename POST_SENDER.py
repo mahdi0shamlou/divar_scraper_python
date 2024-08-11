@@ -46,4 +46,13 @@ if __name__ == "__main__":
     URL = 'https://arkafile.org/admin/file/store_divar_ads'
     DB_FILENAME = 'posts.db'
     app = Application(URL, DB_FILENAME)
-    app.run()
+    while True:
+        try:
+            print('Start of geting detials of service')
+            app.run()
+            print('End of geting detials of service')
+        except Exception as e:
+            print(f'this is Eception : {e}')
+        finally:
+            time.sleep(10)
+            pass
