@@ -31,7 +31,8 @@ class DataFetcher:
         response = requests.get(url_for_request)
         print(f'\t {response.status_code}')
         #response.raise_for_status()
-        return response.json(), response.status_code, json.dumps(response.json())
+        respone_json = response.json()
+        return respone_json, response.status_code, json.dumps(respone_json)
 
 
 class StringChecker:
