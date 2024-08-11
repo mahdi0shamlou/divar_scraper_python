@@ -111,6 +111,22 @@ class DatabaseManager:
                 print(f"Token token already exists in the database.")
             conn.commit()
 
+    def update_post_personal_details(self, token):
+        """
+        this methode update a row in table posts find row from input token
+        this mehtode use for update that we dont get duplicate token for get number resault
+        :param token:
+        :return:
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            try:
+                cursor.execute('UPDATE posts_details_personal SET added = 1 WHERE token = ?', token)
+            except sqlite3.IntegrityError:
+                # Handle the case where the token already exists (do nothing or log if necessary)
+                print(f"Token token already exists in the database.")
+            conn.commit()
+
     def save_post_data_details_moshaver(self, posts):
         """
         this methode insert into table posts_details_personal
