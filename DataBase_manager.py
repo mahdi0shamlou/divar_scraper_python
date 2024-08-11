@@ -47,6 +47,15 @@ class DatabaseManager:
                     added INTEGER
                 )
             ''')
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS personal_number (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    token TEXT UNIQUE,
+                    all_data TEXT,
+                    number TEXT,
+                    added INTEGER
+                )
+            ''')
             conn.commit()
 
     def save_post_data(self, posts):

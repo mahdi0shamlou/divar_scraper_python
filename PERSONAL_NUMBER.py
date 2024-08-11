@@ -14,7 +14,7 @@ class PostExtractor:
         number = ''
         for item in json_data.get('widget_list', []):
             if item.get('widget_type') == 'UNEXPANDABLE_ROW':
-                print(item.get('data'))
+                # print(item.get('data'))
                 if item.get('data')['action']['type'] == 'CALL_SUPPORT':
                     number = item.get('data')['action']['payload']['phone_number']
         return number
