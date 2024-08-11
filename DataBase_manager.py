@@ -202,3 +202,20 @@ class DatabaseManager:
             tokens = cursor.fetchall()
         return [token[0] for token in tokens]
 
+    # -----------------------------
+    # this section for get Post_sender service
+    # -----------------------------
+    def get_post_personal_for_send_post(self):
+        """
+        this methode use for get a token and phone number for onther service for send post like post_sender service
+        :return: Tokens that not added yet
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            cursor.execute('SELECT token,number FROM personal_number WHERE added = 0 limit 1')
+            items = cursor.fetchall()
+        return [item for item in items]
+
+    # -----------------------------
+    # -----------------------------
+
