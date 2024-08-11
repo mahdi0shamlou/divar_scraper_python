@@ -159,9 +159,9 @@ class DatabaseManager:
                 print(f"Token {posts[0]} already exists in the database.")
             conn.commit()
 
+    # -----------------------------
+    # -----------------------------
 
-    # -----------------------------
-    # -----------------------------
     def save_post_data_details_moshaver(self, posts):
         """
         this methode insert into table posts_details_personal
