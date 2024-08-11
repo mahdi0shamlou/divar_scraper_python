@@ -48,7 +48,7 @@ class Application:
         number = self.extractor.extract_post_data(json_data) # this methode get number from response of above methode
         print(f'\t this is number of this post : {number}')
         post = ((tokens[0], all_data, number, 0))
-        self.db_manager.save_number_of_personal(post) 
+        self.db_manager.save_number_of_personal(post)
         self.db_manager.update_post_personal_details(((tokens[0],)))
 
 
@@ -58,5 +58,14 @@ if __name__ == '__main__':
     JWT_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaWQiOiI1NzNjNzVkZi1mZmI3LTRiNzQtYjg3MS0zZGE3OGI5ZGVhN2QiLCJ1c2VyLXR5cGUiOiJwZXJzb25hbCIsInVzZXItdHlwZS1mYSI6Ilx1MDY3ZVx1MDY0Nlx1MDY0NCBcdTA2MzRcdTA2MmVcdTA2MzVcdTA2Y2MiLCJ1aWQiOiJmYTdkY2VmOS04YmYwLTQ5NWItYmQyNi0yYzIwNzQyODQyNzIiLCJ1c2VyIjoiMDkyMDU1MDY5NDgiLCJpc3MiOiJhdXRoIiwidmVyaWZpZWRfdGltZSI6MTcyMzM4OTkzNSwiaWF0IjoxNzIzMzg5OTM1LCJleHAiOjE3Mjg1NzM5MzV9.ppouOeYBlbb2VDyBGl-084VKDtLybr5RkImSHhbQgTY'
     DB_FILENAME = 'posts.db'
     app = Application(URL, DB_FILENAME)
-    app.run(JWT_TOKEN)
+    while True:
+        try:
+            print('Start of geting number of service')
+            app.run(JWT_TOKEN)
+            print('End of geting number of service')
+        except Exception as e:
+            print(f'this is Eception : {e}')
+        finally:
+            time.sleep(30)
+            pass
 
