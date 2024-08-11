@@ -45,12 +45,16 @@ class Application:
         json_data, status_code, all_data = self.fetcher.fetch_json_data(tokens, JWT_TOKEN) # this methode send request
         if status_code == 404:
             self.db_manager.update_post_data_in_posts(((tokens[0],)))
-        number = self.extractor.extract_post_data(json_data) # this methode get number from response of above methode
-        print(f'\t this is number of this post : {number}')
-        post = ((tokens[0], all_data, number, 0))
-        self.db_manager.save_number_of_personal(post)
-        self.db_manager.update_post_personal_details(((tokens[0],)))
-
+        elif status_code == 200:
+            number = self.extractor.extract_post_data(json_data) # this methode get number from response of above methode
+            print(f'\t this is number of this post : {number}')
+            post = ((tokens[0], all_data, number, 0))
+            self.db_manager.save_number_of_personal(post)
+            self.db_manager.update_post_personal_details(((tokens[0],)))
+        else:
+            print('\t can not find number and that is respones : ')
+            print(f'\t {json_data}')
+            time.sleep(30)
 
 
 if __name__ == '__main__':
