@@ -55,8 +55,11 @@ class Application:
             self.db_manager.save_number_of_personal(post)
             self.db_manager.update_post_personal_details(((tokens[0],)))
         except ValueError:
+            print(f'\t response of divar is not 200')
+            print(f'\t this token update for dont get agian {tokens[0]}')
             self.db_manager.update_post_personal_details(((tokens[0],))) # this is using for after response is not 200
         except:
+            print(f'\t we have a error in try block')
             self.db_manager.update_post_personal_details(((tokens[0],))) # this is run when a error happend in try block
 
 
