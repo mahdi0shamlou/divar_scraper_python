@@ -39,7 +39,6 @@ class GetData:
         self._get_from_posts()
         self._get_from_posts_details()
         self._get_from_personal_number()
-        print(self.Data)
         return self.Data
 
 class GetToken:
@@ -63,4 +62,6 @@ if __name__ == '__main__':
         get_data_obj = GetData(token[0], CONNECTION_DB)
         data = get_data_obj.get_data()
         ALL_DATA.append(data)
+    for i in ALL_DATA:
+        print(i[len(i)-1])
 
