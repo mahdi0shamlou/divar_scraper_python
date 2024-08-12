@@ -115,7 +115,7 @@ if __name__ == '__main__':
     WORD_object = WordCHeckReader(WORD_FILE)
     WORD_object.read_words()
     LIST_CHEKC = WORD_object.get_words()
-    print(LIST_CHEKC)
+    print(f'this is list of word check : {LIST_CHEKC}')
     # --------
     # --------
 
