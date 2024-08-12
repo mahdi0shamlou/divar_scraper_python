@@ -46,8 +46,21 @@ class GetToken:
     def __init__(self, data_base_connection: sqlite3.connect):
         self.DB_Conn = data_base_connection
         self.Token = []
+    def get_tokens(self):
+        cursor = self.DB_Conn.cursor()
+        cursor.execute('SELECT token FROM personal_number')
+        posts = cursor.fetchall()
+        self.Token = posts
+        return self.Token
+
 if __name__ == '__main__':
     DATABASE = 'posts.db'
     CONNECTION_DB = sqlite3.connect(DATABASE)
-    get_data_obj = GetData('gZnCrm6p', CONNECTION_DB)
-    data = get_data_obj.get_data()
+    ALL_DATA = []
+    get_tokens_obj = GetToken(CONNECTION_DB)
+    TOKENS = get_tokens_obj.get_tokens()
+    for token in TOKENS:
+        get_data_obj = GetData(token[0], CONNECTION_DB)
+        data = get_data_obj.get_data()
+        ALL_DATA.append(data)
+
