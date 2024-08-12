@@ -2,6 +2,7 @@ import requests
 from DataBase_manager import *
 import time
 import json
+import csv
 
 class PostExtractor:
     @staticmethod
@@ -107,7 +108,18 @@ class WordCHeckReader:
 if __name__ == '__main__':
     URL = 'https://api.divar.ir/v8/posts-v2/web/'
     DB_FILENAME = 'posts.db'
-    LIST_CHEKC = ['مشاور', 'املاک', 'مسکن'] # this list for useing for check validity
+    WORD_FILE = 'WORD_list_check.csv'
+    # --------
+    # word reader
+    # --------
+    WORD_object = WordCHeckReader(WORD_FILE)
+    WORD_object.read_words()
+    LIST_CHEKC = WORD_object.get_words()
+    print(LIST_CHEKC)
+    # --------
+    # --------
+
+
     app = Application(URL, DB_FILENAME)
     while True:
         try:
