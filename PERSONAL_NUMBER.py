@@ -37,7 +37,6 @@ class DataFetcher:
             print(f'\t this token removed {token[0]}')
             raise ValueError # raise a exception for handel response
 
-
 class Application:
     def __init__(self, url, db_filename):
         self.fetcher = DataFetcher(url)
@@ -61,7 +60,6 @@ class Application:
         except:
             print(f'\t we have a error in try block')
             self.db_manager.update_post_personal_details(((tokens[0],))) # this is run when a error happend in try block
-
 
 if __name__ == '__main__':
     URL = 'https://api.divar.ir/v8/postcontact/web/contact_info/'

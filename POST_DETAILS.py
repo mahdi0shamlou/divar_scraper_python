@@ -66,8 +66,6 @@ class Application:
             tokens = self.db_manager.get_all_tokens_not_added() # this method get a token from table for getting details
             print(f'\t this is token for search and getting details : {tokens}')
             json_data, status_code, all_data = self.fetcher.fetch_json_data(tokens) # this methode send request
-            if status_code == 404:
-                self.db_manager.update_post_data_in_posts(((tokens[0],)))
             desck = self.extractor.extract_post_data(json_data) # this methode get desck from response of above methode
             desck_resualt = StringChecker.contains_any_first(desck[0], LIST_CHEKC) # this methode check if desck is valid or not
             print(f'\t this is reault of validtiy : {not desck_resualt}')
@@ -79,7 +77,9 @@ class Application:
                 self.db_manager.save_post_data_details_moshaver(post) # this methode insert data into moshaver table
                 self.db_manager.update_post_data_in_posts(((tokens[0],))) # this methode update row in posts table for dont get duplicat
         except ValueError:
-            self.db_manager.update_post_data_in_posts(((tokens[0],)))
+            self.db_manager.update_post_data_in_posts(((tokens[0],))) # this is running after response is not 200
+        except:
+            self.db_manager.update_post_data_in_posts(((tokens[0],))) # this is run when a error happend in try block
 
 
 if __name__ == '__main__':
