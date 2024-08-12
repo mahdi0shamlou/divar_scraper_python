@@ -81,6 +81,28 @@ class Application:
         except:
             self.db_manager.update_post_data_in_posts(((tokens[0],))) # this is run when a error happend in try block
 
+class WordCHeckReader:
+    def __init__(self, filename):
+        self.filename = filename
+        self.words = []
+
+    def read_words(self):
+        try:
+            with open(self.filename, mode='r', newline='') as file:
+                csv_reader = csv.reader(file)
+                for row in csv_reader:
+                    # Assuming the JWT token is the first element in each row
+                    word = row[0]
+                    self.words.append(word)
+            print("Tokens read successfully!")
+        except FileNotFoundError:
+            print(f"Error: The file {self.filename} was not found.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
+    def get_words(self):
+        return self.words
+
 
 if __name__ == '__main__':
     URL = 'https://api.divar.ir/v8/posts-v2/web/'
