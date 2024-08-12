@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask Web App</title>
+    <title>File HOSTING</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <header>
-        <h1>Flask Web App</h1>
+        <h1>File HOSTING</h1>
         <form id="search-form" action="{{ url_for('index') }}" method="GET">
-            <input type="text" name="query" placeholder="Search posts..." value="{{ request.args.get('query', '') }}">
+            <input type="text" name="query" placeholder="Search number..." value="{{ request.args.get('query', '') }}">
             <button type="submit">Search</button>
         </form>
     </header>
@@ -21,7 +21,7 @@
         {% block content %}{% endblock %}
     </main>
     <footer>
-        <p>&copy; 2024 Flask Web App</p>
+        <p>&copy; 2024 File HOSTING</p>
     </footer>
     <script>
         document.getElementById('search-form').onsubmit = function() {
