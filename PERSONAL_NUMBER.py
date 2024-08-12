@@ -62,9 +62,6 @@ class Application:
             print(f'\t we have a error in try block')
             self.db_manager.update_post_personal_details(((tokens[0],))) # this is run when a error happend in try block
 
-
-
-
 class JWTTokenReader:
     def __init__(self, filename):
         self.filename = filename
@@ -101,14 +98,18 @@ if __name__ == '__main__':
     # --------
     # --------
     app = Application(URL, DB_FILENAME)
+    i = 0
     while True:
         try:
+            JWT_TOKEN = JWT_TOKEN_LIST[0]
             print('Start of geting number of service')
             app.run(JWT_TOKEN)
             print('End of geting number of service')
         except Exception as e:
             print(f'this is Eception : {e}')
         finally:
+            i = i + 1
+            i = i % len(JWT_TOKEN_LIST)
             time.sleep(3)
             pass
 
