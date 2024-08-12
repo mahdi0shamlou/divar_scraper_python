@@ -5,8 +5,9 @@ class GetData:
     """
         this class get all data of one token
     """
-    def __init__(self, token):
+    def __init__(self, token: str, db_obj: DatabaseManager):
         self.Token = token
+        self.Db_Obj = db_obj
         self.Data = []
 
     def _get_from_posts(self):
