@@ -40,8 +40,10 @@ class Application:
             response_json, status_code = self.fetcher.fetch_json_data(tokens) # this methode send request
             self.db_manager.update_number_personal_for_post_sender(((tokens[0][0],)))
         except ValueError:
+            print('\t we have response is not 200 and 201')
             time.sleep(300) # this is using for after response is not 200 or 201
-        except:
+        except Exception as e:
+            print(e)
             time.sleep(300) # this is run when a error happend in try block
 
 
