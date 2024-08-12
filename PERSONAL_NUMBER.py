@@ -2,6 +2,7 @@ import requests
 from DataBase_manager import *
 import time
 import json
+import csv
 
 class PostExtractor:
     @staticmethod
@@ -61,10 +62,44 @@ class Application:
             print(f'\t we have a error in try block')
             self.db_manager.update_post_personal_details(((tokens[0],))) # this is run when a error happend in try block
 
+
+
+
+class JWTTokenReader:
+    def __init__(self, filename):
+        self.filename = filename
+        self.tokens = []
+
+    def read_tokens(self):
+        try:
+            with open(self.filename, mode='r', newline='') as file:
+                csv_reader = csv.reader(file)
+                for row in csv_reader:
+                    # Assuming the JWT token is the first element in each row
+                    token = row[0]
+                    self.tokens.append(token)
+            print("Tokens read successfully!")
+        except FileNotFoundError:
+            print(f"Error: The file {self.filename} was not found.")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+
+    def get_tokens(self):
+        return self.tokens
+
+
 if __name__ == '__main__':
     URL = 'https://api.divar.ir/v8/postcontact/web/contact_info/'
-    JWT_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaWQiOiI1NzNjNzVkZi1mZmI3LTRiNzQtYjg3MS0zZGE3OGI5ZGVhN2QiLCJ1c2VyLXR5cGUiOiJwZXJzb25hbCIsInVzZXItdHlwZS1mYSI6Ilx1MDY3ZVx1MDY0Nlx1MDY0NCBcdTA2MzRcdTA2MmVcdTA2MzVcdTA2Y2MiLCJ1aWQiOiJmYTdkY2VmOS04YmYwLTQ5NWItYmQyNi0yYzIwNzQyODQyNzIiLCJ1c2VyIjoiMDkyMDU1MDY5NDgiLCJpc3MiOiJhdXRoIiwidmVyaWZpZWRfdGltZSI6MTcyMzM4OTkzNSwiaWF0IjoxNzIzMzg5OTM1LCJleHAiOjE3Mjg1NzM5MzV9.ppouOeYBlbb2VDyBGl-084VKDtLybr5RkImSHhbQgTY'
+    JWT_TOKEN_FILE = 'JWT_tokens.csv'
     DB_FILENAME = 'posts.db'
+    # --------
+    # jwt token reader
+    # --------
+    JWT_object = JWTTokenReader(JWT_TOKEN_FILE)
+    JWT_object.read_tokens()
+    JWT_TOKEN_LIST = JWT_object.get_tokens()
+    # --------
+    # --------
     app = Application(URL, DB_FILENAME)
     while True:
         try:
