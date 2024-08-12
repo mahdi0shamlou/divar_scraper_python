@@ -43,7 +43,7 @@ class Application:
             print('\t we have response is not 200 and 201')
             time.sleep(300) # this is using for after response is not 200 or 201
         except Exception as e:
-            print(e)
+            print(f'\t this is error {e}')
             time.sleep(300) # this is run when a error happend in try block
 
 
