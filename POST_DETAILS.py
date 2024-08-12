@@ -36,7 +36,7 @@ class DataFetcher:
             return respone_json, response.status_code, json.dumps(respone_json)
         else:
             print(f'\t this token removed {token[0]}')
-            raise ValueError
+            raise ValueError # raise a exception for handel response
 
 
 class StringChecker:

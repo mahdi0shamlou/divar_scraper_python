@@ -30,8 +30,13 @@ class DataFetcher:
         url_for_request = self.url + token[0]
         response = requests.get(url_for_request, headers=headers)
         print(f'\t {response.status_code}')
-        response_json = response.json()
-        return response_json, response.status_code, json.dumps(response_json)
+        if response.status_code == 200:
+            response_json = response.json()
+            return response_json, response.status_code, json.dumps(response_json)
+        else:
+            print(f'\t this token removed {token[0]}')
+            raise ValueError # raise a exception for handel response
+
 
 class Application:
     def __init__(self, url, db_filename):
@@ -40,21 +45,25 @@ class Application:
         self.db_manager = DatabaseManager(db_filename)
 
     def run(self, JWT_TOKEN):
-        tokens = self.db_manager.get_one_token_from_personal_details() # this method get a token from table for getting details
-        print(f'\t this is token for search and getting number : {tokens}')
-        json_data, status_code, all_data = self.fetcher.fetch_json_data(tokens, JWT_TOKEN) # this methode send request
-        if status_code == 404:
-            self.db_manager.update_post_data_in_posts(((tokens[0],)))
-        elif status_code == 200:
-            number = self.extractor.extract_post_data(json_data) # this methode get number from response of above methode
-            print(f'\t this is number of this post : {number}')
-            post = ((tokens[0], all_data, number, 0))
-            self.db_manager.save_number_of_personal(post)
+        try:
+            tokens = self.db_manager.get_one_token_from_personal_details() # this method get a token from table for getting details
+            print(f'\t this is token for search and getting number : {tokens}')
+            json_data, status_code, all_data = self.fetcher.fetch_json_data(tokens, JWT_TOKEN) # this methode send request
+            if status_code == 404:
+                self.db_manager.update_post_data_in_posts(((tokens[0],)))
+            elif status_code == 200:
+                number = self.extractor.extract_post_data(json_data) # this methode get number from response of above methode
+                print(f'\t this is number of this post : {number}')
+                post = ((tokens[0], all_data, number, 0))
+                self.db_manager.save_number_of_personal(post)
+                self.db_manager.update_post_personal_details(((tokens[0],)))
+            else:
+                print('\t can not find number and that is respones : ')
+                print(f'\t {json_data}')
+                time.sleep(30)
+        except ValueError:
             self.db_manager.update_post_personal_details(((tokens[0],)))
-        else:
-            print('\t can not find number and that is respones : ')
-            print(f'\t {json_data}')
-            time.sleep(30)
+
 
 if __name__ == '__main__':
     URL = 'https://api.divar.ir/v8/postcontact/web/contact_info/'
@@ -69,6 +78,6 @@ if __name__ == '__main__':
         except Exception as e:
             print(f'this is Eception : {e}')
         finally:
-            time.sleep(30)
+            time.sleep(3)
             pass
 
