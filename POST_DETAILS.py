@@ -108,7 +108,7 @@ class WordCHeckReader:
 if __name__ == '__main__':
     URL = 'https://api.divar.ir/v8/posts-v2/web/'
     DB_FILENAME = 'posts.db'
-    WORD_FILE = 'WORD_list_check.csv'
+    WORD_FILE = 'Files/WORD_list_check.csv'
     # --------
     # word reader
     # --------

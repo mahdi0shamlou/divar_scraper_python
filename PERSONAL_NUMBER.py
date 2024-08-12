@@ -87,7 +87,7 @@ class JWTTokenReader:
 
 if __name__ == '__main__':
     URL = 'https://api.divar.ir/v8/postcontact/web/contact_info/'
-    JWT_TOKEN_FILE = 'JWT_tokens.csv'
+    JWT_TOKEN_FILE = 'Files/JWT_tokens.csv'
     DB_FILENAME = 'posts.db'
     # --------
     # jwt token reader
