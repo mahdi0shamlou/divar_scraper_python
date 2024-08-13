@@ -65,6 +65,7 @@ class Application:
     def run(self, LIST_CHEKC):
         try:
             tokens = self.db_manager.get_all_tokens_not_added() # this method get a token from table for getting details
+
             print(f'\t this is token for search and getting details : {tokens}')
             json_data, status_code, all_data = self.fetcher.fetch_json_data(tokens) # this methode send request
             desck = self.extractor.extract_post_data(json_data) # this methode get desck from response of above methode
