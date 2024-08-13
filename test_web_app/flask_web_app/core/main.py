@@ -56,7 +56,7 @@ class GetToken:
 
 class ShowData():
     def Data(self):
-        DATABASE = '../../../posts.db'
+        DATABASE = '../../posts.db'
         CONNECTION_DB = sqlite3.connect(DATABASE)
         ALL_DATA = []
         get_tokens_obj = GetToken(CONNECTION_DB)
@@ -70,7 +70,17 @@ class ShowData():
             print(i[len(i) - 1])
         return ALL_DATA
 
+    def Data_of_token(self, token):
+        DATABASE = '../../posts.db'
+        CONNECTION_DB = sqlite3.connect(DATABASE)
+        get_data_obj = GetData(token, CONNECTION_DB)
+        data = get_data_obj.get_data()
+        return data
 
+
+'''
 if __name__ == '__main__':
     show_data_obj = ShowData()
     print(show_data_obj.Data())
+    print(show_data_obj.Data_of_token('gZ4e-ggy'))
+'''

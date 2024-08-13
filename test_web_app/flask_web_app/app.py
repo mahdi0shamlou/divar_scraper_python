@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
-import sqlite3
+import sqlite3  # imported in core.main
 from config import DATABASE
-
+from core.main import *
 app = Flask(__name__)
 
 
@@ -23,8 +23,12 @@ def index():
 def post(post_id):
     conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM personal_number WHERE id = ?', (post_id,))
+    cursor.execute('SELECT token FROM personal_number WHERE id = ?', (post_id,))
     post = cursor.fetchone()
+    print(post)
+    obj_serach = ShowData()
+    post = obj_serach.Data_of_token(post[0])
+    print(post)
     conn.close()
     return render_template('post.html', post=post)
 
