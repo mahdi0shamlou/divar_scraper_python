@@ -41,10 +41,12 @@ class GetData:
         self._get_from_personal_number()
         return self.Data
 
+
 class GetToken:
     def __init__(self, data_base_connection: sqlite3.connect):
         self.DB_Conn = data_base_connection
         self.Token = []
+
     def get_tokens(self):
         cursor = self.DB_Conn.cursor()
         cursor.execute('SELECT token FROM personal_number')
@@ -52,17 +54,23 @@ class GetToken:
         self.Token = posts
         return self.Token
 
-if __name__ == '__main__':
-    DATABASE = 'posts.db'
-    CONNECTION_DB = sqlite3.connect(DATABASE)
-    ALL_DATA = []
-    get_tokens_obj = GetToken(CONNECTION_DB)
-    TOKENS = get_tokens_obj.get_tokens()
-    for token in TOKENS:
-        get_data_obj = GetData(token[0], CONNECTION_DB)
-        data = get_data_obj.get_data()
-        ALL_DATA.append(data)
-    print(len(ALL_DATA[0]))
-    for i in ALL_DATA:
-        print(i[len(i)-1])
+class ShowData():
+    def Data(self):
+        DATABASE = '../../../posts.db'
+        CONNECTION_DB = sqlite3.connect(DATABASE)
+        ALL_DATA = []
+        get_tokens_obj = GetToken(CONNECTION_DB)
+        TOKENS = get_tokens_obj.get_tokens()
+        for token in TOKENS:
+            get_data_obj = GetData(token[0], CONNECTION_DB)
+            data = get_data_obj.get_data()
+            ALL_DATA.append(data)
+        print(len(ALL_DATA[0]))
+        for i in ALL_DATA:
+            print(i[len(i) - 1])
+        return ALL_DATA
 
+
+if __name__ == '__main__':
+    show_data_obj = ShowData()
+    print(show_data_obj.Data())
