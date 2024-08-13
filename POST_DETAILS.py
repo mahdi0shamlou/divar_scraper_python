@@ -129,6 +129,6 @@ if __name__ == '__main__':
         except Exception as e:
             print(f'this is Eception : {e}')
         finally:
-            time.sleep(3)
+            #time.sleep(3)
             pass
 
