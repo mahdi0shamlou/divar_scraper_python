@@ -61,6 +61,8 @@ if __name__ == '__main__':
     # DATA we can change categort for rent in these type -> all of them (residential-rent) , apartment-rent , house-villa-rent : اجاره مسکونی
     # DATA we can change categort for rent in these type -> all of them(commercial-sell) , office-sell , shop-sell , industry-agriculture-business-sell : فروش اداری
     # DATA we can change categort for rent in these type -> all of them(commercial-rent) , office-rent , shop-rent , industry-agriculture-business-rent : اجاره اداری
+    # DATA we can change category for sell in these type -> all of them(temporary-rent) , suite-apartment , villa , workspace : اجاره کوتاه مدت
+    # DATA we can change category for sell in these type -> all of them(real-estate-services) , partnership , presell : پروژه ساخت و ساز
     DB_FILENAME = 'posts.db'
     app = Application(URL, DATA, DB_FILENAME)
     dbs = DatabaseManager(DB_FILENAME)
