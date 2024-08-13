@@ -57,6 +57,7 @@ class Application:
 if __name__ == '__main__':
     URL = 'https://api.divar.ir/v8/postlist/w/search'
     DATA = '{"city_ids":["1"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"residential-sell"}}}}}}'
+    # FOR citys ids ['1', '2', '1764'] tehran and karaj and andishe
     # DATA we can change category for sell in these type -> all of them (residential-sell) , apartment-sell , house-villa-sell , plot-old : فروش مسکونی
     # DATA we can change categort for rent in these type -> all of them (residential-rent) , apartment-rent , house-villa-rent : اجاره مسکونی
     # DATA we can change categort for rent in these type -> all of them(commercial-sell) , office-sell , shop-sell , industry-agriculture-business-sell : فروش اداری
