@@ -58,6 +58,7 @@ if __name__ == '__main__':
     URL = 'https://api.divar.ir/v8/postlist/w/search'
     DATA = '{"city_ids":["1"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"residential-sell"}}}}}}'
     # DATA we can change category for sell in these type -> apartment-sell , house-villa-sell , plot-old
+    # DATA we can change categort for rent in these type -> allofthem (residential-rent) , apartment-rent , house-villa-rent
     DB_FILENAME = 'posts.db'
     app = Application(URL, DATA, DB_FILENAME)
     dbs = DatabaseManager(DB_FILENAME)
