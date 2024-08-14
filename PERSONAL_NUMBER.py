@@ -101,7 +101,8 @@ if __name__ == '__main__':
     i = 0
     while True:
         try:
-            JWT_TOKEN = JWT_TOKEN_LIST[0]
+            JWT_TOKEN = JWT_TOKEN_LIST[i]
+            print(JWT_TOKEN)
             print('Start of geting number of service')
             app.run(JWT_TOKEN)
             print('End of geting number of service')
@@ -110,6 +111,6 @@ if __name__ == '__main__':
         finally:
             i = i + 1
             i = i % len(JWT_TOKEN_LIST)
-            time.sleep(3)
+            time.sleep(10)
             pass
 

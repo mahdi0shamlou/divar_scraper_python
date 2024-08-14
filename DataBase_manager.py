@@ -137,7 +137,7 @@ class DatabaseManager:
         """
         with sqlite3.connect(self.db_filename) as conn:
             cursor = conn.cursor()
-            cursor.execute('SELECT token FROM posts_details_personal WHERE added = 0 limit 1')
+            cursor.execute('SELECT token FROM posts_details_personal WHERE added = 0 ORDER BY id DESC limit 1')
             tokens = cursor.fetchall()
         return [token[0] for token in tokens]
 
