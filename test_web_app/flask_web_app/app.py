@@ -1,37 +1,51 @@
-from flask import Flask, render_template, request
-import sqlite3  # imported in core.main
+from flask import Flask, render_template, request, jsonify
+import sqlite3
 from config import DATABASE
-from core.main import *
+from core.main import ShowData
+import logging
+
 app = Flask(__name__)
 
+# Configure logging
+logging.basicConfig(level=logging.INFO, filename='app.log')
+
+def get_db_connection():
+    conn = sqlite3.connect(DATABASE)
+    conn.row_factory = sqlite3.Row
+    return conn
 
 @app.route('/')
 def index():
     query = request.args.get('query')
-    conn = sqlite3.connect(DATABASE)
-    cursor = conn.cursor()
-    if query:
-        cursor.execute('SELECT * FROM data_compeleted WHERE number LIKE ?', ('%' + query + '%',))
-    else:
-        cursor.execute('SELECT * FROM data_compeleted')
-    posts = cursor.fetchall()
-    conn.close()
-    return render_template('index.html', posts=posts)
-
+    try:
+        with get_db_connection() as conn:
+            cursor = conn.cursor()
+            if query:
+                cursor.execute('SELECT * FROM data_compeleted WHERE number LIKE ?', ('%' + query + '%',))
+            else:
+                cursor.execute('SELECT * FROM data_compeleted')
+            posts = cursor.fetchall()
+        return render_template('index.html', posts=posts)
+    except sqlite3.Error as e:
+        logging.error(f'Database error: {e}')
+        return jsonify({"error": "Database error"}), 500
 
 @app.route('/post/<int:post_id>')
 def post(post_id):
-    conn = sqlite3.connect(DATABASE)
-    cursor = conn.cursor()
-    cursor.execute('SELECT token FROM data_compeleted WHERE id = ?', (post_id,))
-    post = cursor.fetchone()
-    print(post)
-    obj_serach = ShowData()
-    post = obj_serach.Data_of_token(post[0])
-    print(post)
-    conn.close()
-    return render_template('post.html', post=post)
-
+    try:
+        with get_db_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute('SELECT token FROM data_compeleted WHERE id = ?', (post_id,))
+            post = cursor.fetchone()
+            if post:
+                obj_serach = ShowData()
+                post = obj_serach.Data_of_token(post['token'])
+                return render_template('post.html', post=post)
+            else:
+                return jsonify({"error": "Post not found"}), 404
+    except sqlite3.Error as e:
+        logging.error(f'Database error: {e}')
+        return jsonify({"error": "Database error"}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

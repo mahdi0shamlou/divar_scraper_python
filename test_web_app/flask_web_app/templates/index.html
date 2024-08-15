@@ -6,8 +6,9 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Title</th>
-            <th>Content</th>
+            <th>token</th>
+            <th>tittle</th>
+            <th>price</th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +17,7 @@
             <td>{{ post[0] }}</td>
             <td><a href="{{ url_for('post', post_id=post[0]) }}">{{ post[1] }}</a></td>
             <td>{{ post[3] }}</td>
+            <td>{{ post[7] }}</td>
         </tr>
         {% endfor %}
     </tbody>
