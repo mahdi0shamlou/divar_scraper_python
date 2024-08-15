@@ -23,9 +23,9 @@ def index():
         with get_db_connection() as conn:
             cursor = conn.cursor()
             if query:
-                cursor.execute('SELECT * FROM data_compeleted WHERE number LIKE ?', ('%' + query + '%',))
+                cursor.execute('SELECT * FROM personal_number WHERE number LIKE ?', ('%' + query + '%',))
             else:
-                cursor.execute('SELECT * FROM data_compeleted')
+                cursor.execute('SELECT * FROM personal_number')
             posts = cursor.fetchall()
         return render_template('index.html', posts=posts)
     except sqlite3.Error as e:
@@ -38,7 +38,7 @@ def post(post_id):
     try:
         with get_db_connection() as conn:
             cursor = conn.cursor()
-            cursor.execute('SELECT token FROM data_compeleted WHERE id = ?', (post_id,))
+            cursor.execute('SELECT token FROM personal_number WHERE id = ?', (post_id,))
             post = cursor.fetchone()
             if post:
                 obj_serach = ShowData()
