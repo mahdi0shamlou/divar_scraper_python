@@ -51,14 +51,16 @@ def post(post_id):
         return jsonify({"error": "Database error"}), 500
 
 
+# Error handler for 500 Internal Server Error
 @app.errorhandler(500)
 def internal_error(error):
-    return jsonify({"error": "Internal server error"}), 500
+    return render_template('500.html'), 500
 
 
+# Error handler for 404 Not Found Error
 @app.errorhandler(404)
 def not_found_error(error):
-    return jsonify({"error": "Resource not found"}), 404
+    return render_template('404.html'), 404
 
 
 if __name__ == '__main__':

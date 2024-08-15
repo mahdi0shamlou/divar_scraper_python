@@ -26,3 +26,11 @@ INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 14:58:47] "GET /?query=09asdasd HTTP/1.
 INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 14:58:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 14:58:47] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
 INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 14:58:52] "[33mGET /in HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612

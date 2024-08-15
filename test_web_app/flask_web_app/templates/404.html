@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found - File HOSTING</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>File HOSTING</h1>
+    </header>
+    <div id="loader" class="loader" style="display: none;">
+        <img src="{{ url_for('static', filename='loader.gif') }}" alt="Loading...">
+    </div>
+    <main id="content">
+        <section style="text-align: center; padding: 50px;">
+            <h2>404 - Page Not Found</h2>
+            <p>Oops! The page you are looking for does not exist.</p>
+            <p><a href="{{ url_for('index') }}">Return to Home</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 File HOSTING</p>
+    </footer>
+</body>
+</html>
