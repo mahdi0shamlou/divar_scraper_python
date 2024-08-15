@@ -51,6 +51,13 @@ class GetToken:
         posts = cursor.fetchall()
         self.Token = posts
         return self.Token
+    def Data_of_token(self, token):
+        DATABASE = 'posts.db'
+        CONNECTION_DB = sqlite3.connect(DATABASE)
+        get_data_obj = GetData(token, CONNECTION_DB)
+        data = get_data_obj.get_data()
+        return data
+
 
 if __name__ == '__main__':
     DATABASE = 'posts.db'
