@@ -38,12 +38,11 @@ class Application:
     def run(self, object_token_get_data: GetToken):
         try:
             tokens = self.db_manager.get_number_personal_for_post_sender() # this method get a token from table for getting details
-            retunred_Data = object_token_get_data.Data_of_token(tokens[0][0])
-            self.db_manager.save_post_data_compelete(retunred_Data)
             print(f'\t this is items for post sender : {tokens}')
             response_json, status_code = self.fetcher.fetch_json_data(tokens) # this methode send request
             self.db_manager.update_number_personal_for_post_sender(((tokens[0][0],)))
-
+            retunred_Data_for_completer_data = object_token_get_data.Data_of_token(tokens[0][0]) # this line make data for save in db
+            self.db_manager.save_post_data_compelete(retunred_Data_for_completer_data) # this line insert into table data_completer
 
         except ValueError:
             print('\t we have response is not 200 and 201')

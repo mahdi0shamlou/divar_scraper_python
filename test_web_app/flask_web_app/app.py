@@ -11,9 +11,9 @@ def index():
     conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
     if query:
-        cursor.execute('SELECT * FROM personal_number WHERE number LIKE ?', ('%' + query + '%',))
+        cursor.execute('SELECT * FROM data_compeleted WHERE number LIKE ?', ('%' + query + '%',))
     else:
-        cursor.execute('SELECT * FROM personal_number')
+        cursor.execute('SELECT * FROM data_compeleted')
     posts = cursor.fetchall()
     conn.close()
     return render_template('index.html', posts=posts)
@@ -23,7 +23,7 @@ def index():
 def post(post_id):
     conn = sqlite3.connect(DATABASE)
     cursor = conn.cursor()
-    cursor.execute('SELECT token FROM personal_number WHERE id = ?', (post_id,))
+    cursor.execute('SELECT token FROM data_compeleted WHERE id = ?', (post_id,))
     post = cursor.fetchone()
     print(post)
     obj_serach = ShowData()
