@@ -1,13 +1,25 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 import sqlite3
 from config import DATABASE
 from core.main import ShowData
 import logging
+import pandas as pd
+import os
 
 app = Flask(__name__)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, filename='app.log')
+
+# Path to CSV file
+CSV_FILE_PATH = '../../Files/WORD_list_check.csv'  # Update this path to your CSV file
+UPLOAD_FOLDER = '../../Files/'  # Folder to save uploaded CSV files
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['ALLOWED_EXTENSIONS'] = {'csv'}
+
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 
 def get_db_connection():
@@ -62,6 +74,35 @@ def internal_error(error):
 def not_found_error(error):
     return render_template('404.html'), 404
 
+
+@app.route('/upload_csv', methods=['GET', 'POST'])
+def upload_csv():
+    try:
+        if request.method == 'POST':
+            # Check if the file part exists in the request
+            if 'file' not in request.files:
+                return jsonify({"error": "No file part in the request"}), 400
+
+            file = request.files['file']
+
+            # If the user does not select a file, the browser submits an empty file without a filename
+            if file.filename == '':
+                return jsonify({"error": "No selected file"}), 400
+
+            if file and allowed_file(file.filename):
+                # Save the new CSV file
+                file_path = os.path.join(app.config['UPLOAD_FOLDER'], 'WORD_list_check.csv')
+                file.save(file_path)
+
+                # Optionally, validate the new CSV file contents here
+
+                return redirect(url_for('view_csv'))
+
+        return render_template('upload_csv.html')
+
+    except Exception as e:
+        logging.error(f'Error uploading CSV file: {e}')
+        return jsonify({"error": "Error uploading CSV file"}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

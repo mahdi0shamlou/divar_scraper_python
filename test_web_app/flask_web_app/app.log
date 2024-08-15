@@ -175,3 +175,429 @@ INFO:werkzeug: * Debugger PIN: 536-048-612
 INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:28:13] "GET / HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:28:13] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:28:13] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:35:17] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:35:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:35:17] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:35:27] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:35:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+ERROR:root:Error processing CSV file: 'enumerate' is undefined
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:36:28] "[35m[1mGET /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:37:20] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:37:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+ERROR:root:Error processing CSV file: 'enumerate' is undefined
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:37:22] "[35m[1mGET /edit_csv HTTP/1.1[0m" 500 -
+ERROR:root:Error processing CSV file: 'enumerate' is undefined
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:37:35] "[35m[1mGET /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:38:59] "[35m[1mGET /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:39:00] "GET /edit_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:39:00] "GET /edit_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:39:00] "GET /edit_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:42:34] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:42:34] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+ERROR:root:Error processing CSV file: 'enumerate' is undefined
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:42:36] "[35m[1mGET /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:45:01] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:45:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+ERROR:root:Error processing CSV file: Length of values (36) does not match length of index (18)
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:45:22] "[35m[1mPOST /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:45:25] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:45:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:45:59] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:45:59] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:47:22] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:47:22] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:49:44] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:49:44] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:49:50] "[35m[1mPOST /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:49:50] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:49:50] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:49:50] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:50:07] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:50:11] "[35m[1mPOST /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:50:11] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:50:11] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:50:11] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:50:50] "[35m[1mPOST /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:51:54] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:52:27] "[35m[1mPOST /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:52:27] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:52:27] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:52:27] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:53:26] "[35m[1mPOST /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:53:26] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:53:26] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:53:26] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:55:36] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:55:36] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:55:39] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:55:39] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:55:51] "[35m[1mPOST /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:55:51] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:55:51] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:55:51] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:58:16] "[35m[1mPOST /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:58:16] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:58:16] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:58:16] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:58:39] "[35m[1mPOST /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:58:39] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:58:39] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:58:39] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:59:45] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 15:59:45] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:02:17] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:02:24] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:02:24] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:02:30] "[35m[1mPOST /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:02:31] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:02:31] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:02:31] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:03:47] "[35m[1mPOST /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:04:04] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:04:05] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:04:05] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:11:37] "[35m[1mGET /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:11:37] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:11:37] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:11:37] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:12:02] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:12:02] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:12:13] "[35m[1mGET /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:12:13] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:12:13] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:12:13] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:13:28] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:13:28] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:13:34] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:13:34] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:13:47] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:13:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:13:57] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:13:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:14:14] "[35m[1mGET /edit_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:14:14] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:14:14] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:14:14] "[36mGET /edit_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:14:35] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:14:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:15:05] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:15:05] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:15:25] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:15:25] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:18:17] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:18:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:18:24] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:18:24] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:19:09] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:19:09] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:21:53] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:21:53] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:22:30] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:22:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:22:54] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:22:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:23:06] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:23:06] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:23:20] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:23:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:23:46] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:23:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:24:00] "GET /edit_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:24:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:25:30] "[33mGET /edit_csv HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:25:30] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:25:30] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:25:31] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:25:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:25:32] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:31:50] "[33mGET /upload HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:31:50] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:31:50] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:32:00] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:32:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+ERROR:root:Error uploading CSV file: Could not build url for endpoint 'view_csv'. Did you mean 'upload_csv' instead?
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:33:22] "[35m[1mPOST /upload_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:33:24] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:33:58] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:33:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+ERROR:root:Error uploading CSV file: Could not build url for endpoint 'view_csv'. Did you mean 'upload_csv' instead?
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:34:03] "[35m[1mPOST /upload_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:34:30] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:34:32] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:34:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:34:32] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:34:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+ERROR:root:Error uploading CSV file: Could not build url for endpoint 'view_csv'. Did you mean 'upload_csv' instead?
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:34:37] "[35m[1mPOST /upload_csv HTTP/1.1[0m" 500 -
