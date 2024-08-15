@@ -601,3 +601,23 @@ INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:34:32] "GET /upload_csv HTTP/1.1" 20
 INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:34:32] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
 ERROR:root:Error uploading CSV file: Could not build url for endpoint 'view_csv'. Did you mean 'upload_csv' instead?
 INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:34:37] "[35m[1mPOST /upload_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 536-048-612
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:37:14] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:37:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+ERROR:root:Error reading CSV file: Could not build url for endpoint 'edit_csv'. Did you mean 'view_csv' instead?
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:37:19] "[35m[1mGET /view_csv HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:37:57] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:37:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -

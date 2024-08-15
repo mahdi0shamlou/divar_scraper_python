@@ -74,6 +74,15 @@ def internal_error(error):
 def not_found_error(error):
     return render_template('404.html'), 404
 
+@app.route('/view_csv')
+def view_csv():
+    try:
+        df = pd.read_csv(CSV_FILE_PATH)
+        return render_template('view_csv.html', tables=[df.to_html(classes='data')], titles=df.columns.values)
+    except Exception as e:
+        logging.error(f'Error reading CSV file: {e}')
+        return jsonify({"error": "Error reading CSV file"}), 500
+
 
 @app.route('/upload_csv', methods=['GET', 'POST'])
 def upload_csv():
