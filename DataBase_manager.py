@@ -56,6 +56,21 @@ class DatabaseManager:
                     added INTEGER
                 )
             ''')
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS data_compeleted (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    token TEXT UNIQUE,
+                    city TEXT,
+                    title TEXT,
+                    addres TEXT,
+                    image TEXT,
+                    time_inserted TEXT,
+                    price TEXT,
+                    desck TEXT,
+                    number TEXT,
+                    added INTEGER
+                )
+            ''')
             conn.commit()
 
     def save_post_data(self, posts):
@@ -230,6 +245,31 @@ class DatabaseManager:
             except sqlite3.IntegrityError:
                 # Handle the case where the token already exists (do nothing or log if necessary)
                 print(f"Token token already exists in the database.")
+            conn.commit()
+
+    # -----------------------------
+    # -----------------------------
+
+    # -----------------------------
+    # this section for datacompelet
+    # -----------------------------
+
+    def save_post_data_compelete(self, posts):
+        """
+        this methode insert into table posts_details_personal
+        :param posts:
+        :return:
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            try:
+                cursor.execute('''
+                    INSERT INTO posts_details_personal (token, desc, all_data, added) 
+                    VALUES (?, ?, ?, ?)
+                ''', posts)
+            except sqlite3.IntegrityError:
+                # Handle the case where the token already exists (do nothing or log if necessary)
+                print(f"Token {posts[0]} already exists in the database.")
             conn.commit()
 
     # -----------------------------

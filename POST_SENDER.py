@@ -1,5 +1,6 @@
 import requests
 from DataBase_manager import *
+from POST_DATA_COMPLETER import GetToken, GetData
 import time
 
 
@@ -34,12 +35,16 @@ class Application:
         self.fetcher = DataFetcher(url)
         self.db_manager = DatabaseManager(db_filename)
 
-    def run(self):
+    def run(self, object_token_get_data: GetToken):
         try:
             tokens = self.db_manager.get_number_personal_for_post_sender() # this method get a token from table for getting details
+            retunred_Data = object_token_get_data.Data_of_token(tokens[0][0])
+
             print(f'\t this is items for post sender : {tokens}')
             response_json, status_code = self.fetcher.fetch_json_data(tokens) # this methode send request
             self.db_manager.update_number_personal_for_post_sender(((tokens[0][0],)))
+
+
         except ValueError:
             print('\t we have response is not 200 and 201')
             time.sleep(3) # this is using for after response is not 200 or 201
@@ -52,10 +57,11 @@ if __name__ == "__main__":
     URL = 'https://arkafile.org/admin/file/store_divar_ads'
     DB_FILENAME = 'posts.db'
     app = Application(URL, DB_FILENAME)
+    object_data_compeleter = GetToken('just_verifiy')
     while True:
         try:
             print('Start of geting detials of service')
-            app.run()
+            app.run(object_data_compeleter)
             print('End of geting detials of service')
         except Exception as e:
             print(f'this is Eception : {e}')
