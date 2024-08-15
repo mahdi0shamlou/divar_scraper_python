@@ -256,7 +256,7 @@ class DatabaseManager:
 
     def save_post_data_compelete(self, posts):
         """
-        this methode insert into table posts_details_personal
+        this methode insert into table data_compeleter
         :param posts:
         :return:
         """
@@ -264,8 +264,8 @@ class DatabaseManager:
             cursor = conn.cursor()
             try:
                 cursor.execute('''
-                    INSERT INTO posts_details_personal (token, desc, all_data, added) 
-                    VALUES (?, ?, ?, ?)
+                    INSERT INTO data_compeleted (token, city, title, addres, image, time_inserted, price, desck, number, added) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0)
                 ''', posts)
             except sqlite3.IntegrityError:
                 # Handle the case where the token already exists (do nothing or log if necessary)

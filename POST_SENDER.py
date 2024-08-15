@@ -39,7 +39,7 @@ class Application:
         try:
             tokens = self.db_manager.get_number_personal_for_post_sender() # this method get a token from table for getting details
             retunred_Data = object_token_get_data.Data_of_token(tokens[0][0])
-
+            self.db_manager.save_post_data_compelete(retunred_Data)
             print(f'\t this is items for post sender : {tokens}')
             response_json, status_code = self.fetcher.fetch_json_data(tokens) # this methode send request
             self.db_manager.update_number_personal_for_post_sender(((tokens[0][0],)))
