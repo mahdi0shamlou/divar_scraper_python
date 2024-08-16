@@ -78,8 +78,8 @@ if __name__ == '__main__':
             app.run(DATA_residential_rent)
             app.run(DATA_commercial_sell)
             app.run(DATA_commercial_rent)
-            app.run(DATA_temporary_rent)
-            app.run(DATA_real_estate_services)
+            #app.run(DATA_temporary_rent)
+            #app.run(DATA_real_estate_services)
             print(f'this is len of db : {len(dbs.get_all_tokens())}')
         except Exception as e:
             print(f'this is Eception : {e}')
