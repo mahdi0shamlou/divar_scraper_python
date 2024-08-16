@@ -47,6 +47,7 @@ class Application:
 
         except ValueError:
             print('\t we have response is not 200 and 201')
+            self.db_manager.update_number_personal_for_post_sender(((tokens[0][0],)))
             time.sleep(3) # this is using for after response is not 200 or 201
         except Exception as e:
             print(f'\t this is error {e}')
