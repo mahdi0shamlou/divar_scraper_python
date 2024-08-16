@@ -9,8 +9,8 @@ class DataFetcher:
         self.url = url
         self.data = data
 
-    def fetch_json_data(self):
-        response = requests.post(self.url, data=self.data)
+    def fetch_json_data(self, data):
+        response = requests.post(self.url, data=data)
         response.raise_for_status()
         return response.json()
 
@@ -47,8 +47,8 @@ class Application:
         self.extractor = PostExtractor()
         self.db_manager = DatabaseManager(db_filename)
 
-    def run(self):
-        json_data = self.fetcher.fetch_json_data()
+    def run(self, data):
+        json_data = self.fetcher.fetch_json_data(data)
         posts = self.extractor.extract_post_data(json_data)
         self.db_manager.save_post_data(posts)
         print(f"Saved/Checked {len(posts)} posts into the database.")
@@ -69,7 +69,7 @@ if __name__ == '__main__':
     dbs = DatabaseManager(DB_FILENAME)
     while True:
         try:
-            app.run()
+            app.run(DATA)
             print(f'this is len of db : {len(dbs.get_all_tokens())}')
         except Exception as e:
             print(f'this is Eception : {e}')
