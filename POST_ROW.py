@@ -70,11 +70,16 @@ if __name__ == '__main__':
     # DATA we can change category for sell in these type -> all of them(temporary-rent) , suite-apartment , villa , workspace : اجاره کوتاه مدت
     # DATA we can change category for sell in these type -> all of them(real-estate-services) , partnership , presell : پروژه ساخت و ساز
     DB_FILENAME = 'posts.db'
-    app = Application(URL, DATA, DB_FILENAME)
+    app = Application(URL, DATA_residential_sell, DB_FILENAME)
     dbs = DatabaseManager(DB_FILENAME)
     while True:
         try:
-            app.run(DATA)
+            app.run(DATA_residential_sell)
+            app.run(DATA_residential_rent)
+            app.run(DATA_commercial_sell)
+            app.run(DATA_commercial_rent)
+            app.run(DATA_temporary_rent)
+            app.run(DATA_real_estate_services)
             print(f'this is len of db : {len(dbs.get_all_tokens())}')
         except Exception as e:
             print(f'this is Eception : {e}')
