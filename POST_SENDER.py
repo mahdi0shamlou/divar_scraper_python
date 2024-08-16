@@ -36,8 +36,9 @@ class Application:
         self.db_manager = DatabaseManager(db_filename)
 
     def run(self, object_token_get_data: GetToken):
+        tokens = self.db_manager.get_number_personal_for_post_sender()  # this method get a token from table for getting details
         try:
-            tokens = self.db_manager.get_number_personal_for_post_sender() # this method get a token from table for getting details
+
             print(f'\t this is items for post sender : {tokens}')
             response_json, status_code = self.fetcher.fetch_json_data(tokens) # this methode send request
             self.db_manager.update_number_personal_for_post_sender(((tokens[0][0],)))
@@ -49,7 +50,9 @@ class Application:
             time.sleep(3) # this is using for after response is not 200 or 201
         except Exception as e:
             print(f'\t this is error {e}')
-            time.sleep(300) # this is run when a error happend in try block
+            self.db_manager.update_number_personal_for_post_sender(((tokens[0][0],)))
+            time.sleep(3) # this is run when a error happend in try block
+
 
 
 if __name__ == "__main__":
