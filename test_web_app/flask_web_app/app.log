@@ -718,3 +718,27 @@ INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_a
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 287-262-305
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:23:58] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:23:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:23:58] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:23:59] "[33mGET /asdasd HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:23:59] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:23:59] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:00] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:00] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:01] "[33mGET /asdasdasd HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:01] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:02] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:02] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:02] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:33] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:33] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:33] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:40] "GET /post/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:40] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:43] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 12:24:43] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
