@@ -9,6 +9,13 @@
 <body>
     <header>
         <h1>File HOSTING</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('view_csv') }}">View CSV</a></li>
+                <li><a href="{{ url_for('upload_csv') }}">Upload CSV</a></li>
+            </ul>
+        </nav>
         <form id="search-form" action="{{ url_for('index') }}" method="GET">
             <input type="text" name="query" placeholder="Search number..." value="{{ request.args.get('query', '') }}">
             <button type="submit">Search</button>

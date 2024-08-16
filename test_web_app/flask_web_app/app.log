@@ -621,3 +621,53 @@ ERROR:root:Error reading CSV file: Could not build url for endpoint 'edit_csv'. 
 INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:37:19] "[35m[1mGET /view_csv HTTP/1.1[0m" 500 -
 INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:37:57] "GET /view_csv HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:37:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:38:35] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Aug/2024 16:38:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 637-638-103
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:30:12] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:30:12] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:30:12] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:30:17] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:30:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:30:17] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:30:43] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:30:43] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:30:43] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:30:47] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:30:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:30:47] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:35:41] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:35:41] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:35:41] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:35:46] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:35:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:35:46] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:36:05] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:36:05] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:36:05] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:36:09] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:36:09] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:36:09] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:36:10] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:36:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:36:10] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:36:11] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:36:11] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:36:11] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:38:16] "GET /post/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:38:16] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:38:16] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:38:42] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:38:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:38:42] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:38:46] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:38:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:38:46] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:38:47] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:38:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [16/Aug/2024 07:38:47] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
