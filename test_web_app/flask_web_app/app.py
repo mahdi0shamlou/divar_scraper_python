@@ -115,6 +115,7 @@ def tokens_divar():
         logging.error(f'Database error: {e}')
         return jsonify({"error": "Database error"}), 500
 
+
 # Error handler for 500 Internal Server Error
 @app.errorhandler(500)
 def internal_error(error):
@@ -210,6 +211,22 @@ def get_jwt_token():
         return render_template('get_jwt_token.html', response_data=response_data)
 
     return render_template('get_jwt_token.html', response_data=response_data)
+
+
+@app.route('/control_table', methods=['GET', 'POST'])
+def control_table():
+    if request.method == 'POST':
+        action = request.form.get('action')
+        row_id = request.form.get('row_id')
+        print(row_id)
+        print(action)
+        if action and row_id:
+            flash(f'{action.capitalize()} action triggered for row {row_id}', 'success')
+        else:
+            flash('Invalid action or row ID', 'danger')
+        return redirect(url_for('control_table'))
+
+    return render_template('control_table.html')
 
 
 # Ensure you have other routes and your run configuration

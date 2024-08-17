@@ -1621,3 +1621,191 @@ INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_a
 INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:37] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:37] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:37] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:38] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:38] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:39] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:39] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:39] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:52] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:52] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:52] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:53] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:53] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:53] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:54:54] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:55:19] "GET /?query=0912 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:55:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:55:20] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:55:23] "GET /?query=0 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:55:23] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:55:23] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:55:29] "GET /?query= HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:55:29] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:55:29] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:56:34] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:56:35] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:56:35] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:01:03] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:01:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:01:03] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:03] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:04] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:07] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:07] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:10] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:10] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:14] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:14] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:17] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:17] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:17] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:20] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:20] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:03:20] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:05:07] "POST /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:05:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:05:07] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:05:27] "POST /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:05:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:05:27] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/DataBase_manager.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/DataBase_manager.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/DataBase_manager.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/DataBase_manager.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:29:53] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:29:53] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:29:53] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:30:10] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:30:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:30:10] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:30:11] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:30:11] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:30:11] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:30:57] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:30:57] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:30:57] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:30:57] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:00] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:00] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:00] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:01] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:01] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:01] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:36] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:36] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:36] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:36] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:37] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:37] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:37] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:37] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:38] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:38] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:38] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:38] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:39] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:39] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:39] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:39] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:39] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:39] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:40] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:40] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:40] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:40] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:41] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:41] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:41] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:41] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:41] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:41] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:41] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:41] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:42] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:42] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:42] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:31:42] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:32:29] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:32:29] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:32:29] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:32:31] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:32:31] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:32:31] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:32:31] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:32:47] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:32:47] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:32:47] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:32:47] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:36:57] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:36:57] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:36:57] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:36:58] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:36:58] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:36:58] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:36:58] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:36:59] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:36:59] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:36:59] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:36:59] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:37:00] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:37:00] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:37:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:37:00] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:37:01] "[32mPOST /control_table HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:37:01] "GET /control_table HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:37:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 16:37:01] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -

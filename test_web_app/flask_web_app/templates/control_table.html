@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Control Actions Table</h2>
+    <table border="1">
+        <tr>
+            <th>Row</th>
+            <th>Action</th>
+        </tr>
+        {% for row in range(1, 5) %}
+        <tr>
+            <td>Row {{ row }}</td>
+            <td>
+                <form method="POST" action="{{ url_for('control_table') }}" style="display:inline;">
+                    <input type="hidden" name="row_id" value="{{ row }}">
+                    <button type="submit" name="action" value="start">Start</button>
+                </form>
+                <form method="POST" action="{{ url_for('control_table') }}" style="display:inline;">
+                    <input type="hidden" name="row_id" value="{{ row }}">
+                    <button type="submit" name="action" value="stop">Stop</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+{% endblock %}
