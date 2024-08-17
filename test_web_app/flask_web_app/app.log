@@ -1613,3 +1613,11 @@ INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:40:43] "[33mGET /static/loader.gif 
 INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:41:05] "GET /get_jwt_token HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:41:05] "GET /static/styles.css HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 15:41:05] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112

@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify
-from flask import Flask, request, render_template, redirect, url_for, flash
+from flask import Flask, request, render_template, redirect, url_for, flash, jsonify
 import requests
 import sqlite3
 from config import DATABASE
