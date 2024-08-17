@@ -16,10 +16,10 @@
     {% if response_data %}
         <div id="response-container">
             <h3>Response Data</h3>
-            <p><strong>Token:</strong> {{ response_data.token }}</p>
-            <p><strong>Access Token:</strong> <span id="access-token">{{ response_data.access_token }}</span></p>
+            <p><strong>Token:</strong> <span id="token">{{ response_data.token }}</span></p>
+            <p><strong>Access Token:</strong> {{ response_data.access_token }}</p>
             <p><strong>Refresh Token:</strong> {{ response_data.refresh_token }}</p>
-            <button onclick="copyToClipboard()">Copy Access Token</button>
+            <button id="copy-token-button">Copy Token</button>
         </div>
     {% endif %}
 
@@ -32,15 +32,34 @@
         </ul>
       {% endif %}
     {% endwith %}
+<script>
+    document.getElementById('copy-token-button').addEventListener('click', function() {
+        const token = document.getElementById('token').innerText;
+        if (token) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(token).then(function() {
+                    alert('Token copied to clipboard!');
+                }, function(err) {
+                    console.error('Could not copy text: ', err);
+                });
+            } else {
+                const textArea = document.createElement('textarea');
+                textArea.value = token;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    alert('Token copied to clipboard!');
+                } catch (err) {
+                    console.error('Fallback: Could not copy text: ', err);
+                }
+                document.body.removeChild(textArea);
+            }
+        } else {
+            alert('Token is not available to copy.');
+        }
+    });
+</script>
 {% endblock %}
 
-<script>
-    function copyToClipboard() {
-        const accessToken = document.getElementById('access-token').innerText;
-        navigator.clipboard.writeText(accessToken).then(() => {
-            alert('Access Token copied to clipboard!');
-        }).catch(err => {
-            console.error('Could not copy text: ', err);
-        });
-    }
-</script>
+
