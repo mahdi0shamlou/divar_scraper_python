@@ -12,10 +12,11 @@
         <nav>
             <ul>
                 <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('view_csv') }}">View CSV</a></li>
-                <li><a href="{{ url_for('upload_csv') }}">Upload CSV</a></li>
+                <li><a href="{{ url_for('view_csv') }}">View Word-List</a></li>
+                <li><a href="{{ url_for('upload_csv') }}">Upload New Word-List</a></li>
                 <li><a href="{{ url_for('tokens_divar') }}">JWT-Token List</a></li>
                 <li><a href="{{ url_for('get_jwt_token') }}">Get JWT-Token</a></li>
+                <li><a href="asdad">*Service*</a></li>
             </ul>
         </nav>
         <form id="search-form" action="{{ url_for('index') }}" method="GET">

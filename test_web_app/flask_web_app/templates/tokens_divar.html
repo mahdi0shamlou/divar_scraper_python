@@ -4,8 +4,8 @@
     <h2>JWT-Token List</h2>
     <form method="POST">
         <input type="hidden" name="action" value="add">
-        <input type="text" id="jwt_token_divar" name="jwt_token_divar" placeholder="JWT Token Divar" required>
-        <input type="text" id="number" name="number" placeholder="Number" required>
+        <input type="text" id="jwt_token_divar" class="txtbox_size" name="jwt_token_divar" placeholder="JWT Token Divar" required>
+        <input type="text" id="number" name="number" class="txtbox_size" placeholder="Number" required>
         <button type="submit">Add</button>
     </form>
 
@@ -27,7 +27,7 @@
                     <form method="POST" style="display:inline;">
                         <input type="hidden" name="action" value="update_jwt">
                         <input type="hidden" name="id" value="{{ token['id'] }}">
-                        <input type="text" name="new_jwt_token_divar" value="{{ token['jwt_token_divar'] }}" required>
+                        <input type="text" name="new_jwt_token_divar"  class="txtbox_size" value="{{ token['jwt_token_divar'] }}" required>
                         <button type="submit">Update JWT</button>
                     </form>
                 </td>
@@ -35,7 +35,7 @@
                     <form method="POST" style="display:inline;">
                         <input type="hidden" name="action" value="update_number">
                         <input type="hidden" name="id" value="{{ token['id'] }}">
-                        <input type="text" name="new_number" value="{{ token['number'] }}" required>
+                        <input type="text" name="new_number"  class="txtbox_size" value="{{ token['number'] }}" required>
                         <button type="submit">Update Number</button>
                     </form>
                 </td>
