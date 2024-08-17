@@ -297,5 +297,22 @@ class DatabaseManager:
             tokens = cursor.fetchall()
         return [token[0] for token in tokens]
 
+    def save_token_of_divar_for_personal_number(self, posts):
+        """
+        this methode insert into table tokens_divar
+        :param posts:
+        :return:
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            try:
+                cursor.execute('''
+                    INSERT INTO tokens_divar (jwt_token_divar, number) 
+                    VALUES (?, ?)
+                ''', posts)
+            except sqlite3.IntegrityError:
+                # Handle the case where the token already exists (do nothing or log if necessary)
+                print(f"Token {posts[0]} already exists in the database.")
+            conn.commit()
     # -----------------------------
     # -----------------------------
