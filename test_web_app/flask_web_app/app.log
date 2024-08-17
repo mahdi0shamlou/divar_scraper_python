@@ -1184,3 +1184,14 @@ INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:54:29] "[33mGET /static/loader.gif 
 INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:54:55] "POST /get_jwt_token HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:54:55] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:54:55] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:57:04] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:57:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:57:04] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:57:14] "[32mPOST /tokens_divar HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:57:14] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:57:14] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:57:14] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/PERSONAL_NUMBER.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
