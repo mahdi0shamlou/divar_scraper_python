@@ -282,3 +282,20 @@ class DatabaseManager:
     # -----------------------------
     # -----------------------------
 
+    # -----------------------------
+    # this section for Token divar
+    # -----------------------------
+
+    def get_token_of_divar_for_personal_number(self):
+        """
+        this methode use for get all token for verification of divar
+        :return: Tokens that not added yet
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            cursor.execute('SELECT token_divar FROM tokens_divar')
+            tokens = cursor.fetchall()
+        return [token[0] for token in tokens]
+
+    # -----------------------------
+    # -----------------------------
