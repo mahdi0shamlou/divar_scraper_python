@@ -74,8 +74,8 @@ class DatabaseManager:
             cursor.execute('''
                 CREATE TABLE IF NOT EXISTS tokens_divar (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    token_divar TEXT UNIQUE,
-                    number TEXT UNIQUE,
+                    jwt_token_divar TEXT UNIQUE,
+                    number TEXT UNIQUE
                 )
             ''')
             conn.commit()
@@ -293,7 +293,7 @@ class DatabaseManager:
         """
         with sqlite3.connect(self.db_filename) as conn:
             cursor = conn.cursor()
-            cursor.execute('SELECT token_divar FROM tokens_divar')
+            cursor.execute('SELECT jwt_token_divar FROM tokens_divar')
             tokens = cursor.fetchall()
         return [token[0] for token in tokens]
 

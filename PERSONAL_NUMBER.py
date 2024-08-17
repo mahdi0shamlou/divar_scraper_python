@@ -92,14 +92,20 @@ if __name__ == '__main__':
     # --------
     # jwt token reader
     # --------
+    ''' OLD version
     JWT_object = JWTTokenReader(JWT_TOKEN_FILE)
     JWT_object.read_tokens()
     JWT_TOKEN_LIST = JWT_object.get_tokens()
+    '''
+    '''NEW version'''
+    obj_db_jwt_tokens = DatabaseManager(DB_FILENAME)
+    JWT_TOKEN_LIST = obj_db_jwt_tokens.get_token_of_divar_for_personal_number()
+    print(JWT_TOKEN_LIST)
     # --------
     # --------
     app = Application(URL, DB_FILENAME)
     i = 0
-    while True:
+    while 1 < 0:
         try:
             JWT_TOKEN = JWT_TOKEN_LIST[i]
             print(JWT_TOKEN)
