@@ -71,6 +71,13 @@ class DatabaseManager:
                     added INTEGER
                 )
             ''')
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS tokens_divar (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    token_divar TEXT UNIQUE,
+                    number TEXT UNIQUE,
+                )
+            ''')
             conn.commit()
 
     def save_post_data(self, posts):
