@@ -105,7 +105,7 @@ if __name__ == '__main__':
     # --------
     app = Application(URL, DB_FILENAME)
     i = 0
-    while 1 < 0:
+    while True:
         try:
             JWT_TOKEN = JWT_TOKEN_LIST[i]
             print(JWT_TOKEN)
