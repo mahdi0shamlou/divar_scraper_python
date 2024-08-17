@@ -20,7 +20,7 @@
             </ul>
         </nav>
         <form id="search-form" action="{{ url_for('index') }}" method="GET">
-            <input type="text" name="query" placeholder="Search number..." value="{{ request.args.get('query', '') }}">
+            <input type="text" name="query"  class="txtbox_size" placeholder="Search number..." value="{{ request.args.get('query', '') }}">
             <button type="submit">Search</button>
         </form>
     </header>

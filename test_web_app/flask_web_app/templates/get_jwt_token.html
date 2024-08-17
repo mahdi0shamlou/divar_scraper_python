@@ -5,12 +5,12 @@
     <form method="POST" action="{{ url_for('get_jwt_token') }}">
         <label for="phone_number">Enter Phone Number:</label>
         <input type="text" id="phone_number" name="phone_number" class="txtbox_size" placeholder="09120000000" required>
-
+        <br>
         <label for="code">Enter Verification Code (Optional for Authentication):</label>
         <input type="text" id="code" name="code" class="txtbox_size" placeholder="000000">
-
-        <button type="submit" name="action_type"  class="txtbox_size" value="authenticate">Authenticate</button>
-        <button type="submit" name="action_type"  class="txtbox_size" value="confirm">Confirm</button>
+        <br>
+        <button type="submit" name="action_type"  value="authenticate">Authenticate</button>
+        <button type="submit" name="action_type"  value="confirm">Confirm</button>
     </form>
 
     {% if response_data %}
