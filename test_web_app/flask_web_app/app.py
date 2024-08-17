@@ -63,6 +63,56 @@ def post(post_id):
         return jsonify({"error": "Database error"}), 500
 
 
+# Route to view and edit tokens_divar table
+@app.route('/tokens_divar', methods=['GET', 'POST'])
+def tokens_divar():
+    try:
+        if request.method == 'POST':
+            action = request.form.get('action')
+            if action == 'add':
+                jwt_token_divar = request.form['jwt_token_divar']
+                number = request.form['number']
+                # Insert new data into the table
+                with get_db_connection() as conn:
+                    cursor = conn.cursor()
+                    cursor.execute('INSERT INTO tokens_divar (jwt_token_divar, number) VALUES (?, ?)', (jwt_token_divar, number))
+                    conn.commit()
+            elif action == 'delete':
+                token_id = request.form['id']
+                # Delete data from the table
+                with get_db_connection() as conn:
+                    cursor = conn.cursor()
+                    cursor.execute('DELETE FROM tokens_divar WHERE id = ?', (token_id,))
+                    conn.commit()
+            elif action == 'update_jwt':
+                token_id = request.form['id']
+                new_jwt_token_divar = request.form['new_jwt_token_divar']
+                # Update jwt_token_divar in the table
+                with get_db_connection() as conn:
+                    cursor = conn.cursor()
+                    cursor.execute('UPDATE tokens_divar SET jwt_token_divar = ? WHERE id = ?', (new_jwt_token_divar, token_id))
+                    conn.commit()
+            elif action == 'update_number':
+                token_id = request.form['id']
+                new_number = request.form['new_number']
+                # Update number in the table
+                with get_db_connection() as conn:
+                    cursor = conn.cursor()
+                    cursor.execute('UPDATE tokens_divar SET number = ? WHERE id = ?', (new_number, token_id))
+                    conn.commit()
+
+            return redirect(url_for('tokens_divar'))
+
+        with get_db_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute('SELECT * FROM tokens_divar')
+            tokens = cursor.fetchall()
+        return render_template('tokens_divar.html', tokens=tokens)
+
+    except sqlite3.Error as e:
+        logging.error(f'Database error: {e}')
+        return jsonify({"error": "Database error"}), 500
+
 # Error handler for 500 Internal Server Error
 @app.errorhandler(500)
 def internal_error(error):

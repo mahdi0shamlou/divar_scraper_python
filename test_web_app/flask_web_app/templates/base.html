@@ -14,9 +14,8 @@
                 <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li><a href="{{ url_for('view_csv') }}">View CSV</a></li>
                 <li><a href="{{ url_for('upload_csv') }}">Upload CSV</a></li>
-                <li><a href="/asdasd">List KeyWord</a></li>
-                <li><a href="/asdasdasd">Service</a></li>
-                <li><a href="/asdasdasd">Token Number</a></li>
+                <li><a href="{{ url_for('tokens_divar') }}">JWT-Token List</a></li>
+                <li><a href="/asdasdasd">Get JWT-Token</a></li>
             </ul>
         </nav>
         <form id="search-form" action="{{ url_for('index') }}" method="GET">
