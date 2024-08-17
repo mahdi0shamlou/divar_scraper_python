@@ -100,7 +100,7 @@ if __name__ == '__main__':
     '''NEW version'''
     obj_db_jwt_tokens = DatabaseManager(DB_FILENAME)
     JWT_TOKEN_LIST = obj_db_jwt_tokens.get_token_of_divar_for_personal_number()
-    print(JWT_TOKEN_LIST)
+    print(f'this is len of jwttoeknnuumber : {len(JWT_TOKEN_LIST)}')
     # --------
     # --------
     app = Application(URL, DB_FILENAME)
