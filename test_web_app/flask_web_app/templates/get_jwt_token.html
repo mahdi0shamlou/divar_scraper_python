@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Get JWT Token</h2>
+    <form method="POST" action="{{ url_for('get_jwt_token') }}">
+        <label for="phone_number">Enter Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" placeholder="09128054523" required>
+
+        <label for="code">Enter Verification Code (Optional for Authentication):</label>
+        <input type="text" id="code" name="code" placeholder="646028">
+
+        <button type="submit" name="action_type" value="authenticate">Authenticate</button>
+        <button type="submit" name="action_type" value="confirm">Confirm</button>
+    </form>
+
+    {% if response_data %}
+        <div id="response-container">
+            <h3>Response Data</h3>
+            <p><strong>Token:</strong> {{ response_data.token }}</p>
+            <p><strong>Access Token:</strong> <span id="access-token">{{ response_data.access_token }}</span></p>
+            <p><strong>Refresh Token:</strong> {{ response_data.refresh_token }}</p>
+            <button onclick="copyToClipboard()">Copy Access Token</button>
+        </div>
+    {% endif %}
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+{% endblock %}
+
+<script>
+    function copyToClipboard() {
+        const accessToken = document.getElementById('access-token').innerText;
+        navigator.clipboard.writeText(accessToken).then(() => {
+            alert('Access Token copied to clipboard!');
+        }).catch(err => {
+            console.error('Could not copy text: ', err);
+        });
+    }
+</script>

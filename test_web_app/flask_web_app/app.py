@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, request, render_template, redirect, url_for, flash
+import requests
 import sqlite3
 from config import DATABASE
 from core.main import ShowData
@@ -7,6 +9,7 @@ import pandas as pd
 import os
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, filename='app.log')
@@ -163,6 +166,54 @@ def upload_csv():
     except Exception as e:
         logging.error(f'Error uploading CSV file: {e}')
         return jsonify({"error": "Error uploading CSV file"}), 500
+
+
+@app.route('/get_jwt_token', methods=['GET', 'POST'])
+def get_jwt_token():
+    response_data = {}
+    if request.method == 'POST':
+        phone_number = request.form['phone_number']
+        code = request.form.get('code')
+        action_type = request.form.get('action_type')
+
+        if phone_number and action_type == 'authenticate':
+            url = 'https://api.divar.ir/v5/auth/authenticate'
+            headers = {
+                'Content-Type': 'application/json'
+            }
+            payload = {
+                'phone': phone_number
+            }
+            response = requests.post(url, json=payload, headers=headers)
+            if response.status_code == 200:
+                response_data = response.json()
+                flash('Authentication request successful: {}'.format(response_data), 'success')
+            else:
+                flash('Failed to authenticate. Status code: {}'.format(response.status_code), 'danger')
+        elif phone_number and code and action_type == 'confirm':
+            url = 'https://api.divar.ir/v5/auth/confirm'
+            headers = {
+                'Content-Type': 'application/json'
+            }
+            payload = {
+                'phone': phone_number,
+                'code': code
+            }
+            response = requests.post(url, json=payload, headers=headers)
+            if response.status_code == 200:
+                response_data = response.json()
+                flash('Confirmation request successful: {}'.format(response_data), 'success')
+            else:
+                flash('Failed to confirm. Status code: {}'.format(response.status_code), 'danger')
+        else:
+            flash('Please enter all required fields correctly.', 'warning')
+
+        return render_template('get_jwt_token.html', response_data=response_data)
+
+    return render_template('get_jwt_token.html', response_data=response_data)
+
+
+# Ensure you have other routes and your run configuration
 
 if __name__ == '__main__':
     app.run(debug=True)

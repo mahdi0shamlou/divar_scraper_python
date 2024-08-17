@@ -971,3 +971,162 @@ INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:16:01] "[32mPOST /tokens_divar HTTP
 INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:16:01] "GET /tokens_divar HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:16:01] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:16:01] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:18:59] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:18:59] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:18:59] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:03] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:03] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:03] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:04] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:04] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:04] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:04] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:05] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:05] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:05] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:06] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:06] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:06] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:08] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:08] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:19:08] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:20:00] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:20:00] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:20:00] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:21:52] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:21:52] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:21:52] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:08] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:08] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:08] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:31] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:31] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:31] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:39] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:39] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:39] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:39] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:39] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:39] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:40] "GET /view_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:40] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:40] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:41] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:53] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:53] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:53] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:54] "GET /upload_csv HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:54] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:54] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:54] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:24:54] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:43:07] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:43:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:43:07] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:43:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:43:16] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:43:16] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:43:16] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:59:44] "GET /tokens_divar HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:59:44] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 12:59:44] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:08:21] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:08:21] "GET /static/styles.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:08:21] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:08:38] "[35m[1mPOST /get_jwt_token HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:08:38] "GET /get_jwt_token?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:08:38] "GET /get_jwt_token?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:08:38] "GET /get_jwt_token?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:10:46] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:10:47] "[35m[1mPOST /get_jwt_token HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:10:47] "[36mGET /get_jwt_token?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:10:47] "[36mGET /get_jwt_token?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:10:47] "[36mGET /get_jwt_token?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:15:44] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:15:46] "[32mPOST /get_jwt_token HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:15:46] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:15:46] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:15:46] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:15:56] "[32mPOST /get_jwt_token HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:15:56] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:15:56] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:15:56] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:22:22] "[35m[1mGET /get_jwt_token HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:22:22] "[36mGET /get_jwt_token?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:22:22] "[36mGET /get_jwt_token?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:22:22] "[36mGET /get_jwt_token?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:22:45] "[35m[1mGET /get_jwt_token HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:22:45] "[36mGET /get_jwt_token?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:22:45] "[36mGET /get_jwt_token?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:22:45] "[36mGET /get_jwt_token?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:22:47] "[33mGET / HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:22:50] "[33mGET / HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:23:03] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:23:04] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:23:04] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:23:10] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:23:10] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:23:10] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:23:40] "[32mPOST /get_jwt_token HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:23:40] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:23:40] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:23:40] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:24:07] "[32mPOST /get_jwt_token HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:24:07] "GET /get_jwt_token HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:24:07] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Aug/2024 13:24:07] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/home/mahdi/divar_scraper_python/test_web_app/flask_web_app/app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 214-710-112

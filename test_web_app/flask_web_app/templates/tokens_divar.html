@@ -1,59 +1,54 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-
-    <h1>Tokens Divar</h1>
-
+    <h2>JWT-Token List</h2>
     <form method="POST">
-      <input type="hidden" name="action" value="add">
-      <label for="jwt_token_divar">JWT Token Divar:</label>
-      <input type="text" id="jwt_token_divar" name="jwt_token_divar" required>
-      <label for="number">Number:</label>
-      <input type="text" id="number" name="number" required>
-      <button type="submit">Add</button>
+        <input type="hidden" name="action" value="add">
+        <input type="text" id="jwt_token_divar" name="jwt_token_divar" placeholder="JWT Token Divar" required>
+        <input type="text" id="number" name="number" placeholder="Number" required>
+        <button type="submit">Add</button>
     </form>
 
-    <h2>Existing Tokens</h2>
     <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>JWT Token Divar</th>
-          <th>Number</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for token in tokens %}
-        <tr>
-          <td>{{ token['id'] }}</td>
-          <td>
-            <form method="POST" style="display:inline;">
-              <input type="hidden" name="action" value="update_jwt">
-              <input type="hidden" name="id" value="{{ token['id'] }}">
-              <input type="text" name="new_jwt_token_divar" value="{{ token['jwt_token_divar'] }}" required>
-              <button type="submit">Update JWT</button>
-            </form>
-          </td>
-          <td>
-            <form method="POST" style="display:inline;">
-              <input type="hidden" name="action" value="update_number">
-              <input type="hidden" name="id" value="{{ token['id'] }}">
-              <input type="text" name="new_number" value="{{ token['number'] }}" required>
-              <button type="submit">Update Number</button>
-            </form>
-          </td>
-          <td>
-            <form method="POST" style="display:inline;">
-              <input type="hidden" name="action" value="delete">
-              <input type="hidden" name="id" value="{{ token['id'] }}">
-              <button type="submit">Delete</button>
-            </form>
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>JWT Token Divar</th>
+                <th>Number</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for token in tokens %}
+            <tr>
+                <td>{{ token['id'] }}</td>
+                <td>
+                    <form method="POST" style="display:inline;">
+                        <input type="hidden" name="action" value="update_jwt">
+                        <input type="hidden" name="id" value="{{ token['id'] }}">
+                        <input type="text" name="new_jwt_token_divar" value="{{ token['jwt_token_divar'] }}" required>
+                        <button type="submit">Update JWT</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" style="display:inline;">
+                        <input type="hidden" name="action" value="update_number">
+                        <input type="hidden" name="id" value="{{ token['id'] }}">
+                        <input type="text" name="new_number" value="{{ token['number'] }}" required>
+                        <button type="submit">Update Number</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" style="display:inline;">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="id" value="{{ token['id'] }}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
     </table>
-
-
 {% endblock %}

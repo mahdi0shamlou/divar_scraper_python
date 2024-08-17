@@ -112,6 +112,35 @@ table tr:nth-child(even) {
     background: #f9f9f9;
 }
 
+input[type="text"],
+button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="text"]:focus,
+button:hover {
+    border-color: #0066cc;
+}
+
+button {
+    background: #0066cc;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background: #004d99;
+}
+
+button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
 #loader {
     display: none;
     position: fixed;
