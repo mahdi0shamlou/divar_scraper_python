@@ -79,11 +79,12 @@ class DatabaseManager:
                 )
             ''')
             cursor.execute('''
+                
                 -- Create table if it doesn't exist
                 CREATE TABLE IF NOT EXISTS moshaver_numbers (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name TEXT,
-                    number TEXT UNIQUE,
+                    number TEXT,
                     type TEXT,
                     creator_id INTEGER,
                     editor_id INTEGER,
