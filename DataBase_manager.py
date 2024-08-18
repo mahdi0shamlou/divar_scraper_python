@@ -333,3 +333,21 @@ class DatabaseManager:
             conn.commit()
     # -----------------------------
     # -----------------------------
+
+
+    # -----------------------------
+    # this section for Moshaver numbers
+    # -----------------------------
+    def get_number_from_moshaver_number_table(self, number):
+        """
+        this methode use for get a number for personal number service
+        :return: Tokens that not added yet
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            cursor.execute('SELECT * FROM moshaver_numbers WHERE number = ?', number)
+            tokens = cursor.fetchall()
+        return [token[0] for token in tokens]
+
+    # -----------------------------
+    # -----------------------------
