@@ -78,6 +78,23 @@ class DatabaseManager:
                     number TEXT UNIQUE
                 )
             ''')
+            cursor.execute('''
+                -- Create table if it doesn't exist
+                CREATE TABLE IF NOT EXISTS moshaver_numbers (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    name TEXT,
+                    number TEXT UNIQUE,
+                    type TEXT,
+                    creator_id INTEGER,
+                    editor_id INTEGER,
+                    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                );       
+            ''')
+            cursor.execute('''
+                -- Create index on the 'number' column
+                CREATE INDEX IF NOT EXISTS idx_number ON moshaver_numbers (number);              
+            ''')
             conn.commit()
 
     def save_post_data(self, posts):
