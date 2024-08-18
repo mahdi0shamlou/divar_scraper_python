@@ -51,6 +51,8 @@ class Application:
             json_data, status_code, all_data = self.fetcher.fetch_json_data(tokens, JWT_TOKEN) # this methode send request
             number = self.extractor.extract_post_data(json_data) # this methode get number from response of above methode
             print(f'\t this is number of this post : {number}')
+            number_data_from_moshaver_number_table = self.db_manager.get_number_from_moshaver_number_table(((number,)))
+            print(number_data_from_moshaver_number_table)
             post = ((tokens[0], all_data, number, 0))
             self.db_manager.save_number_of_personal(post)
             self.db_manager.update_post_personal_details(((tokens[0],)))
@@ -58,8 +60,9 @@ class Application:
             print(f'\t response of divar is not 200')
             print(f'\t this token update for dont get agian {tokens[0]}')
             self.db_manager.update_post_personal_details(((tokens[0],))) # this is using for after response is not 200
-        except:
+        except Exception as e:
             print(f'\t we have a error in try block')
+            print(e)
             self.db_manager.update_post_personal_details(((tokens[0],))) # this is run when a error happend in try block
 
 class JWTTokenReader:
