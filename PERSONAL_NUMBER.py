@@ -54,6 +54,7 @@ class Application:
             number_data_from_moshaver_number_table = self.db_manager.get_number_from_moshaver_number_table(((number,)))
             if len(number_data_from_moshaver_number_table) == 0:
                 print(f'\t this number is not one of the moshavers ./ : {number}')
+                print(f'\t this is resault of selectin from moshaver number : {number_data_from_moshaver_number_table}')
                 post = ((tokens[0], all_data, number, 0))
                 self.db_manager.save_number_of_personal(post)
                 self.db_manager.update_post_personal_details(((tokens[0],)))
