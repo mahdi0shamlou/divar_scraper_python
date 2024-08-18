@@ -52,10 +52,15 @@ class Application:
             number = self.extractor.extract_post_data(json_data) # this methode get number from response of above methode
             print(f'\t this is number of this post : {number}')
             number_data_from_moshaver_number_table = self.db_manager.get_number_from_moshaver_number_table(((number,)))
-            print(number_data_from_moshaver_number_table)
-            post = ((tokens[0], all_data, number, 0))
-            self.db_manager.save_number_of_personal(post)
-            self.db_manager.update_post_personal_details(((tokens[0],)))
+            if len(number_data_from_moshaver_number_table) == 0:
+                print(f'\t this number is not one of the moshavers ./ : {number}')
+                post = ((tokens[0], all_data, number, 0))
+                self.db_manager.save_number_of_personal(post)
+                self.db_manager.update_post_personal_details(((tokens[0],)))
+            else:
+                print(f'\t this number is in table of moshaver number : {number_data_from_moshaver_number_table}')
+                self.db_manager.update_post_personal_details(((tokens[0],)))
+
         except ValueError:
             print(f'\t response of divar is not 200')
             print(f'\t this token update for dont get agian {tokens[0]}')
