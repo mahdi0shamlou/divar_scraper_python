@@ -16,6 +16,7 @@ class InsertDataSharpiMelk:
             database='SharpiMelk',
             port=3306
         )
+
         param = (posts['token'],
                  posts['phone'],
                  posts['city'],
@@ -28,9 +29,12 @@ class InsertDataSharpiMelk:
                  posts['meter'],
                  posts['desck'],
                  str(posts['map']),
-                 str(posts['LIST_DATA'])
+                 str(posts['LIST_DATA']),
+                 posts['GROUP_INFO_ROW'],
+                 posts['UNEXPANDABLE_ROW'],
+                 posts['GROUP_FEATURE_ROW']
                  )
-        query = f"""INSERT INTO PostFileSell (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, meter, desck, `map`, details) VALUES{param};"""
+        query = f"""INSERT INTO PostFileSell (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, meter, desck, `map`, details, GROUP_INFO_ROW, UNEXPANDABLE_ROW, GROUP_FEATURE_ROW) VALUES{param};"""
         cursor = connection.cursor()
         print(cursor.execute(query))
         connection.commit()
@@ -75,29 +79,69 @@ class GetDataFull:
         cursor.execute('SELECT * FROM posts_details_personal WHERE token = ?', (self.Token,))
         posts = cursor.fetchall()
         full_data = json.loads(posts[0][3])
+
         self.Data_full['price'] = full_data['webengage']['price']
         self.Data_full['map'] = ''
         self.Data_full['meter'] = 0
-
+        self.Data_full['otagh'] = 0
+        self.Data_full['make'] = 0
+        self.Data_full['UNEXPANDABLE_ROW'] = []
+        self.Data_full['GROUP_INFO_ROW'] = []
+        self.Data_full['GROUP_FEATURE_ROW'] = []
         for i in full_data['sections']:
             if i['section_name'] == 'MAP':
                 self.Data_full['map'] = i
             elif i['section_name'] == 'LIST_DATA':
                 self.Data_full['LIST_DATA'] = i
+
                 for z in i['widgets']:
                     if z['widget_type'] == 'GROUP_INFO_ROW':
                         for x in z['data']['items']:
+                            self.Data_full['GROUP_INFO_ROW'].append({x['title']:x['value']})
                             if x['title'] == 'متراژ':
                                 self.Data_full['meter'] = int(x['value'])
                             if x['title'] == 'ساخت':
-                                # self.Data_full['make'] = int(x['value'])
-                                pass
+                                try:
+                                    self.Data_full['make'] = int(x['value'])
+                                except:
+                                    self.Data_full['make'] = x['value']
+
                             if x['title'] == 'اتاق':
-                                self.Data_full['otagh'] = int(x['value'])
+                                try:
+                                    self.Data_full['otagh'] = int(x['value'])
+                                except:
+                                    self.Data_full['otagh'] = x['value']
 
                             print(x)
+                    if z['widget_type'] == 'UNEXPANDABLE_ROW':
+
+                        self.Data_full['UNEXPANDABLE_ROW'].append({z['data']['title']:z['data']['value']})
+
+                    if z['widget_type'] == 'GROUP_FEATURE_ROW':
+                        if 'action' in z['data']:
+                            print(z['data']['action']['payload']['modal_page']['widget_list'])
+                            datas = z['data']['action']['payload']['modal_page']['widget_list']
+                            for x in datas:
+                                print(x)
+                                if x['widget_type'] == 'UNEXPANDABLE_ROW':
+                                    self.Data_full['GROUP_FEATURE_ROW'].append({x['data']['title']: x['data']['value']})
+
+
+
+
 
             # print(i)
+        print(self.Data_full['GROUP_INFO_ROW'])
+        self.Data_full['GROUP_INFO_ROW'] = str(self.Data_full['GROUP_INFO_ROW'])
+        self.Data_full['GROUP_INFO_ROW'] = self.Data_full['GROUP_INFO_ROW'].replace("'", '"')
+
+        print(self.Data_full['UNEXPANDABLE_ROW'])
+        self.Data_full['UNEXPANDABLE_ROW'] = str(self.Data_full['UNEXPANDABLE_ROW'])
+        self.Data_full['UNEXPANDABLE_ROW'] = self.Data_full['UNEXPANDABLE_ROW'].replace("'", '"')
+        print(self.Data_full['GROUP_FEATURE_ROW'])
+        self.Data_full['GROUP_FEATURE_ROW'] = str(self.Data_full['GROUP_FEATURE_ROW'])
+        self.Data_full['GROUP_FEATURE_ROW'] = self.Data_full['GROUP_FEATURE_ROW'].replace("'", '"')
+
 
         self.Data_full['desck'] = posts[0][2]
 
@@ -119,6 +163,7 @@ class GetDataFull:
 
     def get_data(self):
         self.db_manager = DatabaseManager('posts.db')
+
         x = self._check()
         if x == 1:
             print(f'\t this a sell file')
@@ -139,7 +184,7 @@ class GetDataFull:
             self._get_from_posts_details()
             InsertDataSharpiMelk.inser_data_sell(self.Data_full)
             self.db_manager.update_number_personal_for_post_sender(((self.Token,)))
-            
+
         elif x == 4:
             print('rent tejary')
             self.db_manager.update_number_personal_for_post_sender(((self.Token,)))
@@ -165,6 +210,9 @@ if __name__ == "__main__":
     app = Application(DB_FILENAME)
     DATABASE = 'posts.db'
     CONNECTION_DB = sqlite3.connect(DATABASE)
+    print('Start of geting detials of service')
+    app.run(CONNECTION_DB)
+    print('End of geting detials of service')
     while True:
         try:
             print('Start of geting detials of service')
