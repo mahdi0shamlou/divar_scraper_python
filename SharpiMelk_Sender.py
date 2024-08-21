@@ -163,7 +163,6 @@ class GetDataFull:
 
     def get_data(self):
         self.db_manager = DatabaseManager('posts.db')
-
         x = self._check()
         if x == 1:
             print(f'\t this a sell file')
@@ -172,7 +171,7 @@ class GetDataFull:
             self._get_from_personal_number()
             self._get_from_posts_details()
             InsertDataSharpiMelk.inser_data_sell(self.Data_full)
-            self.db_manager.update_number_personal_for_post_sender(((self.Token,)))
+            self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
         elif x == 2:
             print('rent')
             self.db_manager.update_number_personal_for_post_sender(((self.Token,)))
@@ -183,7 +182,7 @@ class GetDataFull:
             self._get_from_personal_number()
             self._get_from_posts_details()
             InsertDataSharpiMelk.inser_data_sell(self.Data_full)
-            self.db_manager.update_number_personal_for_post_sender(((self.Token,)))
+            self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
 
         elif x == 4:
             print('rent tejary')
@@ -199,7 +198,7 @@ class Application:
         self.db_manager = DatabaseManager(db_filename)
 
     def run(self, CONNECTION_DB: sqlite3.connect):
-        tokens = self.db_manager.get_number_personal_for_post_sender()  # this method get a token from table for getting details
+        tokens = self.db_manager.get_token_for_sharpi_melk()  # this method get a token from table for getting details
         oject_data_completer = GetDataFull(tokens[0][0], CONNECTION_DB)
         data = oject_data_completer.get_data()
         print(data)
