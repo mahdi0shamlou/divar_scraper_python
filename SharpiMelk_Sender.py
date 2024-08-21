@@ -165,31 +165,34 @@ class GetDataFull:
         self.db_manager = DatabaseManager('posts.db')
         print(token)
         x = self._check()
-        if x == 1:
-            print(f'\t this a sell file')
-            self.Data_full['types'] = 1
-            self._get_from_posts()
-            self._get_from_personal_number()
-            self._get_from_posts_details()
-            InsertDataSharpiMelk.inser_data_sell(self.Data_full)
-            self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
-        elif x == 2:
-            print('rent')
-            self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
-        elif x == 3:
-            print(f'\t this a sell tejaryi file')
-            self.Data_full['types'] = 3
-            self._get_from_posts()
-            self._get_from_personal_number()
-            self._get_from_posts_details()
-            InsertDataSharpiMelk.inser_data_sell(self.Data_full)
-            self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+        try:
+            if x == 1:
+                print(f'\t this a sell file')
+                self.Data_full['types'] = 1
+                self._get_from_posts()
+                self._get_from_personal_number()
+                self._get_from_posts_details()
+                InsertDataSharpiMelk.inser_data_sell(self.Data_full)
+                self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+            elif x == 2:
+                print('rent')
+                self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+            elif x == 3:
+                print(f'\t this a sell tejaryi file')
+                self.Data_full['types'] = 3
+                self._get_from_posts()
+                self._get_from_personal_number()
+                self._get_from_posts_details()
+                InsertDataSharpiMelk.inser_data_sell(self.Data_full)
+                self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
 
-        elif x == 4:
-            print('rent tejary')
-            self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
-        else:
-            print('none')
+            elif x == 4:
+                print('rent tejary')
+                self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+            else:
+                print('none')
+                self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+        except:
             self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
 
 
