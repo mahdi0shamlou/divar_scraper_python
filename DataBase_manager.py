@@ -96,6 +96,15 @@ class DatabaseManager:
                 -- Create index on the 'number' column
                 CREATE INDEX IF NOT EXISTS idx_number ON moshaver_numbers (number);              
             ''')
+
+            cursor.execute('''
+                        
+                          CREATE TABLE IF NOT EXISTS mahal_tehran (
+                              id INTEGER PRIMARY KEY AUTOINCREMENT,
+                              name TEXT,
+                              number INTEGER
+                            );       
+                      ''')
             conn.commit()
 
     def save_post_data(self, posts):
@@ -384,3 +393,22 @@ class DatabaseManager:
             conn.commit()
     # -----------------------------
     # -----------------------------
+
+    def save_mahal_tehran_to_db(self, posts):
+        """
+        this methode insert into table mahal
+        :param posts:
+        :return:
+        """
+        print(posts)
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            try:
+                cursor.execute('''
+                    INSERT INTO mahal_tehran (name, number) 
+                    VALUES (?, ?)
+                ''', posts)
+            except sqlite3.IntegrityError:
+                # Handle the case where the token already exists (do nothing or log if necessary)
+                print(f"Token {posts[0]} already exists in the database.")
+            conn.commit()
