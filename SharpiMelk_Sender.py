@@ -174,7 +174,7 @@ class GetDataFull:
             self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
         elif x == 2:
             print('rent')
-            self.db_manager.update_number_personal_for_post_sender(((self.Token,)))
+            self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
         elif x == 3:
             print(f'\t this a sell tejaryi file')
             self.Data_full['types'] = 3
@@ -186,10 +186,10 @@ class GetDataFull:
 
         elif x == 4:
             print('rent tejary')
-            self.db_manager.update_number_personal_for_post_sender(((self.Token,)))
+            self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
         else:
             print('none')
-            self.db_manager.update_number_personal_for_post_sender(((self.Token,)))
+            self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
 
 
 
