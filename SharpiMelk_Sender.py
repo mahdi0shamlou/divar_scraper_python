@@ -21,7 +21,7 @@ class InsertDataSharpiMelk:
                  posts['phone'],
                  posts['city'],
                  posts['city_text'],
-                 0,
+                 posts['mahal'],
                  posts['mahal_text'],
                  posts['types'],
                  posts['title'],
@@ -44,10 +44,11 @@ class GetDataFull:
     """
         this class get all data of one token
     """
-    def __init__(self, token: str, data_base_connection: sqlite3.connect):
+    def __init__(self, token: str, data_base_connection: sqlite3.connect, list_mahal):
         self.Token = token
         self.DB_Conn = data_base_connection
         self.Data_full = {}
+        self.list_mahal = list_mahal
 
     def _get_from_posts(self):
         cursor = self.DB_Conn.cursor()
@@ -67,6 +68,18 @@ class GetDataFull:
             self.Data_full['city'] = 4
         self.Data_full['title'] = posts[0][2]
         self.Data_full['mahal_text'] = posts[0][3]
+        self.Data_full['mahal'] = 0
+
+        if self.Data_full['city'] == 1:
+            for i in self.list_mahal:
+                if self.Data_full['mahal_text'] == i[1] and i[3] == 1:
+                    print(f'\t this mahal {i}')
+                    self.Data_full['mahal'] = i[2]
+        elif self.Data_full['city'] == 2:
+            for i in self.list_mahal:
+                if self.Data_full['mahal_text'] == i[1] and i[3] == 2:
+                    print(f'\t this mahal {i}')
+                    self.Data_full['mahal'] = i[2]
 
     def _get_from_personal_number(self):
         cursor = self.DB_Conn.cursor()
@@ -198,19 +211,22 @@ class GetDataFull:
 
 
 class Application:
-    def __init__(self, db_filename):
+    def __init__(self, db_filename, list_mahal):
         self.db_manager = DatabaseManager(db_filename)
+        self.list_mahal = list_mahal
 
     def run(self, CONNECTION_DB: sqlite3.connect):
         tokens = self.db_manager.get_token_for_sharpi_melk()  # this method get a token from table for getting details
-        oject_data_completer = GetDataFull(tokens[0][0], CONNECTION_DB)
+        oject_data_completer = GetDataFull(tokens[0][0], CONNECTION_DB, self.list_mahal)
         data = oject_data_completer.get_data()
         print(data)
 
 
 if __name__ == "__main__":
     DB_FILENAME = 'posts.db'
-    app = Application(DB_FILENAME)
+    objct_database = DatabaseManager(DB_FILENAME)
+    list_mahal = objct_database.select_all_mahal_name()
+    app = Application(DB_FILENAME, list_mahal)
     DATABASE = 'posts.db'
     CONNECTION_DB = sqlite3.connect(DATABASE)
     print('Start of geting detials of service')

@@ -102,9 +102,11 @@ class DatabaseManager:
                           CREATE TABLE IF NOT EXISTS mahal_tehran (
                               id INTEGER PRIMARY KEY AUTOINCREMENT,
                               name TEXT,
-                              number INTEGER
+                              number INTEGER,
+                              city INTEGER
                             );       
                       ''')
+
             conn.commit()
 
     def save_post_data(self, posts):
@@ -416,8 +418,8 @@ class DatabaseManager:
             cursor = conn.cursor()
             try:
                 cursor.execute('''
-                    INSERT INTO mahal_tehran (name, number) 
-                    VALUES (?, ?)
+                    INSERT INTO mahal_tehran (name, number, city) 
+                    VALUES (?, ?, ?)
                 ''', posts)
             except sqlite3.IntegrityError:
                 # Handle the case where the token already exists (do nothing or log if necessary)
