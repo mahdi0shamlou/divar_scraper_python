@@ -163,6 +163,7 @@ class GetDataFull:
 
     def get_data(self):
         self.db_manager = DatabaseManager('posts.db')
+        print(token)
         x = self._check()
         if x == 1:
             print(f'\t this a sell file')
