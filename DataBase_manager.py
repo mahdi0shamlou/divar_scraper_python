@@ -393,6 +393,17 @@ class DatabaseManager:
             conn.commit()
     # -----------------------------
     # -----------------------------
+    def select_all_mahal_name(self):
+        """
+        this methode use for get a token and phone number for onther service for send post like SharpiSender service
+        :return: Tokens that not added yet
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            cursor.execute('SELECT * FROM mahal_tehran')
+            items = cursor.fetchall()
+        return [item for item in items]
+
 
     def save_mahal_tehran_to_db(self, posts):
         """
