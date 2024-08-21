@@ -352,3 +352,35 @@ class DatabaseManager:
 
     # -----------------------------
     # -----------------------------
+
+    # -----------------------------
+    # this section for SharpitMelk sneder
+    # -----------------------------
+    def get_token_for_sharpi_melk(self):
+        """
+        this methode use for get a token and phone number for onther service for send post like SharpiSender service
+        :return: Tokens that not added yet
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            cursor.execute('SELECT token,number FROM personal_number WHERE added != 2 limit 1')
+            items = cursor.fetchall()
+        return [item for item in items]
+
+    def update_token_for_sharpi_melk(self, token):
+        """
+        this methode update a row in table posts find row from input token
+        this mehtode use for update that we dont get duplicate token for get number resault
+        :param token:
+        :return:
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            try:
+                cursor.execute('UPDATE personal_number SET added = 2 WHERE token = ?', token)
+            except sqlite3.IntegrityError:
+                # Handle the case where the token already exists (do nothing or log if necessary)
+                print(f"Token token already exists in the database.")
+            conn.commit()
+    # -----------------------------
+    # -----------------------------
