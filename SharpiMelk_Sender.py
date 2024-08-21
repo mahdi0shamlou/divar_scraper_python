@@ -163,7 +163,7 @@ class GetDataFull:
 
     def get_data(self):
         self.db_manager = DatabaseManager('posts.db')
-        print(token)
+        print(self.Token)
         x = self._check()
         try:
             if x == 1:
