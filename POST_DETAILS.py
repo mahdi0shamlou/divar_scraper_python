@@ -136,7 +136,6 @@ if __name__ == '__main__':
         try:
             print('Start of geting detials of service')
             app.run(LIST_CHEKC)
-            break
             print('End of geting detials of service')
         except Exception as e:
             print(f'this is Eception : {e}')

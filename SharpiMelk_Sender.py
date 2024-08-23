@@ -34,9 +34,10 @@ class InsertDataSharpiMelk:
                  posts['UNEXPANDABLE_ROW'],
                  posts['GROUP_FEATURE_ROW'],
                  posts['GROUP_FEATURE_ROW_items'],
-                 posts['GROUP_FEATURE_ROW_more_details']
+                 posts['GROUP_FEATURE_ROW_more_details'],
+                 posts['Images']
                  )
-        query = f"""INSERT INTO PostFileSell (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, meter, desck, `map`, details, GROUP_INFO_ROW, UNEXPANDABLE_ROW, GROUP_FEATURE_ROW, GROUP_FEATURE_ROW_items, GROUP_FEATURE_ROW_more_details) VALUES{param};"""
+        query = f"""INSERT INTO PostFileSell (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, meter, desck, `map`, details, GROUP_INFO_ROW, UNEXPANDABLE_ROW, GROUP_FEATURE_ROW, GROUP_FEATURE_ROW_items, GROUP_FEATURE_ROW_more_details, Images) VALUES{param};"""
         cursor = connection.cursor()
         print(cursor.execute(query))
         connection.commit()
@@ -105,10 +106,17 @@ class GetDataFull:
         self.Data_full['GROUP_FEATURE_ROW'] = []
         self.Data_full['GROUP_FEATURE_ROW_items'] = []
         self.Data_full['GROUP_FEATURE_ROW_more_details'] = []
-
+        self.Data_full['Images'] = []
         for i in full_data['sections']:
             if i['section_name'] == 'MAP':
                 self.Data_full['map'] = i
+            #---------------------------------------------------
+            elif i['section_name'] == 'IMAGE':
+                for z in i['widgets']:
+                    if z['widget_type'] == 'IMAGE_CAROUSEL':
+                        for x in z['data']['items']:
+                            self.Data_full['Images'].append(x['image']['url'])
+            # ---------------------------------------------------
             elif i['section_name'] == 'LIST_DATA':
                 self.Data_full['LIST_DATA'] = i
                 for z in i['widgets']:
@@ -169,6 +177,10 @@ class GetDataFull:
         print(self.Data_full['GROUP_FEATURE_ROW_more_details'])
         self.Data_full['GROUP_FEATURE_ROW_more_details'] = str(self.Data_full['GROUP_FEATURE_ROW_more_details'])
         self.Data_full['GROUP_FEATURE_ROW_more_details'] = self.Data_full['GROUP_FEATURE_ROW_more_details'].replace("'", '"')
+        print(self.Data_full['Images'])
+        self.Data_full['Images'] = str(self.Data_full['Images'])
+        self.Data_full['Images'] = self.Data_full['Images'].replace("'",'"')
+
         self.Data_full['desck'] = posts[0][2]
 
     def _check(self):
@@ -198,6 +210,7 @@ class GetDataFull:
                 self._get_from_posts()
                 self._get_from_personal_number()
                 self._get_from_posts_details()
+
                 InsertDataSharpiMelk.inser_data_sell(self.Data_full)
                 self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
             elif x == 2:
@@ -209,6 +222,7 @@ class GetDataFull:
                 self._get_from_posts()
                 self._get_from_personal_number()
                 self._get_from_posts_details()
+
                 InsertDataSharpiMelk.inser_data_sell(self.Data_full)
                 self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
 
@@ -218,6 +232,8 @@ class GetDataFull:
             else:
                 print('none')
                 self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+        except ValueError as e:
+            time.sleep(20)
         except:
             self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
 
