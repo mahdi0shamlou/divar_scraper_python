@@ -32,9 +32,11 @@ class InsertDataSharpiMelk:
                  str(posts['LIST_DATA']),
                  posts['GROUP_INFO_ROW'],
                  posts['UNEXPANDABLE_ROW'],
-                 posts['GROUP_FEATURE_ROW']
+                 posts['GROUP_FEATURE_ROW'],
+                 posts['GROUP_FEATURE_ROW_items'],
+                 posts['GROUP_FEATURE_ROW_more_details']
                  )
-        query = f"""INSERT INTO PostFileSell (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, meter, desck, `map`, details, GROUP_INFO_ROW, UNEXPANDABLE_ROW, GROUP_FEATURE_ROW) VALUES{param};"""
+        query = f"""INSERT INTO PostFileSell (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, meter, desck, `map`, details, GROUP_INFO_ROW, UNEXPANDABLE_ROW, GROUP_FEATURE_ROW, GROUP_FEATURE_ROW_items, GROUP_FEATURE_ROW_more_details) VALUES{param};"""
         cursor = connection.cursor()
         print(cursor.execute(query))
         connection.commit()
@@ -101,12 +103,14 @@ class GetDataFull:
         self.Data_full['UNEXPANDABLE_ROW'] = []
         self.Data_full['GROUP_INFO_ROW'] = []
         self.Data_full['GROUP_FEATURE_ROW'] = []
+        self.Data_full['GROUP_FEATURE_ROW_items'] = []
+        self.Data_full['GROUP_FEATURE_ROW_more_details'] = []
+
         for i in full_data['sections']:
             if i['section_name'] == 'MAP':
                 self.Data_full['map'] = i
             elif i['section_name'] == 'LIST_DATA':
                 self.Data_full['LIST_DATA'] = i
-
                 for z in i['widgets']:
                     if z['widget_type'] == 'GROUP_INFO_ROW':
                         for x in z['data']['items']:
@@ -127,10 +131,15 @@ class GetDataFull:
 
                             print(x)
                     if z['widget_type'] == 'UNEXPANDABLE_ROW':
-
                         self.Data_full['UNEXPANDABLE_ROW'].append({z['data']['title']:z['data']['value']})
-
                     if z['widget_type'] == 'GROUP_FEATURE_ROW':
+                        if 'items' in z['data']:
+                            for i in z['data']['items']:
+                                self.Data_full['GROUP_FEATURE_ROW_items'].append({i['icon']['icon_name']: i['available']})
+
+
+
+
                         if 'action' in z['data']:
                             print(z['data']['action']['payload']['modal_page']['widget_list'])
                             datas = z['data']['action']['payload']['modal_page']['widget_list']
@@ -138,7 +147,8 @@ class GetDataFull:
                                 print(x)
                                 if x['widget_type'] == 'UNEXPANDABLE_ROW':
                                     self.Data_full['GROUP_FEATURE_ROW'].append({x['data']['title']: x['data']['value']})
-
+                                if x['widget_type'] == 'FEATURE_ROW':
+                                    self.Data_full['GROUP_FEATURE_ROW_more_details'].append(x['data']['title'])
 
 
 
@@ -147,15 +157,18 @@ class GetDataFull:
         print(self.Data_full['GROUP_INFO_ROW'])
         self.Data_full['GROUP_INFO_ROW'] = str(self.Data_full['GROUP_INFO_ROW'])
         self.Data_full['GROUP_INFO_ROW'] = self.Data_full['GROUP_INFO_ROW'].replace("'", '"')
-
         print(self.Data_full['UNEXPANDABLE_ROW'])
         self.Data_full['UNEXPANDABLE_ROW'] = str(self.Data_full['UNEXPANDABLE_ROW'])
         self.Data_full['UNEXPANDABLE_ROW'] = self.Data_full['UNEXPANDABLE_ROW'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW'])
         self.Data_full['GROUP_FEATURE_ROW'] = str(self.Data_full['GROUP_FEATURE_ROW'])
         self.Data_full['GROUP_FEATURE_ROW'] = self.Data_full['GROUP_FEATURE_ROW'].replace("'", '"')
-
-
+        print(self.Data_full['GROUP_FEATURE_ROW_items'])
+        self.Data_full['GROUP_FEATURE_ROW_items'] = str(self.Data_full['GROUP_FEATURE_ROW_items'])
+        self.Data_full['GROUP_FEATURE_ROW_items'] = self.Data_full['GROUP_FEATURE_ROW_items'].replace("'", '"')
+        print(self.Data_full['GROUP_FEATURE_ROW_more_details'])
+        self.Data_full['GROUP_FEATURE_ROW_more_details'] = str(self.Data_full['GROUP_FEATURE_ROW_more_details'])
+        self.Data_full['GROUP_FEATURE_ROW_more_details'] = self.Data_full['GROUP_FEATURE_ROW_more_details'].replace("'", '"')
         self.Data_full['desck'] = posts[0][2]
 
     def _check(self):

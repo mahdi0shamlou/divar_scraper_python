@@ -38,6 +38,7 @@ class DataFetcher:
             response_json = response.json()
             return response_json, response.status_code, json.dumps(response_json)
         elif response.status_code == 400:
+            print(response.json())
             raise Erro400fromdivar
         else:
             print(f'\t this token removed {token[0]}')

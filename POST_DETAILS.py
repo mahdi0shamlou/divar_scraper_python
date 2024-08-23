@@ -12,13 +12,20 @@ class PostExtractor:
         :param json_data:
         :return:
         """
-        posts = []
+        posts = {}
         for item in json_data.get('sections', []):
+
             if item.get('section_name') == 'DESCRIPTION':
                 for item2 in item.get('widgets', {}):
                     if item2.get('widget_type') == 'DESCRIPTION_ROW':
                         data = item2.get('data', {})['text']
-                        posts.append(data)
+                        posts['desck']= data
+
+            if item.get('section_name') == 'TITLE':
+                for item2 in item.get('widgets', {}):
+                    if item2.get('widget_type') == 'LEGEND_TITLE_ROW':
+                        data = item2.get('data', {})['title']
+                        posts['title']= data
         return posts
 
 
@@ -68,10 +75,14 @@ class Application:
             print(f'\t this is token for search and getting details : {tokens}')
             json_data, status_code, all_data = self.fetcher.fetch_json_data(tokens) # this methode send request
             desck = self.extractor.extract_post_data(json_data) # this methode get desck from response of above methode
-            desck_resualt = StringChecker.contains_any_first(desck[0], LIST_CHEKC) # this methode check if desck is valid or not
-            print(f'\t this is reault of validtiy : {not desck_resualt}')
-            post = ((tokens[0], desck[0], all_data, 0))
-            if desck_resualt==False: # this conditon check desck is valid or not
+            desck_resualt = StringChecker.contains_any_first(desck['desck'], LIST_CHEKC) # this methode check if desck is valid or not
+            desck_resualt_titile = StringChecker.contains_any_first(desck['title'], LIST_CHEKC)  # this methode check if desck is valid or not
+            print(f'\t this is reault of validtiy desck : {not desck_resualt}')
+            print(f'\t this is reault of validtiy title : {not desck_resualt_titile}')
+
+            post = ((tokens[0], desck['desck'], all_data, 0))
+            if desck_resualt==False and desck_resualt_titile==False: # this conditon check desck is valid or not
+                print(f'\t inserting to db')
                 self.db_manager.save_post_data_details_personal(post) # this methode insert data into personal table
                 self.db_manager.update_post_data_in_posts(((tokens[0],))) # this methode update row in posts table for dont get duplicat
             else:
@@ -125,6 +136,7 @@ if __name__ == '__main__':
         try:
             print('Start of geting detials of service')
             app.run(LIST_CHEKC)
+            break
             print('End of geting detials of service')
         except Exception as e:
             print(f'this is Eception : {e}')

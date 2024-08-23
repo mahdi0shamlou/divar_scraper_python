@@ -109,6 +109,8 @@ def tokens_divar():
             cursor = conn.cursor()
             cursor.execute('SELECT * FROM tokens_divar')
             tokens = cursor.fetchall()
+            for i in tokens:
+                pass
         return render_template('tokens_divar.html', tokens=tokens)
 
     except sqlite3.Error as e:
