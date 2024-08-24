@@ -374,7 +374,7 @@ class DatabaseManager:
         """
         with sqlite3.connect(self.db_filename) as conn:
             cursor = conn.cursor()
-            cursor.execute('SELECT token,number FROM personal_number WHERE added != 6 order by id DESC limit 1')
+            cursor.execute('SELECT token,number FROM personal_number WHERE added != 6 order by id ASC limit 1')
             items = cursor.fetchall()
         return [item for item in items]
 
