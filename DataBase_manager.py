@@ -374,7 +374,7 @@ class DatabaseManager:
         """
         with sqlite3.connect(self.db_filename) as conn:
             cursor = conn.cursor()
-            cursor.execute('SELECT token,number FROM personal_number WHERE added != 5 order by id DESC limit 1')
+            cursor.execute('SELECT token,number FROM personal_number WHERE added != 6 order by id DESC limit 1')
             items = cursor.fetchall()
         return [item for item in items]
 
@@ -388,7 +388,7 @@ class DatabaseManager:
         with sqlite3.connect(self.db_filename) as conn:
             cursor = conn.cursor()
             try:
-                cursor.execute('UPDATE personal_number SET added = 5 WHERE token = ?', token)
+                cursor.execute('UPDATE personal_number SET added = 6 WHERE token = ?', token)
             except sqlite3.IntegrityError:
                 # Handle the case where the token already exists (do nothing or log if necessary)
                 print(f"Token token already exists in the database.")
