@@ -11,7 +11,7 @@ class InsertDataSharpiMelk:
     def inser_data_sell(posts):
         print(len(posts))
         connection = mysql.connector.connect(
-            host='localhost',
+            host='185.19.201.97',
             user='root',
             password='ya mahdi',
             database='SharpiMelk',
