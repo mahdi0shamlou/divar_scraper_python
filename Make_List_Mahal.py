@@ -53,8 +53,8 @@ class InsertDataSharpiMelk:
     def inser_data_sell(posts):
 
         connection = mysql.connector.connect(
-            host='localhost',
-            user='root',
+            host='185.19.201.97',
+            user='root_sharpi_melk_gelobal',
             password='ya mahdi',
             database='SharpiMelk',
             port=3306

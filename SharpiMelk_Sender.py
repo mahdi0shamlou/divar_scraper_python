@@ -12,7 +12,7 @@ class InsertDataSharpiMelk:
         print(len(posts))
         connection = mysql.connector.connect(
             host='185.19.201.97',
-            user='root',
+            user='root_sharpi_melk_gelobal',
             password='ya mahdi',
             database='SharpiMelk',
             port=3306
@@ -48,7 +48,7 @@ class InsertDataSharpiMelk:
         print(len(posts))
         connection = mysql.connector.connect(
             host='185.19.201.97',
-            user='root',
+            user='root_sharpi_melk_gelobal',
             password='ya mahdi',
             database='SharpiMelk',
             port=3306
