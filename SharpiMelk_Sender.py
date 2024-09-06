@@ -109,7 +109,8 @@ class GetDataFull:
         elif posts[0][4] == 'فردیس':
             self.Data_full['city'] = 4
         self.Data_full['title'] = posts[0][2]
-        self.Data_full['mahal_text'] = posts[0][3]
+        self.Data_full['mahal_text'] = posts[0][3].replace('\u200c', ' ')
+
         self.Data_full['mahal'] = 0
 
         if self.Data_full['city'] == 1:
