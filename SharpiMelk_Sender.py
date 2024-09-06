@@ -148,7 +148,7 @@ class GetDataFull:
         self.Data_full['price'] = full_data['webengage']['price']
         self.Data_full['map'] = ''
         self.Data_full['meter'] = 0
-        self.Data_full['otagh'] = 0
+        self.Data_full['Otagh'] = 0
         self.Data_full['make'] = 0
         self.Data_full['UNEXPANDABLE_ROW'] = []
         self.Data_full['GROUP_INFO_ROW'] = []
@@ -179,15 +179,16 @@ class GetDataFull:
                                     self.Data_full['make'] = int(x['value'])
                                 except:
                                     if x['value'] == "قبل از ۱۳۷۰":
-                                        self.Data_full['otagh'] = 1370
+                                        self.Data_full['make'] = 1370
+
                             if x['title'] == 'اتاق':
                                 try:
-                                    self.Data_full['otagh'] = int(x['value'])
+                                    self.Data_full['Otagh'] = int(x['value'])
                                 except:
                                     if x['value'] == 'بدون اتاق':
-                                        self.Data_full['otagh'] = 0
+                                        self.Data_full['Otagh'] = 0
                                     else:
-                                        self.Data_full['otagh'] = 4
+                                        self.Data_full['Otagh'] = 4
 
                             print(x)
                     if z['widget_type'] == 'UNEXPANDABLE_ROW':
@@ -245,7 +246,7 @@ class GetDataFull:
         self.Data_full['rent'] = full_data['webengage']['rent']
         self.Data_full['map'] = ''
         self.Data_full['meter'] = 0
-        self.Data_full['otagh'] = 0
+        self.Data_full['Otagh'] = 0
         self.Data_full['make'] = 0
         self.Data_full['UNEXPANDABLE_ROW'] = []
         self.Data_full['GROUP_INFO_ROW'] = []
@@ -276,15 +277,15 @@ class GetDataFull:
                                     self.Data_full['make'] = int(x['value'])
                                 except:
                                     if x['value'] == "قبل از ۱۳۷۰":
-                                        self.Data_full['otagh'] = 1370
+                                        self.Data_full['make'] = 1370
                             if x['title'] == 'اتاق':
                                 try:
-                                    self.Data_full['otagh'] = int(x['value'])
+                                    self.Data_full['Otagh'] = int(x['value'])
                                 except:
                                     if x['value'] == 'بدون اتاق':
-                                        self.Data_full['otagh'] = 0
+                                        self.Data_full['Otagh'] = 0
                                     else:
-                                        self.Data_full['otagh'] = 4
+                                        self.Data_full['Otagh'] = 4
 
                             print(x)
                     if z['widget_type'] == 'UNEXPANDABLE_ROW':
