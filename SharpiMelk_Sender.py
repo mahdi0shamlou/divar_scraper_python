@@ -37,12 +37,14 @@ class InsertDataSharpiMelk:
                  posts['GROUP_FEATURE_ROW_items'],
                  posts['GROUP_FEATURE_ROW_more_details'],
                  posts['Images'],
+                 posts['Otagh'],
+                 posts['make'],
                 posts['PARKING'],
                 posts['ELEVATOR'],
                 posts['CABINET'],
                  persian_date
                  )
-        query = f"""INSERT INTO PostFileSell (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, meter, desck, `map`, details, GROUP_INFO_ROW, UNEXPANDABLE_ROW, GROUP_FEATURE_ROW, GROUP_FEATURE_ROW_items, GROUP_FEATURE_ROW_more_details, Images, PARKING, ELEVATOR, CABINET, date_created_persian) VALUES{param};"""
+        query = f"""INSERT INTO PostFileSell (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, meter, desck, `map`, details, GROUP_INFO_ROW, UNEXPANDABLE_ROW, GROUP_FEATURE_ROW, GROUP_FEATURE_ROW_items, GROUP_FEATURE_ROW_more_details, Images, Otagh, Make_years, PARKING, ELEVATOR, CABINET, date_created_persian) VALUES{param};"""
         cursor = connection.cursor()
         print(cursor.execute(query))
         connection.commit()
@@ -77,12 +79,14 @@ class InsertDataSharpiMelk:
                  posts['GROUP_FEATURE_ROW_items'],
                  posts['GROUP_FEATURE_ROW_more_details'],
                  posts['Images'],
+                 posts['Otagh'],
+                 posts['make'],
                  posts['PARKING'],
                  posts['ELEVATOR'],
                  posts['CABINET'],
                  persian_date
                  )
-        query = f"""INSERT INTO PostFileRent (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, rent, meter, desck, `map`, details, GROUP_INFO_ROW, UNEXPANDABLE_ROW, GROUP_FEATURE_ROW, GROUP_FEATURE_ROW_items, GROUP_FEATURE_ROW_more_details, Images, PARKING, ELEVATOR, CABINET, date_created_persian) VALUES{param};"""
+        query = f"""INSERT INTO PostFileRent (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, rent, meter, desck, `map`, details, GROUP_INFO_ROW, UNEXPANDABLE_ROW, GROUP_FEATURE_ROW, GROUP_FEATURE_ROW_items, GROUP_FEATURE_ROW_more_details, Images, Otagh, Make_years, PARKING, ELEVATOR, CABINET, date_created_persian) VALUES{param};"""
         cursor = connection.cursor()
         print(cursor.execute(query))
         connection.commit()
@@ -174,13 +178,16 @@ class GetDataFull:
                                 try:
                                     self.Data_full['make'] = int(x['value'])
                                 except:
-                                    self.Data_full['make'] = x['value']
-
+                                    if x['value'] == "قبل از ۱۳۷۰":
+                                        self.Data_full['otagh'] = 1370
                             if x['title'] == 'اتاق':
                                 try:
                                     self.Data_full['otagh'] = int(x['value'])
                                 except:
-                                    self.Data_full['otagh'] = x['value']
+                                    if x['value'] == 'بدون اتاق':
+                                        self.Data_full['otagh'] = 0
+                                    else:
+                                        self.Data_full['otagh'] = 4
 
                             print(x)
                     if z['widget_type'] == 'UNEXPANDABLE_ROW':
@@ -268,13 +275,16 @@ class GetDataFull:
                                 try:
                                     self.Data_full['make'] = int(x['value'])
                                 except:
-                                    self.Data_full['make'] = x['value']
-
+                                    if x['value'] == "قبل از ۱۳۷۰":
+                                        self.Data_full['otagh'] = 1370
                             if x['title'] == 'اتاق':
                                 try:
                                     self.Data_full['otagh'] = int(x['value'])
                                 except:
-                                    self.Data_full['otagh'] = x['value']
+                                    if x['value'] == 'بدون اتاق':
+                                        self.Data_full['otagh'] = 0
+                                    else:
+                                        self.Data_full['otagh'] = 4
 
                             print(x)
                     if z['widget_type'] == 'UNEXPANDABLE_ROW':
