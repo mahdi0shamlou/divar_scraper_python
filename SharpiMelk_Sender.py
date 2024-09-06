@@ -213,9 +213,10 @@ class GetDataFull:
         self.Data_full['PARKING'] = 0
         self.Data_full['ELEVATOR'] = 0
         self.Data_full['CABINET'] = 0
-        for (key, value) in self.Data_full['GROUP_FEATURE_ROW_items'].items():
-            self.Data_full[key] = value
-        
+        for i in self.Data_full['GROUP_FEATURE_ROW_items']:
+            for (key, value) in i.items():
+                self.Data_full[key] = value
+
         self.Data_full['GROUP_FEATURE_ROW_items'] = str(self.Data_full['GROUP_FEATURE_ROW_items'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = self.Data_full['GROUP_FEATURE_ROW_items'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_more_details'])
