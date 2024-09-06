@@ -278,25 +278,22 @@ class GetDataFull:
 
                             print(x)
                     if z['widget_type'] == 'UNEXPANDABLE_ROW':
-                        self.Data_full['UNEXPANDABLE_ROW'].append({z['data']['title']:z['data']['value']})
+                        self.Data_full['UNEXPANDABLE_ROW'].append({z['data']['title'].replace('\u200c', ' '):z['data']['value'].replace('\u200c', ' ')})
                     if z['widget_type'] == 'GROUP_FEATURE_ROW':
                         if 'items' in z['data']:
                             for i in z['data']['items']:
                                 if 'available' in i:
                                     self.Data_full['GROUP_FEATURE_ROW_items'].append({i['icon']['icon_name']: i['available']})
-
-
-
-
                         if 'action' in z['data']:
                             print(z['data']['action']['payload']['modal_page']['widget_list'])
                             datas = z['data']['action']['payload']['modal_page']['widget_list']
                             for x in datas:
                                 print(x)
                                 if x['widget_type'] == 'UNEXPANDABLE_ROW':
-                                    self.Data_full['GROUP_FEATURE_ROW'].append({x['data']['title']: x['data']['value']})
+                                    self.Data_full['GROUP_FEATURE_ROW'].append({x['data']['title'].replace('\u200c', ' '): x['data']['value'].replace('\u200c', ' ')})
                                 if x['widget_type'] == 'FEATURE_ROW':
-                                    self.Data_full['GROUP_FEATURE_ROW_more_details'].append(x['data']['title'])
+                                    self.Data_full['GROUP_FEATURE_ROW_more_details'].append(x['data']['title'].replace('\u200c', ' '))
+
         print(self.Data_full['GROUP_INFO_ROW'])
         self.Data_full['GROUP_INFO_ROW'] = str(self.Data_full['GROUP_INFO_ROW'])
         self.Data_full['GROUP_INFO_ROW'] = self.Data_full['GROUP_INFO_ROW'].replace("'", '"')
@@ -307,6 +304,12 @@ class GetDataFull:
         self.Data_full['GROUP_FEATURE_ROW'] = str(self.Data_full['GROUP_FEATURE_ROW'])
         self.Data_full['GROUP_FEATURE_ROW'] = self.Data_full['GROUP_FEATURE_ROW'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_items'])
+        self.Data_full['PARKING'] = 0
+        self.Data_full['ELEVATOR'] = 0
+        self.Data_full['CABINET'] = 0
+        for i in self.Data_full['GROUP_FEATURE_ROW_items']:
+            for (key, value) in i.items():
+                self.Data_full[key] = value
         self.Data_full['GROUP_FEATURE_ROW_items'] = str(self.Data_full['GROUP_FEATURE_ROW_items'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = self.Data_full['GROUP_FEATURE_ROW_items'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_more_details'])
@@ -330,7 +333,6 @@ class GetDataFull:
             return 3
         if full_data['analytics']['cat2'] == 'commercial-rent':
             return 4
-
         return 0
 
     def get_data(self):
