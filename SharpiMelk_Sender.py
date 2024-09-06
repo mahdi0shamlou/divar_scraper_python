@@ -336,24 +336,49 @@ class GetDataFull:
         cursor.execute('SELECT * FROM posts_details_personal WHERE token = ?', (self.Token,))
         posts = cursor.fetchall()
         full_data = json.loads(posts[0][3])
+        z = 0
         if full_data['analytics']['cat2'] == 'residential-sell':
-            return 1
+            if full_data['analytics']['cat3'] == 'apartment-sell':
+                z = 1
+            elif full_data['analytics']['cat3'] == 'house-villa-sell':
+                z = 2
+            elif full_data['analytics']['cat3'] == 'plot-old':
+                z = 3
+            return 1, z
+
         if full_data['analytics']['cat2'] == 'residential-rent':
-            return 2
+            if full_data['analytics']['cat3'] == 'apartment-rent':
+                z = 1
+            elif full_data['analytics']['cat3'] == 'house-villa-rent':
+                z = 2
+            return 2, z
+
         if full_data['analytics']['cat2'] == 'commercial-sell':
-            return 3
+            if full_data['analytics']['cat3'] == 'office-sell':
+                z = 1
+            elif full_data['analytics']['cat3'] == 'shop-sell':
+                z = 2
+            elif full_data['analytics']['cat3'] == 'industry-agriculture-business-sell':
+                z = 3
+            return 3, z
         if full_data['analytics']['cat2'] == 'commercial-rent':
-            return 4
-        return 0
+            if full_data['analytics']['cat3'] == 'office-rent':
+                z = 1
+            elif full_data['analytics']['cat3'] == 'shop-rent':
+                z = 2
+            elif full_data['analytics']['cat3'] == 'industry-agriculture-business-rent':
+                z = 3
+            return 4, z
+        return 0, z
 
     def get_data(self):
         self.db_manager = DatabaseManager('posts.db')
         print(self.Token)
-        x = self._check()
+        x, z = self._check()
         try:
             if x == 1:
                 print(f'\t this a sell file')
-                self.Data_full['types'] = 1
+                self.Data_full['types'] = int(str(x)+str(z))
                 self._get_from_posts()
                 self._get_from_personal_number()
                 self._get_from_posts_details()
@@ -361,7 +386,7 @@ class GetDataFull:
                 self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
             elif x == 2:
                 print(f'\t this a rent file')
-                self.Data_full['types'] = 2
+                self.Data_full['types'] = int(str(x)+str(z))
                 self._get_from_posts()
                 self._get_from_personal_number()
                 self._get_from_posts_details_rent()
@@ -372,7 +397,7 @@ class GetDataFull:
 
             elif x == 3:
                 print(f'\t this a sell tejaryi file')
-                self.Data_full['types'] = 3
+                self.Data_full['types'] = int(str(x)+str(z))
                 self._get_from_posts()
                 self._get_from_personal_number()
                 self._get_from_posts_details()
@@ -381,7 +406,7 @@ class GetDataFull:
 
             elif x == 4:
                 print(f'\t this a rent tejary file')
-                self.Data_full['types'] = 4
+                self.Data_full['types'] = int(str(x)+str(z))
                 self._get_from_posts()
                 self._get_from_personal_number()
                 self._get_from_posts_details_rent()
