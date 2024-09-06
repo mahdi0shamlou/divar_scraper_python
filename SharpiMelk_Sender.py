@@ -37,9 +37,12 @@ class InsertDataSharpiMelk:
                  posts['GROUP_FEATURE_ROW_items'],
                  posts['GROUP_FEATURE_ROW_more_details'],
                  posts['Images'],
+                posts['PARKING'],
+                posts['ELEVATOR'],
+                posts['CABINET'],
                  persian_date
                  )
-        query = f"""INSERT INTO PostFileSell (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, meter, desck, `map`, details, GROUP_INFO_ROW, UNEXPANDABLE_ROW, GROUP_FEATURE_ROW, GROUP_FEATURE_ROW_items, GROUP_FEATURE_ROW_more_details, Images, date_created_persian) VALUES{param};"""
+        query = f"""INSERT INTO PostFileSell (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, meter, desck, `map`, details, GROUP_INFO_ROW, UNEXPANDABLE_ROW, GROUP_FEATURE_ROW, GROUP_FEATURE_ROW_items, GROUP_FEATURE_ROW_more_details, Images, PARKING, ELEVATOR, CABINET, date_created_persian) VALUES{param};"""
         cursor = connection.cursor()
         print(cursor.execute(query))
         connection.commit()
@@ -74,9 +77,12 @@ class InsertDataSharpiMelk:
                  posts['GROUP_FEATURE_ROW_items'],
                  posts['GROUP_FEATURE_ROW_more_details'],
                  posts['Images'],
+                 posts['PARKING'],
+                 posts['ELEVATOR'],
+                 posts['CABINET'],
                  persian_date
                  )
-        query = f"""INSERT INTO PostFileRent (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, rent, meter, desck, `map`, details, GROUP_INFO_ROW, UNEXPANDABLE_ROW, GROUP_FEATURE_ROW, GROUP_FEATURE_ROW_items, GROUP_FEATURE_ROW_more_details, Images, date_created_persian) VALUES{param};"""
+        query = f"""INSERT INTO PostFileRent (token, `number`, city, city_text, mahal, mahal_text, `type`, title, price, rent, meter, desck, `map`, details, GROUP_INFO_ROW, UNEXPANDABLE_ROW, GROUP_FEATURE_ROW, GROUP_FEATURE_ROW_items, GROUP_FEATURE_ROW_more_details, Images, PARKING, ELEVATOR, CABINET, date_created_persian) VALUES{param};"""
         cursor = connection.cursor()
         print(cursor.execute(query))
         connection.commit()
@@ -183,6 +189,7 @@ class GetDataFull:
                         if 'items' in z['data']:
                             for i in z['data']['items']:
                                 if 'available' in i:
+
                                     self.Data_full['GROUP_FEATURE_ROW_items'].append({i['icon']['icon_name']: i['available']})
                         if 'action' in z['data']:
                             print(z['data']['action']['payload']['modal_page']['widget_list'])
@@ -203,6 +210,12 @@ class GetDataFull:
         self.Data_full['GROUP_FEATURE_ROW'] = str(self.Data_full['GROUP_FEATURE_ROW'])
         self.Data_full['GROUP_FEATURE_ROW'] = self.Data_full['GROUP_FEATURE_ROW'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_items'])
+        self.Data_full['PARKING'] = 0
+        self.Data_full['ELEVATOR'] = 0
+        self.Data_full['CABINET'] = 0
+        for (key, value) in self.Data_full['GROUP_FEATURE_ROW_items'].items():
+            self.Data_full[key] = value
+        
         self.Data_full['GROUP_FEATURE_ROW_items'] = str(self.Data_full['GROUP_FEATURE_ROW_items'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = self.Data_full['GROUP_FEATURE_ROW_items'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_more_details'])
