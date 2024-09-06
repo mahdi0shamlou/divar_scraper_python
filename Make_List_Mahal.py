@@ -115,9 +115,9 @@ if __name__ == '__main__':
         app = Application(URL, DATA_residential_sell, DB_FILENAME)
         dbs = DatabaseManager(DB_FILENAME)
         mahal = app.run(DATA_residential_sell)
-        mahal_text.append([mahal,i,1])
+        mahal_text.append([mahal.replace('\u200c', ' '),i,1])
         if len(mahal) != 0:
-            dbs.save_mahal_tehran_to_db([mahal,int(i),1])
+            dbs.save_mahal_tehran_to_db([mahal.replace('\u200c', ' '),int(i),1])
     print(mahal_text)
 
     z = ["1058","1041","1078","1045","1049","1051","1042","1101","1081","1056","573","1105","1104","1091","572","1099","1083","1044","579","588","1070","598","1080","591","1043","597","1111","570","1047","576","1072","1040","1066","1096","1089","596","590","1094","1073","1052","1050","1064","1075","1084","1059","1053","594","1057","584","586","569","589","1067","1093","1095","1071","581","1055","1038","1046","1088","1069","1076","1086","1039","582","1092","1054","568","1077","566","577","1074","593","580","592","1048","587","1114","1112","1113","567","1097","571","1079","585"]
@@ -128,14 +128,15 @@ if __name__ == '__main__':
         app = Application(URL, DATA_residential_sell, DB_FILENAME)
         dbs = DatabaseManager(DB_FILENAME)
         mahal = app.run(DATA_residential_sell)
-        mahal_text.append([mahal,i,2])
+        mahal_text.append([mahal.replace('\u200c', ' '),i,2])
         if len(mahal) != 0:
-            dbs.save_mahal_tehran_to_db([mahal,int(i),2])
+            dbs.save_mahal_tehran_to_db([mahal.replace('\u200c', ' '),int(i),2])
     print(mahal_text)
-
+    '''
     DB_FILENAME = 'posts.db'
     dbs = DatabaseManager(DB_FILENAME)
     mahals = dbs.select_all_mahal_name()
     for i in mahals:
         InsertDataSharpiMelk.inser_data_sell(i)
     print(mahals)
+    '''
