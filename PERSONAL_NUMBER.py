@@ -40,6 +40,9 @@ class DataFetcher:
         elif response.status_code == 400:
             print(response.json())
             raise Erro400fromdivar
+        elif response.status_code == 403:
+            print(response.json())
+            raise Erro400fromdivar
         else:
             print(f'\t this token removed {token[0]}')
             raise ValueError # raise a exception for handel response
@@ -69,8 +72,8 @@ class Application:
                 self.db_manager.update_post_personal_details(((tokens[0],)))
                 print(f'\t Update this number as moshaver :( ')
         except Erro400fromdivar:
-            print(f'\t thispost return 400')
-            time.sleep(1)
+            print(f'\t thispost return 400 or 403')
+            time.sleep(10)
         except ValueError:
             print(f'\t response of divar is not 200')
             print(f'\t this token update for dont get agian {tokens[0]}')
@@ -135,6 +138,6 @@ if __name__ == '__main__':
         finally:
             i = i + 1
             i = i % len(JWT_TOKEN_LIST)
-            time.sleep(5)
+            time.sleep(10)
 
 
