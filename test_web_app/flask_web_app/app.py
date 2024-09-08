@@ -77,7 +77,7 @@ def tokens_divar():
                 # Insert new data into the table
                 with get_db_connection() as conn:
                     cursor = conn.cursor()
-                    cursor.execute('INSERT INTO tokens_divar (jwt_token_divar, number) VALUES (?, ?)', (jwt_token_divar, number))
+                    cursor.execute('INSERT INTO tokens_divar (jwt_token_divar, number, counte) VALUES (?, ?, ?)', (jwt_token_divar, number, 0))
                     conn.commit()
             elif action == 'delete':
                 token_id = request.form['id']

@@ -75,7 +75,9 @@ class DatabaseManager:
                 CREATE TABLE IF NOT EXISTS tokens_divar (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     jwt_token_divar TEXT UNIQUE,
-                    number TEXT UNIQUE
+                    number TEXT UNIQUE,
+                    counte TEXT,
+                    lats_counter TEXT
                 )
             ''')
             cursor.execute('''
@@ -322,9 +324,9 @@ class DatabaseManager:
         """
         with sqlite3.connect(self.db_filename) as conn:
             cursor = conn.cursor()
-            cursor.execute('SELECT jwt_token_divar FROM tokens_divar')
+            cursor.execute('SELECT jwt_token_divar,counte FROM tokens_divar')
             tokens = cursor.fetchall()
-        return [token[0] for token in tokens]
+        return [[token[0], token[1]]for token in tokens]
 
     def save_token_of_divar_for_personal_number(self, posts):
         """
@@ -336,12 +338,42 @@ class DatabaseManager:
             cursor = conn.cursor()
             try:
                 cursor.execute('''
-                    INSERT INTO tokens_divar (jwt_token_divar, number) 
-                    VALUES (?, ?)
+                    INSERT INTO tokens_divar (jwt_token_divar, number, counte) 
+                    VALUES (?, ?, 0)
                 ''', posts)
             except sqlite3.IntegrityError:
                 # Handle the case where the token already exists (do nothing or log if necessary)
                 print(f"Token {posts[0]} already exists in the database.")
+            conn.commit()
+
+    def update_token_counter_of_divar_for_personal_number(self, posts):
+        """
+        this methode update into table tokens_divar becuase counter added
+        :param posts:
+        :return:
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            try:
+                cursor.execute('UPDATE tokens_divar SET counte = ? WHERE jwt_token_divar = ?', posts)
+            except sqlite3.IntegrityError:
+                # Handle the case where the token already exists (do nothing or log if necessary)
+                print(f"Token token already exists in the database.")
+            conn.commit()
+
+    def update_token_counter_of_divar_for_personal_number_where_blocked(self, posts):
+        """
+        this methode update into table tokens_divar becuase counter added
+        :param posts:
+        :return:
+        """
+        with sqlite3.connect(self.db_filename) as conn:
+            cursor = conn.cursor()
+            try:
+                cursor.execute('UPDATE tokens_divar SET last_counter = ? WHERE jwt_token_divar = ?', posts)
+            except sqlite3.IntegrityError:
+                # Handle the case where the token already exists (do nothing or log if necessary)
+                print(f"Token token already exists in the database.")
             conn.commit()
     # -----------------------------
     # -----------------------------

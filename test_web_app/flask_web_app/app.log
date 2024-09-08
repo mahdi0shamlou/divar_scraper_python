@@ -2157,3 +2157,5 @@ INFO:werkzeug:127.0.0.1 - - [19/Aug/2024 03:28:26] "[33mGET /static/loader.gif 
 INFO:werkzeug:127.0.0.1 - - [19/Aug/2024 03:28:27] "GET /tokens_divar HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [19/Aug/2024 03:28:27] "[36mGET /static/styles.css HTTP/1.1[0m" 304 -
 INFO:werkzeug:127.0.0.1 - - [19/Aug/2024 03:28:27] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
+ERROR:root:Database error: UNIQUE constraint failed: tokens_divar.jwt_token_divar
+ERROR:root:Database error: UNIQUE constraint failed: tokens_divar.jwt_token_divar
