@@ -36,12 +36,12 @@ class DataFetcher:
                     'Accept-Language': 'en-US,en;q=0.5',
                     'Accept-Encoding': 'gzip, deflate, br, zstd',
                     'Referer': 'https://divar.ir/',
-                    'Origin': 'https://divar.ir/',
+                    'Origin': 'https://divar.ir',
                     'Sec-Fetch-Dest': 'empty',
                     'Sec-Fetch-Mode': 'cors',
                     'Sec-Fetch-Site': 'same-site',
-                    'Authorization': f'Basic {jwt_token}',
-                    'Connection':'keep-alive'
+                    'Authorization': f'Basic {jwt_token}'
+
                 }
         url_for_request = self.url + token[0]
         response = requests.get(url_for_request, headers=headers)
