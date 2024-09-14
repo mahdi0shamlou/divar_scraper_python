@@ -45,6 +45,7 @@ class DataFetcher:
                 }
         url_for_request = self.url + token[0]
         response = requests.get(url_for_request, headers=headers)
+        print(response.text)
         print(f'\t {response.status_code}')
         if response.status_code == 200:
             response_json = response.json()
