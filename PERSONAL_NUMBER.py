@@ -33,15 +33,12 @@ class DataFetcher:
                     'Host':'api.divar.ir',
                     'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0',
                     'Accept': 'application/json, text/plain, */*',
-                    'Accept-Language': 'en-US,en;q=0.5',
-                    'Accept-Encoding': 'gzip, deflate, br, zstd',
                     'Referer': 'https://divar.ir/',
                     'Origin': 'https://divar.ir',
                     'Sec-Fetch-Dest': 'empty',
                     'Sec-Fetch-Mode': 'cors',
                     'Sec-Fetch-Site': 'same-site',
                     'Authorization': f'Basic {jwt_token}'
-
                 }
         url_for_request = self.url + token[0]
         response = requests.get(url_for_request, headers=headers)
