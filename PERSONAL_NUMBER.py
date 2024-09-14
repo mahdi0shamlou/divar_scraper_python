@@ -156,6 +156,6 @@ if __name__ == '__main__':
         finally:
             i = i + 1
             i = i % len(JWT_TOKEN_LIST)
-            time.sleep(90)
+            time.sleep(150)
 
 
