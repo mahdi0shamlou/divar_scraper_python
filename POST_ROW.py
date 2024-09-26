@@ -56,7 +56,7 @@ class Application:
 
 if __name__ == '__main__':
     URL = 'https://api.divar.ir/v8/postlist/w/search'
-    '''
+
     DATA_residential_sell = '{"city_ids":["1","1764","1751","2"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"residential-sell"}}}}}}'
     DATA_residential_rent = '{"city_ids":["1","1764","1751","2"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"residential-rent"}}}}}}'
     DATA_commercial_sell = '{"city_ids":["1","1764","1751","2"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"commercial-sell"}}}}}}'
@@ -70,6 +70,7 @@ if __name__ == '__main__':
     DATA_commercial_rent = '{"city_ids":["1"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"commercial-rent"}}}}}}'
     DATA_temporary_rent = '{"city_ids":["1"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"temporary-rent"}}}}}}'
     DATA_real_estate_services = '{"city_ids":["1"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"real-estate-services"}}}}}}'
+    '''
     '''
     List_Post_Row_Data = []
     List_Post_Row_Data.append(DATA_residential_sell) # add tehran data to Post Row Data
