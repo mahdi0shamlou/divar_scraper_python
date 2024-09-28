@@ -34,11 +34,13 @@ class PostExtractor:
                 red_text = data.get('red_text', 'No Red Text')
                 image_count = data.get('image_count', 0)
                 timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                if red_text == 'No Red Text':
-                    posts.append((token, title, district, city, image_url, bottom_description, middle_description, red_text, image_count, timestamp, 0))
-                else:
+                if "نردبان" in red_text:
                     # dont add post if has red text
-                    print(f'find red text into posts --> : {token}')
+                    print(f'find nardeboon into posts --> : {token}')
+                else:
+                    posts.append((token, title, district, city, image_url, bottom_description, middle_description,
+                                  red_text, image_count, timestamp, 0))
+
         return posts
 
 
