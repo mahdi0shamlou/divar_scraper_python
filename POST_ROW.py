@@ -38,7 +38,7 @@ class PostExtractor:
                     posts.append((token, title, district, city, image_url, bottom_description, middle_description, red_text, image_count, timestamp, 0))
                 else:
                     # dont add post if has red text
-                    pass
+                    print(f'find red text into posts --> : {token}')
         return posts
 
 
