@@ -34,10 +34,11 @@ class PostExtractor:
                 red_text = data.get('red_text', 'No Red Text')
                 image_count = data.get('image_count', 0)
                 timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
-                posts.append((token, title, district, city, image_url, bottom_description, middle_description, red_text,
-                              image_count, timestamp, 0))
-
+                if red_text == 'No Red Text':
+                    posts.append((token, title, district, city, image_url, bottom_description, middle_description, red_text, image_count, timestamp, 0))
+                else:
+                    # dont add post if has red text
+                    pass
         return posts
 
 
