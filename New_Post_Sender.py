@@ -149,7 +149,6 @@ class GetDataFull:
 
         self.Data_full['desck'] = posts[0][2]
 
-
     def _get_from_posts_details_rent(self):
         cursor = self.DB_Conn.cursor()
         cursor.execute('SELECT * FROM posts_details_personal WHERE token = ?', (self.Token,))
@@ -244,6 +243,7 @@ class GetDataFull:
         self.Data_full['Images'] = self.Data_full['Images'].replace("'",'"')
 
         self.Data_full['desck'] = posts[0][2]
+
     def _check(self):
         cursor = self.DB_Conn.cursor()
         cursor.execute('SELECT * FROM posts_details_personal WHERE token = ?', (self.Token,))
@@ -347,7 +347,10 @@ class Application:
         self.list_category = list_category
 
     def run(self, CONNECTION_DB: sqlite3.connect):
-        pass
+        tokens = self.db_manager.get_token_for_new_post_sender() # this method get a token from table for getting details
+        oject_data_completer = GetDataFull(tokens[0][0], CONNECTION_DB, self.list_mahal)
+        data = oject_data_completer.get_data()
+        print(data)
 
 
 if __name__ == "__main__":
