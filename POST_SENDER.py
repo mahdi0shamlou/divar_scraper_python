@@ -22,7 +22,7 @@ class DataFetcher:
         }
         print(f'\t {data_for_send}')
         response = requests.post(self.url, data=data_for_send, headers=headers)
-
+        print(response.text)
         print(f'\t {response.status_code}')
         if response.status_code == 200 or response.status_code == 201:
             response_json = response.json()
