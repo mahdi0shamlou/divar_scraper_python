@@ -1,6 +1,4 @@
-import requests
 from DataBase_manager import *
-from POST_DATA_COMPLETER import GetToken, GetData
 import time
 import json
 import mysql.connector
