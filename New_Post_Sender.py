@@ -40,10 +40,15 @@ class InsertDataSharpiMelk:
                  posts['PARKING'],
                  posts['ELEVATOR'],
                  'none',
-                 posts['ELEVATOR']
+                 posts['ELEVATOR'],
+                 posts['price'],
+                 posts['price_meter'],
+                 posts['credit'],
+                 posts['rent'],
+                 f'https://divar.ir/v/{posts["token"]}'
 
                  )
-        query = f"""INSERT INTO admin_arkafile_duplicate.files (title, image, body, floors, phone, file_content_status, quality_control_status,file_category_id, status, location, created_at, updated_at, bedroom, year, dimension, parking, elevator, warehouse, balcony) VALUES{param};"""
+        query = f"""INSERT INTO admin_arkafile_duplicate.files (title, image, body, floors, phone, file_content_status, quality_control_status,file_category_id, status, location, created_at, updated_at, bedroom, year, dimension, parking, elevator, warehouse, balcony, price, price_per_meter, deposit, rent, url) VALUES{param};"""
 
         cursor = connection.cursor()
         print(cursor.execute(query))
@@ -94,6 +99,11 @@ class GetDataFull:
         posts = cursor.fetchall()
         full_data = json.loads(posts[0][3])
         self.Data_full['price'] = full_data['webengage']['price']
+        self.Data_full['type'] = 0
+        self.Data_full['price_meter'] = 0
+        self.Data_full['credit'] = 0
+        self.Data_full['rent'] = 0
+
         self.Data_full['map'] = ''
         self.Data_full['meter'] = 0
         self.Data_full['Otagh'] = 0
@@ -196,6 +206,9 @@ class GetDataFull:
         cursor.execute('SELECT * FROM posts_details_personal WHERE token = ?', (self.Token,))
         posts = cursor.fetchall()
         full_data = json.loads(posts[0][3])
+        self.Data_full['type'] = 1
+        self.Data_full['price'] = 0
+        self.Data_full['price_meter'] = 0
         self.Data_full['credit'] = full_data['webengage']['credit']
         self.Data_full['rent'] = full_data['webengage']['rent']
         self.Data_full['map'] = ''
