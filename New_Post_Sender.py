@@ -45,10 +45,11 @@ class InsertDataSharpiMelk:
                  posts['price_meter'],
                  posts['credit'],
                  posts['rent'],
-                 f'https://divar.ir/v/{posts["token"]}'
+                 f'https://divar.ir/v/{posts["token"]}',
+                 posts['type']
 
                  )
-        query = f"""INSERT INTO admin_arkafile_duplicate.files (title, image, body, floors, phone, file_content_status, quality_control_status,file_category_id, status, location, created_at, updated_at, bedroom, year, dimension, parking, elevator, warehouse, balcony, price, price_per_meter, deposit, rent, url) VALUES{param};"""
+        query = f"""INSERT INTO admin_arkafile_duplicate.files (title, image, body, floors, phone, file_content_status, quality_control_status,file_category_id, status, location, created_at, updated_at, bedroom, year, dimension, parking, elevator, warehouse, balcony, price, price_per_meter, deposit, rent, url, type) VALUES{param};"""
 
         cursor = connection.cursor()
         print(cursor.execute(query))
