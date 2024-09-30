@@ -100,7 +100,7 @@ class GetDataFull:
         posts = cursor.fetchall()
         full_data = json.loads(posts[0][3])
         self.Data_full['price'] = full_data['webengage']['price']
-        self.Data_full['type'] = 0
+        self.Data_full['type'] = '0'
         self.Data_full['price_meter'] = 0
         self.Data_full['credit'] = 0
         self.Data_full['rent'] = 0
@@ -207,7 +207,7 @@ class GetDataFull:
         cursor.execute('SELECT * FROM posts_details_personal WHERE token = ?', (self.Token,))
         posts = cursor.fetchall()
         full_data = json.loads(posts[0][3])
-        self.Data_full['type'] = 1
+        self.Data_full['type'] = '1'
         self.Data_full['price'] = 0
         self.Data_full['price_meter'] = 0
         self.Data_full['credit'] = full_data['webengage']['credit']
