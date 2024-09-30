@@ -10,6 +10,27 @@ import pymysql
 class InsertDataSharpiMelk:
     @staticmethod
     def inser_data(posts, file_category_id):
+        print(posts['PARKING'])
+        print(posts['ELEVATOR'])
+        print(posts['CABINET'])
+
+        if posts['PARKING']:
+            posts['PARKING'] = '1'
+        else:
+            posts['PARKING'] = '0'
+
+        if posts['ELEVATOR']:
+            posts['ELEVATOR'] = '1'
+        else:
+            posts['ELEVATOR'] = '0'
+
+        if posts['CABINET']:
+            posts['CABINET'] = '1'
+        else:
+            posts['CABINET'] = '0'
+        print(posts['PARKING'])
+        print(posts['ELEVATOR'])
+        print(posts['CABINET'])
         print(len(posts))
         connection = mysql.connector.connect(
             host='45.149.79.52',
@@ -104,7 +125,6 @@ class GetDataFull:
         self.Data_full['price_meter'] = 0
         self.Data_full['credit'] = 0
         self.Data_full['rent'] = 0
-
         self.Data_full['map'] = ''
         self.Data_full['meter'] = 0
         self.Data_full['Otagh'] = 0
@@ -148,7 +168,6 @@ class GetDataFull:
                                         self.Data_full['Otagh'] = 0
                                     else:
                                         self.Data_full['Otagh'] = 4
-
                             print(x)
                     if z['widget_type'] == 'UNEXPANDABLE_ROW':
                         self.Data_full['UNEXPANDABLE_ROW'].append({z['data']['title'].replace('\u200c', ' '):z['data']['value'].replace('\u200c', ' ')})
@@ -156,7 +175,6 @@ class GetDataFull:
                         if 'items' in z['data']:
                             for i in z['data']['items']:
                                 if 'available' in i:
-
                                     self.Data_full['GROUP_FEATURE_ROW_items'].append({i['icon']['icon_name']: i['available']})
                         if 'action' in z['data']:
                             print(z['data']['action']['payload']['modal_page']['widget_list'])
@@ -183,27 +201,6 @@ class GetDataFull:
         for i in self.Data_full['GROUP_FEATURE_ROW_items']:
             for (key, value) in i.items():
                 self.Data_full[key] = value
-        print(self.Data_full['PARKING'])
-        print(self.Data_full['ELEVATOR'])
-        print(self.Data_full['CABINET'])
-
-        if self.Data_full['PARKING']:
-            self.Data_full['PARKING'] = '1'
-        else:
-            self.Data_full['PARKING'] = '0'
-
-        if self.Data_full['ELEVATOR']:
-            self.Data_full['ELEVATOR'] = '1'
-        else:
-            self.Data_full['ELEVATOR'] = '0'
-
-        if self.Data_full['CABINET']:
-            self.Data_full['CABINET'] = '1'
-        else:
-            self.Data_full['CABINET'] = '0'
-        print(self.Data_full['PARKING'])
-        print(self.Data_full['ELEVATOR'])
-        print(self.Data_full['CABINET'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = str(self.Data_full['GROUP_FEATURE_ROW_items'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = self.Data_full['GROUP_FEATURE_ROW_items'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_more_details'])
@@ -302,28 +299,6 @@ class GetDataFull:
         for i in self.Data_full['GROUP_FEATURE_ROW_items']:
             for (key, value) in i.items():
                 self.Data_full[key] = value
-
-        print(self.Data_full['PARKING'])
-        print(self.Data_full['ELEVATOR'])
-        print(self.Data_full['CABINET'])
-
-        if self.Data_full['PARKING']:
-            self.Data_full['PARKING'] = '1'
-        else:
-            self.Data_full['PARKING'] = '0'
-
-        if self.Data_full['ELEVATOR']:
-            self.Data_full['ELEVATOR'] = '1'
-        else:
-            self.Data_full['ELEVATOR'] = '0'
-
-        if self.Data_full['CABINET']:
-            self.Data_full['CABINET'] = '1'
-        else:
-            self.Data_full['CABINET'] = '0'
-        print(self.Data_full['PARKING'])
-        print(self.Data_full['ELEVATOR'])
-        print(self.Data_full['CABINET'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = str(self.Data_full['GROUP_FEATURE_ROW_items'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = self.Data_full['GROUP_FEATURE_ROW_items'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_more_details'])
