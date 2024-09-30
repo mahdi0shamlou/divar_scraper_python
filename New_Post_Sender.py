@@ -183,14 +183,27 @@ class GetDataFull:
         for i in self.Data_full['GROUP_FEATURE_ROW_items']:
             for (key, value) in i.items():
                 self.Data_full[key] = value
+        print(self.Data_full['PARKING'])
+        print(self.Data_full['ELEVATOR'])
+        print(self.Data_full['CABINET'])
 
         if self.Data_full['PARKING']:
             self.Data_full['PARKING'] = '1'
+        else:
+            self.Data_full['PARKING'] = '0'
+
         if self.Data_full['ELEVATOR']:
             self.Data_full['ELEVATOR'] = '1'
+        else:
+            self.Data_full['ELEVATOR'] = '0'
+
         if self.Data_full['CABINET']:
             self.Data_full['CABINET'] = '1'
-
+        else:
+            self.Data_full['CABINET'] = '0'
+        print(self.Data_full['PARKING'])
+        print(self.Data_full['ELEVATOR'])
+        print(self.Data_full['CABINET'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = str(self.Data_full['GROUP_FEATURE_ROW_items'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = self.Data_full['GROUP_FEATURE_ROW_items'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_more_details'])
@@ -289,12 +302,28 @@ class GetDataFull:
         for i in self.Data_full['GROUP_FEATURE_ROW_items']:
             for (key, value) in i.items():
                 self.Data_full[key] = value
+
+        print(self.Data_full['PARKING'])
+        print(self.Data_full['ELEVATOR'])
+        print(self.Data_full['CABINET'])
+
         if self.Data_full['PARKING']:
             self.Data_full['PARKING'] = '1'
+        else:
+            self.Data_full['PARKING'] = '0'
+
         if self.Data_full['ELEVATOR']:
             self.Data_full['ELEVATOR'] = '1'
+        else:
+            self.Data_full['ELEVATOR'] = '0'
+
         if self.Data_full['CABINET']:
             self.Data_full['CABINET'] = '1'
+        else:
+            self.Data_full['CABINET'] = '0'
+        print(self.Data_full['PARKING'])
+        print(self.Data_full['ELEVATOR'])
+        print(self.Data_full['CABINET'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = str(self.Data_full['GROUP_FEATURE_ROW_items'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = self.Data_full['GROUP_FEATURE_ROW_items'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_more_details'])
