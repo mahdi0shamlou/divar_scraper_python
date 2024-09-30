@@ -2159,3 +2159,9 @@ INFO:werkzeug:127.0.0.1 - - [19/Aug/2024 03:28:27] "[36mGET /static/styles.css 
 INFO:werkzeug:127.0.0.1 - - [19/Aug/2024 03:28:27] "[33mGET /static/loader.gif HTTP/1.1[0m" 404 -
 ERROR:root:Database error: UNIQUE constraint failed: tokens_divar.jwt_token_divar
 ERROR:root:Database error: UNIQUE constraint failed: tokens_divar.jwt_token_divar
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 165-903-474

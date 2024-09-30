@@ -3,17 +3,16 @@ from POST_DATA_COMPLETER import GetToken, GetData
 import time
 import json
 import mysql.connector
-
+import pymysql
 
 class GetDataFull:
     """
         this class get all data of one token
     """
-    def __init__(self, token: str, data_base_connection: sqlite3.connect, list_mahal):
+    def __init__(self, token: str, data_base_connection: sqlite3.connect):
         self.Token = token
         self.DB_Conn = data_base_connection
         self.Data_full = {}
-        self.list_mahal = list_mahal
 
     def _get_from_posts(self):
         cursor = self.DB_Conn.cursor()
@@ -36,16 +35,7 @@ class GetDataFull:
 
         self.Data_full['mahal'] = 0
 
-        if self.Data_full['city'] == 1:
-            for i in self.list_mahal:
-                if self.Data_full['mahal_text'] == i[1] and i[3] == 1:
-                    print(f'\t this mahal {i}')
-                    self.Data_full['mahal'] = i[2]
-        elif self.Data_full['city'] == 2:
-            for i in self.list_mahal:
-                if self.Data_full['mahal_text'] == i[1] and i[3] == 2:
-                    print(f'\t this mahal {i}')
-                    self.Data_full['mahal'] = i[2]
+
 
     def _get_from_personal_number(self):
         cursor = self.DB_Conn.cursor()
@@ -341,28 +331,65 @@ class GetDataFull:
             self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
 
 
+class Get_File_category():
+    @staticmethod
+    def Get_category(type_post, mahal_text):
+        mysql_connection = pymysql.connect(
+            host='45.149.79.52',
+            user='admin_arkafile',
+            port=3306,
+            password='eZtO7SOV',
+            database='admin_arkafile_duplicate'
+        )
+        with mysql_connection.cursor() as mysql_cursor:
+            mysql_cursor.execute(f"SELECT * FROM crawler_locations WHERE label = '{mahal_text}'")
+            rows = mysql_cursor.fetchall()
+            area_id = rows[0][5]
+            print(area_id)
+            mysql_cursor.execute(f"SELECT * FROM area_file_category JOIN file_categories ON area_file_category.file_category_id = file_categories.id WHERE file_categories.status = '1' AND area_file_category.area_id = {area_id}")
+            rows = mysql_cursor.fetchall()
+            if type_post == 1:
+                for i in rows:
+                    if 'فروش' in i[5] and 'مسکونی' in i[5]:
+                        category_id = i[1]
+            if type_post == 2:
+                for i in rows:
+                    if 'اجاره' in i[5] and 'مسکونی' in i[5]:
+                        category_id = i[1]
+            if type_post == 3:
+                for i in rows:
+                    if 'فروش' in i[5] and 'اداری' in i[5]:
+                        category_id = i[1]
+            if type_post == 4:
+                for i in rows:
+                    if 'اجاره' in i[5] and 'اداری' in i[5]:
+                        category_id = i[1]
+            return category_id
+
+
+
+
 class Application:
-    def __init__(self, db_filename, list_category):
+    def __init__(self, db_filename):
         self.db_manager = DatabaseManager(db_filename)
-        self.list_category = list_category
 
     def run(self, CONNECTION_DB: sqlite3.connect):
         tokens = self.db_manager.get_token_for_new_post_sender() # this method get a token from table for getting details
-        oject_data_completer = GetDataFull(tokens[0][0], CONNECTION_DB, self.list_mahal)
+        oject_data_completer = GetDataFull(tokens[0][0], CONNECTION_DB)
         data = oject_data_completer.get_data()
         print(data)
 
 
 if __name__ == "__main__":
     DB_FILENAME = 'posts.db'
-    list_category = ['test']
-
     CONNECTION_DB = sqlite3.connect(DB_FILENAME)
-    app = Application(DB_FILENAME, list_category)
+    app = Application(DB_FILENAME)
     while True:
         try:
             print('Start of sending post in service')
-            app.run(CONNECTION_DB)
+            #app.run(CONNECTION_DB)
+            file_categor_id = Get_File_category.Get_category(4, 'پاسداران')
+            print(file_categor_id)
             print('End of sending post in of service')
         except Exception as e:
             print(f'this is Eception : {e}')
