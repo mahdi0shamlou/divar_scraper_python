@@ -14,20 +14,15 @@ class InsertDataSharpiMelk:
         print(posts['ELEVATOR'])
         print(posts['CABINET'])
 
-        if posts['PARKING']:
+        if posts['PARKING'] == True:
             posts['PARKING'] = '1'
-        else:
-            posts['PARKING'] = '0'
 
-        if posts['ELEVATOR']:
+        if posts['ELEVATOR'] == True:
             posts['ELEVATOR'] = '1'
-        else:
-            posts['ELEVATOR'] = '0'
 
-        if posts['CABINET']:
+        if posts['CABINET'] == True:
             posts['CABINET'] = '1'
-        else:
-            posts['CABINET'] = '0'
+
         print(posts['PARKING'])
         print(posts['ELEVATOR'])
         print(posts['CABINET'])
