@@ -359,7 +359,7 @@ class GetDataFull:
                 file_categor_id = GetFileCategory.Get_category(x, self.Data_full['mahal_text'])
                 print(file_categor_id)
                 InsertDataSharpiMelk.inser_data(self.Data_full, file_categor_id)
-                #self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+                self.db_manager.update_token_for_new_post_sender(((self.Token,)))
             elif x == 2:
                 print(f'\t this a rent file')
                 self.Data_full['types'] = int(str(x)+str(z))
@@ -368,8 +368,8 @@ class GetDataFull:
                 self._get_from_posts_details_rent()
                 file_categor_id = GetFileCategory.Get_category(x, self.Data_full['mahal_text'])
                 print(file_categor_id)
-                #InsertDataSharpiMelk.inser_data_rent(self.Data_full)
-                #self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+                InsertDataSharpiMelk.inser_data(self.Data_full, file_categor_id)
+                self.db_manager.update_token_for_new_post_sender(((self.Token,)))
                 print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 
 
@@ -381,8 +381,8 @@ class GetDataFull:
                 self._get_from_posts_details()
                 file_categor_id = GetFileCategory.Get_category(x, self.Data_full['mahal_text'])
                 print(file_categor_id)
-                #InsertDataSharpiMelk.inser_data_sell(self.Data_full)
-                #self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+                InsertDataSharpiMelk.inser_data(self.Data_full, file_categor_id)
+                self.db_manager.update_token_for_new_post_sender(((self.Token,)))
 
             elif x == 4:
                 print(f'\t this a rent tejary file')
@@ -392,12 +392,12 @@ class GetDataFull:
                 self._get_from_posts_details_rent()
                 file_categor_id = GetFileCategory.Get_category(x, self.Data_full['mahal_text'])
                 print(file_categor_id)
-                #InsertDataSharpiMelk.inser_data_rent(self.Data_full)
-                #self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+                InsertDataSharpiMelk.inser_data(self.Data_full, file_categor_id)
+                self.db_manager.update_token_for_new_post_sender(((self.Token,)))
                 print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
             else:
                 print('none')
-                #self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+                self.db_manager.update_token_for_new_post_sender(((self.Token,)))
 
 
         except ValueError as e:
@@ -407,7 +407,7 @@ class GetDataFull:
         except Exception as e:
             print('Errrrrrrrrrrrrrrrrrrrrrrrrorrrrrrrrrrrrrrrrrrrrrr')
             print(e)
-            #self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+            self.db_manager.update_token_for_new_post_sender(((self.Token,)))
 
 class GetFileCategory:
     @staticmethod
