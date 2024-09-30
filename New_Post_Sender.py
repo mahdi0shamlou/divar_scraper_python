@@ -285,6 +285,8 @@ class GetDataFull:
                 self._get_from_posts()
                 self._get_from_personal_number()
                 self._get_from_posts_details()
+                file_categor_id = GetFileCategory.Get_category(x, self.Data_full['mahal_text'])
+                print(file_categor_id)
                 #InsertDataSharpiMelk.inser_data_sell(self.Data_full)
                 #self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
             elif x == 2:
@@ -293,6 +295,8 @@ class GetDataFull:
                 self._get_from_posts()
                 self._get_from_personal_number()
                 self._get_from_posts_details_rent()
+                file_categor_id = GetFileCategory.Get_category(x, self.Data_full['mahal_text'])
+                print(file_categor_id)
                 #InsertDataSharpiMelk.inser_data_rent(self.Data_full)
                 #self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
                 print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
@@ -304,6 +308,8 @@ class GetDataFull:
                 self._get_from_posts()
                 self._get_from_personal_number()
                 self._get_from_posts_details()
+                file_categor_id = GetFileCategory.Get_category(x, self.Data_full['mahal_text'])
+                print(file_categor_id)
                 #InsertDataSharpiMelk.inser_data_sell(self.Data_full)
                 #self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
 
@@ -313,6 +319,8 @@ class GetDataFull:
                 self._get_from_posts()
                 self._get_from_personal_number()
                 self._get_from_posts_details_rent()
+                file_categor_id = GetFileCategory.Get_category(x, self.Data_full['mahal_text'])
+                print(file_categor_id)
                 #InsertDataSharpiMelk.inser_data_rent(self.Data_full)
                 #self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
                 print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
@@ -330,8 +338,7 @@ class GetDataFull:
             print(e)
             self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
 
-
-class Get_File_category():
+class GetFileCategory:
     @staticmethod
     def Get_category(type_post, mahal_text):
         mysql_connection = pymysql.connect(
@@ -366,9 +373,6 @@ class Get_File_category():
                         category_id = i[1]
             return category_id
 
-
-
-
 class Application:
     def __init__(self, db_filename):
         self.db_manager = DatabaseManager(db_filename)
@@ -387,9 +391,9 @@ if __name__ == "__main__":
     while True:
         try:
             print('Start of sending post in service')
-            #app.run(CONNECTION_DB)
-            file_categor_id = Get_File_category.Get_category(4, 'پاسداران')
-            print(file_categor_id)
+            app.run(CONNECTION_DB)
+            #file_categor_id = Get_File_category.Get_category(4, 'پاسداران')
+            #print(file_categor_id)
             print('End of sending post in of service')
         except Exception as e:
             print(f'this is Eception : {e}')
