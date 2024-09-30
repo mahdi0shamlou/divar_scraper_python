@@ -1,5 +1,3 @@
-
-
 from DataBase_manager import *
 import datetime
 import time
@@ -43,8 +41,8 @@ class InsertDataSharpiMelk:
                  posts['desck'],
                  '',
                  posts['phone'],
-                 '1',
-                 '1',
+                 '0',
+                 '0',
                  file_category_id,
                  '1',
                  posts['mahal_text'],
