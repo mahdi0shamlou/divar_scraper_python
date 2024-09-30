@@ -1,9 +1,54 @@
+
+
 from DataBase_manager import *
-from POST_DATA_COMPLETER import GetToken, GetData
+import datetime
 import time
 import json
 import mysql.connector
 import pymysql
+
+class InsertDataSharpiMelk:
+    @staticmethod
+    def inser_data(posts, file_category_id):
+        print(len(posts))
+        connection = mysql.connector.connect(
+            host='45.149.79.52',
+            user='admin_arkafile',
+            port=3306,
+            password='eZtO7SOV',
+            database='admin_arkafile_duplicate'
+        )
+        now = datetime.datetime.now()
+        now = now.strftime('%Y-%m-%d %H:%M:%S')
+        print('-------------------------------------------')
+        print(now)
+        param = (posts['title'],
+                 '',
+                 posts['desck'],
+                 '',
+                 posts['phone'],
+                 '1',
+                 '1',
+                 file_category_id,
+                 '1',
+                 posts['mahal_text'],
+                 now,
+                 now,
+                 posts['Otagh'],
+                 posts['make'],
+                 posts['meter'],
+                 posts['PARKING'],
+                 posts['ELEVATOR'],
+                 'none',
+                 posts['ELEVATOR']
+
+                 )
+        query = f"""INSERT INTO admin_arkafile_duplicate.files (title, image, body, floors, phone, file_content_status, quality_control_status,file_category_id, status, location, created_at, updated_at, bedroom, year, dimension, parking, elevator, warehouse, balcony) VALUES{param};"""
+
+        cursor = connection.cursor()
+        print(cursor.execute(query))
+        connection.commit()
+
 
 class GetDataFull:
     """
@@ -121,12 +166,19 @@ class GetDataFull:
         self.Data_full['GROUP_FEATURE_ROW'] = str(self.Data_full['GROUP_FEATURE_ROW'])
         self.Data_full['GROUP_FEATURE_ROW'] = self.Data_full['GROUP_FEATURE_ROW'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_items'])
-        self.Data_full['PARKING'] = 0
-        self.Data_full['ELEVATOR'] = 0
-        self.Data_full['CABINET'] = 0
+        self.Data_full['PARKING'] = 'none'
+        self.Data_full['ELEVATOR'] = 'none'
+        self.Data_full['CABINET'] = 'none'
         for i in self.Data_full['GROUP_FEATURE_ROW_items']:
             for (key, value) in i.items():
                 self.Data_full[key] = value
+
+        if self.Data_full['PARKING']:
+            self.Data_full['PARKING'] = '1'
+        if self.Data_full['ELEVATOR']:
+            self.Data_full['ELEVATOR'] = '1'
+        if self.Data_full['CABINET']:
+            self.Data_full['CABINET'] = '1'
 
         self.Data_full['GROUP_FEATURE_ROW_items'] = str(self.Data_full['GROUP_FEATURE_ROW_items'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = self.Data_full['GROUP_FEATURE_ROW_items'].replace("'", '"')
@@ -217,12 +269,18 @@ class GetDataFull:
         self.Data_full['GROUP_FEATURE_ROW'] = str(self.Data_full['GROUP_FEATURE_ROW'])
         self.Data_full['GROUP_FEATURE_ROW'] = self.Data_full['GROUP_FEATURE_ROW'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_items'])
-        self.Data_full['PARKING'] = 0
-        self.Data_full['ELEVATOR'] = 0
-        self.Data_full['CABINET'] = 0
+        self.Data_full['PARKING'] = 'none'
+        self.Data_full['ELEVATOR'] = 'none'
+        self.Data_full['CABINET'] = 'none'
         for i in self.Data_full['GROUP_FEATURE_ROW_items']:
             for (key, value) in i.items():
                 self.Data_full[key] = value
+        if self.Data_full['PARKING']:
+            self.Data_full['PARKING'] = '1'
+        if self.Data_full['ELEVATOR']:
+            self.Data_full['ELEVATOR'] = '1'
+        if self.Data_full['CABINET']:
+            self.Data_full['CABINET'] = '1'
         self.Data_full['GROUP_FEATURE_ROW_items'] = str(self.Data_full['GROUP_FEATURE_ROW_items'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = self.Data_full['GROUP_FEATURE_ROW_items'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_more_details'])
@@ -287,7 +345,7 @@ class GetDataFull:
                 self._get_from_posts_details()
                 file_categor_id = GetFileCategory.Get_category(x, self.Data_full['mahal_text'])
                 print(file_categor_id)
-                #InsertDataSharpiMelk.inser_data_sell(self.Data_full)
+                InsertDataSharpiMelk.inser_data(self.Data_full, file_categor_id)
                 #self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
             elif x == 2:
                 print(f'\t this a rent file')
@@ -326,7 +384,7 @@ class GetDataFull:
                 print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
             else:
                 print('none')
-                self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+                #self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
 
 
         except ValueError as e:
@@ -336,7 +394,7 @@ class GetDataFull:
         except Exception as e:
             print('Errrrrrrrrrrrrrrrrrrrrrrrrorrrrrrrrrrrrrrrrrrrrrr')
             print(e)
-            self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+            #self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
 
 class GetFileCategory:
     @staticmethod
