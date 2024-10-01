@@ -54,7 +54,7 @@ class InsertDataSharpiMelk:
                  posts['PARKING'],
                  posts['ELEVATOR'],
                  'none',
-                 posts['ELEVATOR'],
+                 posts['CABINET'],
                  posts['price'],
                  posts['price_meter'],
                  posts['credit'],
