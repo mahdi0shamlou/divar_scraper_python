@@ -60,10 +60,16 @@ class InsertDataSharpiMelk:
                  posts['credit'],
                  posts['rent'],
                  f'https://divar.ir/v/{posts["token"]}',
-                 posts['type']
+                 posts['type'],
+                 posts['floor_material'],
+                 posts['post_wc'],
+                 posts['post_cooling'],
+                 posts['post_heating'],
+                 posts['post_ab_garm_kon']
+
 
                  )
-        query = f"""INSERT INTO admin_arkafile_duplicate.files (title, image, body, floors, phone, file_content_status, quality_control_status,file_category_id, status, location, created_at, updated_at, bedroom, year, dimension, parking, elevator, warehouse, balcony, price, price_per_meter, deposit, rent, url, type) VALUES{param};"""
+        query = f"""INSERT INTO admin_arkafile_duplicate.files (title, image, body, floors, phone, file_content_status, quality_control_status,file_category_id, status, location, created_at, updated_at, bedroom, year, dimension, parking, elevator, warehouse, balcony, price, price_per_meter, deposit, rent, url, type, floor_material, wc, cooling, heating, hot_water_supplier) VALUES{param};"""
 
         cursor = connection.cursor()
         print(cursor.execute(query))
@@ -334,6 +340,41 @@ class GetDataFull:
         self.Data_full['GROUP_FEATURE_ROW_items'] = str(self.Data_full['GROUP_FEATURE_ROW_items'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = self.Data_full['GROUP_FEATURE_ROW_items'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_more_details'])
+        """
+                find some more details
+                """
+        self.Data_full['floor_material'] = ''
+        self.Data_full['post_wc'] = ''
+        self.Data_full['post_cooling'] = ''
+        self.Data_full['post_heating'] = ''
+        self.Data_full['post_balcony'] = 'none'
+        self.Data_full['post_ab_garm_kon'] = ''
+
+        if "پارکینگ ندارد" in self.Data_full['GROUP_FEATURE_ROW_more_details']:
+            self.Data_full['PARKING'] = '0'
+        if "آسانسور ندارد" in self.Data_full['GROUP_FEATURE_ROW_more_details']:
+            self.Data_full['ELEVATOR'] = '0'
+        if "انباری ندارد" in self.Data_full['GROUP_FEATURE_ROW_more_details']:
+            self.Data_full['CABINET'] = '0'
+        for i in self.Data_full['GROUP_FEATURE_ROW_more_details']:
+            if "جنس کف" in i:
+                self.Data_full['floor_material'] = i
+            elif "سرویس بهداشتی" in i:
+                self.Data_full['post_wc'] = i
+            elif "سرمایش" in i:
+                self.Data_full['post_cooling'] = i
+            elif "گرمایش" in i:
+                self.Data_full['post_heating'] = i
+            elif "تأمین کننده آب" in i:
+                self.Data_full['post_ab_garm_kon'] = i
+            elif "بالکن" in i:
+                if "بالکن" == i:
+                    self.Data_full['post_balcony'] = '1'
+                else:
+                    self.Data_full['post_balcony'] = '0'
+        """
+        end of find some details
+        """
         self.Data_full['GROUP_FEATURE_ROW_more_details'] = str(self.Data_full['GROUP_FEATURE_ROW_more_details'])
         self.Data_full['GROUP_FEATURE_ROW_more_details'] = self.Data_full['GROUP_FEATURE_ROW_more_details'].replace("'", '"')
         print(self.Data_full['Images'])
