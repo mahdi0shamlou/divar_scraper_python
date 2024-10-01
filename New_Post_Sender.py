@@ -202,7 +202,11 @@ class GetDataFull:
         print(self.Data_full['Images'])
         self.Data_full['Images'] = str(self.Data_full['Images'])
         self.Data_full['Images'] = self.Data_full['Images'].replace("'",'"')
-
+        try:
+            self.Data_full['price_meter'] = self.Data_full['price'] / self.Data_full['meter']
+        except Exception as e:
+            print('we can not find price meter so send it 0')
+            
         self.Data_full['desck'] = posts[0][2]
 
     def _get_from_posts_details_rent(self):
