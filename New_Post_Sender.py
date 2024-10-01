@@ -232,9 +232,9 @@ class GetDataFull:
                 self.Data_full['post_ab_garm_kon'] = i
             elif "بالکن" in i:
                 if "بالکن" == i:
-                    self.Data_full['post_balcony'] = '1'
+                    self.Data_full['post_balcony'] = '0' # becuase we have a error in arkafile we save this reverse
                 else:
-                    self.Data_full['post_balcony'] = '0'
+                    self.Data_full['post_balcony'] = '1' # becuase we have a error in arkafile we save this reverse
         """
         end of find some details
         """
@@ -369,9 +369,9 @@ class GetDataFull:
                 self.Data_full['post_ab_garm_kon'] = i
             elif "بالکن" in i:
                 if "بالکن" == i:
-                    self.Data_full['post_balcony'] = '1'
+                    self.Data_full['post_balcony'] = '0'# becuase we have a error in arkafile we save this reverse
                 else:
-                    self.Data_full['post_balcony'] = '0'
+                    self.Data_full['post_balcony'] = '1'# becuase we have a error in arkafile we save this reverse
         """
         end of find some details
         """
