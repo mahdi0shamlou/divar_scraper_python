@@ -204,11 +204,15 @@ class GetDataFull:
         self.Data_full['post_wc'] = ''
         self.Data_full['post_cooling'] = ''
         self.Data_full['post_heating'] = ''
-        self.Data_full['post_ware'] = ''
+        self.Data_full['post_balcony'] = ''
+        
+        if "پارکینگ ندارد" in self.Data_full['GROUP_FEATURE_ROW_more_details']:
+            self.Data_full['PARKING'] = '0'
+        if "آسانسور ندارد" in self.Data_full['GROUP_FEATURE_ROW_more_details']:
+            self.Data_full['ELEVATOR'] = '0'
+        if "انباری ندارد" in self.Data_full['GROUP_FEATURE_ROW_more_details']:
+            self.Data_full['CABINET'] = '0'
 
-        print('-----------------------------------------------------------------')
-        for i in self.Data_full['GROUP_FEATURE_ROW_more_details']:
-            print(i)
         """
         end of find some details
         """
