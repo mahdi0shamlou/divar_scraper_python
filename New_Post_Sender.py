@@ -328,6 +328,20 @@ class GetDataFull:
         self.Data_full['UNEXPANDABLE_ROW'] = str(self.Data_full['UNEXPANDABLE_ROW'])
         self.Data_full['UNEXPANDABLE_ROW'] = self.Data_full['UNEXPANDABLE_ROW'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW'])
+        """
+            find some more details
+        """
+        self.Data_full['dwelling_units_per_floor'] = ''
+        self.Data_full['building_direction'] = ''
+        try:
+            pass
+        except Exception as e:
+            pass
+
+        """
+            end of find some details
+        """
+
         self.Data_full['GROUP_FEATURE_ROW'] = str(self.Data_full['GROUP_FEATURE_ROW'])
         self.Data_full['GROUP_FEATURE_ROW'] = self.Data_full['GROUP_FEATURE_ROW'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_items'])
@@ -341,8 +355,8 @@ class GetDataFull:
         self.Data_full['GROUP_FEATURE_ROW_items'] = self.Data_full['GROUP_FEATURE_ROW_items'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_more_details'])
         """
-                find some more details
-                """
+        find some more details
+        """
         self.Data_full['floor_material'] = ''
         self.Data_full['post_wc'] = ''
         self.Data_full['post_cooling'] = ''
