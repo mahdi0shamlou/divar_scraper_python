@@ -53,8 +53,8 @@ class InsertDataSharpiMelk:
                  posts['meter'],
                  posts['PARKING'],
                  posts['ELEVATOR'],
-                 'none',
                  posts['CABINET'],
+                 'none',
                  posts['price'],
                  posts['price_meter'],
                  posts['credit'],
@@ -197,6 +197,21 @@ class GetDataFull:
         self.Data_full['GROUP_FEATURE_ROW_items'] = str(self.Data_full['GROUP_FEATURE_ROW_items'])
         self.Data_full['GROUP_FEATURE_ROW_items'] = self.Data_full['GROUP_FEATURE_ROW_items'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_more_details'])
+        """
+        find some more details
+        """
+        self.Data_full['floor_material'] = ''
+        self.Data_full['post_wc'] = ''
+        self.Data_full['post_cooling'] = ''
+        self.Data_full['post_heating'] = ''
+        self.Data_full['post_ware'] = ''
+
+        print('-----------------------------------------------------------------')
+        for i in self.Data_full['GROUP_FEATURE_ROW_more_details']:
+            print(i)
+        """
+        end of find some details
+        """
         self.Data_full['GROUP_FEATURE_ROW_more_details'] = str(self.Data_full['GROUP_FEATURE_ROW_more_details'])
         self.Data_full['GROUP_FEATURE_ROW_more_details'] = self.Data_full['GROUP_FEATURE_ROW_more_details'].replace("'", '"')
         print(self.Data_full['Images'])
@@ -206,7 +221,7 @@ class GetDataFull:
             self.Data_full['price_meter'] = self.Data_full['price'] / self.Data_full['meter']
         except Exception as e:
             print('we can not find price meter so send it 0')
-            
+
         self.Data_full['desck'] = posts[0][2]
 
     def _get_from_posts_details_rent(self):
