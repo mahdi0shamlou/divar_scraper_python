@@ -54,7 +54,7 @@ class InsertDataSharpiMelk:
                  posts['PARKING'],
                  posts['ELEVATOR'],
                  posts['CABINET'],
-                 'none',
+                 posts['post_balcony'],
                  posts['price'],
                  posts['price_meter'],
                  posts['credit'],
@@ -204,15 +204,31 @@ class GetDataFull:
         self.Data_full['post_wc'] = ''
         self.Data_full['post_cooling'] = ''
         self.Data_full['post_heating'] = ''
-        self.Data_full['post_balcony'] = ''
-        
+        self.Data_full['post_balcony'] = 'none'
+        self.Data_full['post_ab_garm_kon'] = ''
+
         if "پارکینگ ندارد" in self.Data_full['GROUP_FEATURE_ROW_more_details']:
             self.Data_full['PARKING'] = '0'
         if "آسانسور ندارد" in self.Data_full['GROUP_FEATURE_ROW_more_details']:
             self.Data_full['ELEVATOR'] = '0'
         if "انباری ندارد" in self.Data_full['GROUP_FEATURE_ROW_more_details']:
             self.Data_full['CABINET'] = '0'
-
+        for i in self.Data_full['GROUP_FEATURE_ROW_more_details']:
+            if "جنس کف" in i:
+                self.Data_full['floor_material'] = i
+            elif "سرویس بهداشتی" in i:
+                self.Data_full['post_wc'] = i
+            elif "سرمایش" in i:
+                self.Data_full['post_cooling'] = i
+            elif "گرمایش" in i:
+                self.Data_full['post_heating'] = i
+            elif "تأمین کننده آب" in i:
+                self.Data_full['post_ab_garm_kon'] = i
+            elif "بالکن" in i:
+                if "بالکن" == i:
+                    self.Data_full['post_balcony'] = '1'
+                else:
+                    self.Data_full['post_balcony'] = '0'
         """
         end of find some details
         """
