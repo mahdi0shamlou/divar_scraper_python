@@ -65,11 +65,12 @@ class InsertDataSharpiMelk:
                  posts['post_wc'],
                  posts['post_cooling'],
                  posts['post_heating'],
-                 posts['post_ab_garm_kon']
-
+                 posts['post_ab_garm_kon'],
+                 posts['building_direction'],
+                 posts['dwelling_units_per_floor']
 
                  )
-        query = f"""INSERT INTO admin_arkafile_duplicate.files (title, image, body, floors, phone, file_content_status, quality_control_status,file_category_id, status, location, created_at, updated_at, bedroom, year, dimension, parking, elevator, warehouse, balcony, price, price_per_meter, deposit, rent, url, type, floor_material, wc, cooling, heating, hot_water_supplier) VALUES{param};"""
+        query = f"""INSERT INTO admin_arkafile_duplicate.files (title, image, body, floors, phone, file_content_status, quality_control_status,file_category_id, status, location, created_at, updated_at, bedroom, year, dimension, parking, elevator, warehouse, balcony, price, price_per_meter, deposit, rent, url, type, floor_material, wc, cooling, heating, hot_water_supplier, building_direction, dwelling_units_per_floor) VALUES{param};"""
 
         cursor = connection.cursor()
         print(cursor.execute(query))
@@ -191,6 +192,21 @@ class GetDataFull:
         self.Data_full['UNEXPANDABLE_ROW'] = str(self.Data_full['UNEXPANDABLE_ROW'])
         self.Data_full['UNEXPANDABLE_ROW'] = self.Data_full['UNEXPANDABLE_ROW'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW'])
+        """
+            find some more details
+        """
+
+        try:
+            self.Data_full['building_direction'] = self.Data_full['GROUP_FEATURE_ROW']['جهت ساختمان']
+        except:
+            self.Data_full['building_direction'] = ''
+        try:
+            self.Data_full['dwelling_units_per_floor'] = self.Data_full['GROUP_FEATURE_ROW']["تعداد واحد در طبقه"]
+        except:
+            self.Data_full['dwelling_units_per_floor'] = ''
+        """
+            end of find some details
+        """
         self.Data_full['GROUP_FEATURE_ROW'] = str(self.Data_full['GROUP_FEATURE_ROW'])
         self.Data_full['GROUP_FEATURE_ROW'] = self.Data_full['GROUP_FEATURE_ROW'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW_items'])
@@ -331,13 +347,15 @@ class GetDataFull:
         """
             find some more details
         """
-        self.Data_full['dwelling_units_per_floor'] = ''
-        self.Data_full['building_direction'] = ''
-        try:
-            pass
-        except Exception as e:
-            pass
 
+        try:
+            self.Data_full['building_direction'] = self.Data_full['GROUP_FEATURE_ROW']['جهت ساختمان']
+        except:
+            self.Data_full['building_direction'] = ''
+        try:
+            self.Data_full['dwelling_units_per_floor'] = self.Data_full['GROUP_FEATURE_ROW']["تعداد واحد در طبقه"]
+        except:
+            self.Data_full['dwelling_units_per_floor'] = ''
         """
             end of find some details
         """
