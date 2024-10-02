@@ -18,6 +18,7 @@ class DataFetcher:
 class PostExtractor:
     @staticmethod
     def extract_post_data(json_data):
+        last_post_time_out = json_data['pagination']['data']['last_post_date']
         posts = []
         for item in json_data.get('list_widgets', []):
             if item.get('widget_type') == 'POST_ROW':
@@ -41,7 +42,7 @@ class PostExtractor:
                     posts.append((token, title, district, city, image_url, bottom_description, middle_description,
                                   red_text, image_count, timestamp, 0))
 
-        return posts
+        return posts, last_post_time_out
 
 
 class Application:
@@ -50,16 +51,41 @@ class Application:
         self.extractor = PostExtractor()
         self.db_manager = DatabaseManager(db_filename)
 
-    def run(self, data):
+    def run(self, data: str):
         json_data = self.fetcher.fetch_json_data(data)
-        posts = self.extractor.extract_post_data(json_data)
+        posts, last_post_time_out = self.extractor.extract_post_data(json_data)
         self.db_manager.save_post_data(posts)
         print(f"Saved/Checked {len(posts)} posts into the database.")
+
+        new_data = data[:35] + ',"pagination_data":{"@type":"type.googleapis.com/post_list.PaginationData","last_post_date":"'+last_post_time_out+'","page":10,"layer_page":10}'+data[35:]
+        json_data = self.fetcher.fetch_json_data(new_data)
+        posts, last_post_time_out = self.extractor.extract_post_data(json_data)
+        self.db_manager.save_post_data(posts)
+        print(f"Saved/Checked {len(posts)} posts into the database.")
+
+        new_data = data[:35] + ',"pagination_data":{"@type":"type.googleapis.com/post_list.PaginationData","last_post_date":"'+last_post_time_out+'","page":10,"layer_page":10}'+data[35:]
+        json_data = self.fetcher.fetch_json_data(new_data)
+        posts, last_post_time_out = self.extractor.extract_post_data(json_data)
+        self.db_manager.save_post_data(posts)
+        print(f"Saved/Checked {len(posts)} posts into the database.")
+
+        new_data = data[:35] + ',"pagination_data":{"@type":"type.googleapis.com/post_list.PaginationData","last_post_date":"'+last_post_time_out+'","page":10,"layer_page":10}'+data[35:]
+        json_data = self.fetcher.fetch_json_data(new_data)
+        posts, last_post_time_out = self.extractor.extract_post_data(json_data)
+        self.db_manager.save_post_data(posts)
+        print(f"Saved/Checked {len(posts)} posts into the database.")
+
+        new_data = data[:35] + ',"pagination_data":{"@type":"type.googleapis.com/post_list.PaginationData","last_post_date":"'+last_post_time_out+'","page":10,"layer_page":10}'+data[35:]
+        json_data = self.fetcher.fetch_json_data(new_data)
+        posts, last_post_time_out = self.extractor.extract_post_data(json_data)
+        self.db_manager.save_post_data(posts)
+        print(f"Saved/Checked {len(posts)} posts into the database.")
+        print('--------------------------------------------------------')
+        return last_post_time_out
 
 
 if __name__ == '__main__':
     URL = 'https://api.divar.ir/v8/postlist/w/search'
-
     DATA_residential_sell = '{"city_ids":["1","1764","1751","2"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"residential-sell"}}}}}}'
     DATA_residential_rent = '{"city_ids":["1","1764","1751","2"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"residential-rent"}}}}}}'
     DATA_commercial_sell = '{"city_ids":["1","1764","1751","2"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"commercial-sell"}}}}}}'
