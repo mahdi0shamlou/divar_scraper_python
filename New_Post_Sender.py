@@ -46,7 +46,7 @@ class InsertDataSharpiMelk:
         param = (posts['title'],
                  '',
                  posts['desck'],
-                 '',
+                 posts['floors'],
                  posts['phone'],
                  '0',
                  '0',
@@ -75,11 +75,11 @@ class InsertDataSharpiMelk:
                  posts['post_ab_garm_kon'],
                  posts['building_direction'],
                  posts['dwelling_units_per_floor'],
-                 posts['dwelling_unit_floor'],
-                 posts['floor']
+                 posts['dwelling_unit_floor']
+
 
                  )
-        query = f"""INSERT INTO admin_arkafile_duplicate.files (title, image, body, floors, phone, file_content_status, quality_control_status,file_category_id, status, location, created_at, updated_at, bedroom, year, dimension, parking, elevator, warehouse, balcony, price, price_per_meter, deposit, rent, url, type, floor_material, wc, cooling, heating, hot_water_supplier, building_direction, dwelling_units_per_floor, dwelling_unit_floor, floors) VALUES{param};"""
+        query = f"""INSERT INTO admin_arkafile_duplicate.files (title, image, body, floors, phone, file_content_status, quality_control_status,file_category_id, status, location, created_at, updated_at, bedroom, year, dimension, parking, elevator, warehouse, balcony, price, price_per_meter, deposit, rent, url, type, floor_material, wc, cooling, heating, hot_water_supplier, building_direction, dwelling_units_per_floor, dwelling_unit_floor) VALUES{param};"""
 
         cursor = connection.cursor()
         print(cursor.execute(query))
