@@ -5,6 +5,8 @@ import json
 import mysql.connector
 import pymysql
 import traceback
+import pytz
+
 class InsertDataSharpiMelk:
     @staticmethod
     def inser_data(posts, file_category_id):
@@ -32,8 +34,13 @@ class InsertDataSharpiMelk:
             password='eZtO7SOV',
             database='admin_arkafile_duplicate'
         )
+        # زمان فعلی
         now = datetime.datetime.now()
-        now = now.strftime('%Y-%m-%d %H:%M:%S')
+        # تنظیم منطقه زمانی به تهران
+        tehran_tz = pytz.timezone('Asia/Tehran')
+        now_tehran = now.astimezone(tehran_tz)
+        # فرمت دهی زمان
+        now = now_tehran.strftime('%Y-%m-%d %H:%M:%S')
         print('-------------------------------------------')
         print(now)
         param = (posts['title'],
