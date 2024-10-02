@@ -192,6 +192,8 @@ class GetDataFull:
         """
             find some more details
         """
+        for i in self.Data_full['UNEXPANDABLE_ROW']:
+            pass
 
 
         """
@@ -212,6 +214,7 @@ class GetDataFull:
             for (z,k) in i.items():
                 if z == 'جهت ساختمان':
                     self.Data_full['building_direction'] = k
+
                 elif z == "تعداد واحد در طبقه":
                     self.Data_full['dwelling_units_per_floor'] = k
 
@@ -525,10 +528,13 @@ class GetDataFull:
         except ValueError as e:
             print('Errrrrrrrrrrrrrrrrrrrrrrrrorrrrrrrrrrrrrrrrrrrrrr')
             print(e)
+            raise
             time.sleep(20)
+
         except Exception as e:
             print('Errrrrrrrrrrrrrrrrrrrrrrrrorrrrrrrrrrrrrrrrrrrrrr')
             print(e)
+            raise
             self.db_manager.update_token_for_new_post_sender(((self.Token,)))
 
 class GetFileCategory:
