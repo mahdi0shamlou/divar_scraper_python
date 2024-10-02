@@ -74,10 +74,12 @@ class InsertDataSharpiMelk:
                  posts['post_heating'],
                  posts['post_ab_garm_kon'],
                  posts['building_direction'],
-                 posts['dwelling_units_per_floor']
+                 posts['dwelling_units_per_floor'],
+                 posts['dwelling_unit_floor'],
+                 posts['floor']
 
                  )
-        query = f"""INSERT INTO admin_arkafile_duplicate.files (title, image, body, floors, phone, file_content_status, quality_control_status,file_category_id, status, location, created_at, updated_at, bedroom, year, dimension, parking, elevator, warehouse, balcony, price, price_per_meter, deposit, rent, url, type, floor_material, wc, cooling, heating, hot_water_supplier, building_direction, dwelling_units_per_floor) VALUES{param};"""
+        query = f"""INSERT INTO admin_arkafile_duplicate.files (title, image, body, floors, phone, file_content_status, quality_control_status,file_category_id, status, location, created_at, updated_at, bedroom, year, dimension, parking, elevator, warehouse, balcony, price, price_per_meter, deposit, rent, url, type, floor_material, wc, cooling, heating, hot_water_supplier, building_direction, dwelling_units_per_floor, dwelling_unit_floor, floors) VALUES{param};"""
 
         cursor = connection.cursor()
         print(cursor.execute(query))
@@ -199,8 +201,16 @@ class GetDataFull:
         """
             find some more details
         """
+        self.Data_full['dwelling_unit_floor'] = ''
+        self.Data_full['floors'] = ''
+
         for i in self.Data_full['UNEXPANDABLE_ROW']:
-            pass
+            for (z, k) in i.items():
+                if z == 'طبقه':
+                    self.Data_full['dwelling_unit_floor'] = k[0]
+                    if 'از' in k:
+                        self.Data_full['floors'] = k[-1]
+
 
 
         """
@@ -362,6 +372,24 @@ class GetDataFull:
         self.Data_full['GROUP_INFO_ROW'] = str(self.Data_full['GROUP_INFO_ROW'])
         self.Data_full['GROUP_INFO_ROW'] = self.Data_full['GROUP_INFO_ROW'].replace("'", '"')
         print(self.Data_full['UNEXPANDABLE_ROW'])
+        """
+            find some more details
+        """
+        self.Data_full['dwelling_unit_floor'] = ''
+        self.Data_full['floors'] = ''
+
+        for i in self.Data_full['UNEXPANDABLE_ROW']:
+            for (z, k) in i.items():
+                if z == 'طبقه':
+                    self.Data_full['dwelling_unit_floor'] = k[0]
+                    if 'از' in k:
+                        self.Data_full['floors'] = k[-1]
+
+
+
+        """
+            end of find some details
+        """
         self.Data_full['UNEXPANDABLE_ROW'] = str(self.Data_full['UNEXPANDABLE_ROW'])
         self.Data_full['UNEXPANDABLE_ROW'] = self.Data_full['UNEXPANDABLE_ROW'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW'])
