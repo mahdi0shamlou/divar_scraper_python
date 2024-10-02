@@ -4,7 +4,7 @@ import time
 import json
 import mysql.connector
 import pymysql
-
+import traceback
 class InsertDataSharpiMelk:
     @staticmethod
     def inser_data(posts, file_category_id):
@@ -528,13 +528,13 @@ class GetDataFull:
         except ValueError as e:
             print('Errrrrrrrrrrrrrrrrrrrrrrrrorrrrrrrrrrrrrrrrrrrrrr')
             print(e)
-            raise
+            print(traceback.format_exc())
             time.sleep(20)
 
         except Exception as e:
             print('Errrrrrrrrrrrrrrrrrrrrrrrrorrrrrrrrrrrrrrrrrrrrrr')
             print(e)
-            raise
+            print(traceback.format_exc())
             self.db_manager.update_token_for_new_post_sender(((self.Token,)))
 
 class GetFileCategory:
