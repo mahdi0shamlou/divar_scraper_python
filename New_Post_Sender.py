@@ -189,6 +189,14 @@ class GetDataFull:
         self.Data_full['GROUP_INFO_ROW'] = str(self.Data_full['GROUP_INFO_ROW'])
         self.Data_full['GROUP_INFO_ROW'] = self.Data_full['GROUP_INFO_ROW'].replace("'", '"')
         print(self.Data_full['UNEXPANDABLE_ROW'])
+        """
+            find some more details
+        """
+
+
+        """
+            end of find some details
+        """
         self.Data_full['UNEXPANDABLE_ROW'] = str(self.Data_full['UNEXPANDABLE_ROW'])
         self.Data_full['UNEXPANDABLE_ROW'] = self.Data_full['UNEXPANDABLE_ROW'].replace("'", '"')
         print(self.Data_full['GROUP_FEATURE_ROW'])
@@ -350,15 +358,16 @@ class GetDataFull:
         """
             find some more details
         """
-
-        try:
-            self.Data_full['building_direction'] = self.Data_full['GROUP_FEATURE_ROW']['جهت ساختمان']
-        except:
-            self.Data_full['building_direction'] = ''
-        try:
-            self.Data_full['dwelling_units_per_floor'] = self.Data_full['GROUP_FEATURE_ROW']["تعداد واحد در طبقه"]
-        except:
-            self.Data_full['dwelling_units_per_floor'] = ''
+        self.Data_full['building_direction'] = ''
+        self.Data_full['dwelling_units_per_floor'] = ''
+        for i in self.Data_full['GROUP_FEATURE_ROW']:
+            print('sssssssssssssssssssssssssssss')
+            print(i)
+            for (z,k) in i.items():
+                if z == 'جهت ساختمان':
+                    self.Data_full['building_direction'] = k
+                elif z == "تعداد واحد در طبقه":
+                    self.Data_full['dwelling_units_per_floor'] = k
         """
             end of find some details
         """
