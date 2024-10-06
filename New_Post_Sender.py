@@ -276,7 +276,7 @@ class GetDataFull:
             elif "گرمایش" in i:
                 self.Data_full['post_heating'] = i[6:]
             elif "تأمین کننده آب" in i:
-                self.Data_full['post_ab_garm_kon'] = i[14:]
+                self.Data_full['post_ab_garm_kon'] = i[15:]
             elif "بالکن" in i:
                 if "بالکن" == i:
                     self.Data_full['post_balcony'] = '0' # becuase we have a error in arkafile we save this reverse
@@ -448,7 +448,7 @@ class GetDataFull:
             elif "گرمایش" in i:
                 self.Data_full['post_heating'] = i[6:]
             elif "تأمین کننده آب" in i:
-                self.Data_full['post_ab_garm_kon'] = i[14:]
+                self.Data_full['post_ab_garm_kon'] = i[15:]
             elif "بالکن" in i:
                 if "بالکن" == i:
                     self.Data_full['post_balcony'] = '0'# becuase we have a error in arkafile we save this reverse
