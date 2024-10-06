@@ -268,13 +268,13 @@ class GetDataFull:
             self.Data_full['CABINET'] = '0'
         for i in self.Data_full['GROUP_FEATURE_ROW_more_details']:
             if "جنس کف" in i:
-                self.Data_full['floor_material'] = i
+                self.Data_full['floor_material'] = i[5:]
             elif "سرویس بهداشتی" in i:
-                self.Data_full['post_wc'] = i
+                self.Data_full['post_wc'] = i[12:]
             elif "سرمایش" in i:
-                self.Data_full['post_cooling'] = i
+                self.Data_full['post_cooling'] = i[5:]
             elif "گرمایش" in i:
-                self.Data_full['post_heating'] = i
+                self.Data_full['post_heating'] = i[5:]
             elif "تأمین کننده آب" in i:
                 self.Data_full['post_ab_garm_kon'] = i
             elif "بالکن" in i:
@@ -440,13 +440,13 @@ class GetDataFull:
             self.Data_full['CABINET'] = '0'
         for i in self.Data_full['GROUP_FEATURE_ROW_more_details']:
             if "جنس کف" in i:
-                self.Data_full['floor_material'] = i
+                self.Data_full['floor_material'] = i[5:]
             elif "سرویس بهداشتی" in i:
-                self.Data_full['post_wc'] = i
+                self.Data_full['post_wc'] = i[12:]
             elif "سرمایش" in i:
-                self.Data_full['post_cooling'] = i
+                self.Data_full['post_cooling'] = i[5:]
             elif "گرمایش" in i:
-                self.Data_full['post_heating'] = i
+                self.Data_full['post_heating'] = i[5:]
             elif "تأمین کننده آب" in i:
                 self.Data_full['post_ab_garm_kon'] = i
             elif "بالکن" in i:
