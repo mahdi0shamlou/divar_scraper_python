@@ -593,6 +593,10 @@ class GetFileCategory:
                 for i in rows:
                     if 'فروش' in i[5] and 'مسکونی' in i[5]:
                         category_id = i[1]
+                if type_post_details == 2:
+                    for i in rows:
+                        if 'کلنگی' in i[5]:
+                            category_id = i[1]
             if type_post == 2:
                 for i in rows:
                     if 'اجاره' in i[5] and 'مسکونی' in i[5]:
