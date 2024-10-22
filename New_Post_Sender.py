@@ -189,7 +189,8 @@ class GetDataFull:
                                 self.Data_full['meter'] = int(z['data']['value'])
                             except Exception as e:
                                 if "متر" in z['data']['value']:
-                                    self.Data_full['meter'] = int(z['data']['value'][:-3])
+                                    meter_vales = z['data']['value'].replace("٬", '')
+                                    self.Data_full['meter'] = int(meter_vales[:-3])
 
                     if z['widget_type'] == 'GROUP_FEATURE_ROW':
                         if 'items' in z['data']:
@@ -373,7 +374,8 @@ class GetDataFull:
                                 self.Data_full['meter'] = int(z['data']['value'])
                             except Exception as e:
                                 if "متر" in z['data']['value']:
-                                    self.Data_full['meter'] = int(z['data']['value'][:-3])
+                                    meter_vales = z['data']['value'].replace("٬", '')
+                                    self.Data_full['meter'] = int(meter_vales[:-3])
 
                     if z['widget_type'] == 'GROUP_FEATURE_ROW':
                         if 'items' in z['data']:
