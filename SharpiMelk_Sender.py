@@ -171,7 +171,11 @@ class GetDataFull:
                         for x in z['data']['items']:
                             self.Data_full['GROUP_INFO_ROW'].append({x['title']:x['value']})
                             if x['title'] == 'متراژ':
-                                self.Data_full['meter'] = int(x['value'])
+                                try:
+                                    self.Data_full['meter'] = int(x['value'])
+                                except:
+                                    if "متر" in x['value']:
+                                        self.Data_full['meter'] = int(x['value'][:-3])
                             if x['title'] == 'ساخت':
                                 try:
                                     self.Data_full['make'] = int(x['value'])
@@ -269,7 +273,12 @@ class GetDataFull:
                         for x in z['data']['items']:
                             self.Data_full['GROUP_INFO_ROW'].append({x['title']:x['value']})
                             if x['title'] == 'متراژ':
-                                self.Data_full['meter'] = int(x['value'])
+                                try:
+                                    self.Data_full['meter'] = int(x['value'])
+                                except:
+                                    if "متر" in x['value']:
+                                        self.Data_full['meter'] = int(x['value'][:-3])
+
                             if x['title'] == 'ساخت':
                                 try:
                                     self.Data_full['make'] = int(x['value'])
