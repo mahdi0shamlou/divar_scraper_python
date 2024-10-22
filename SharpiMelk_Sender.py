@@ -468,9 +468,11 @@ if __name__ == "__main__":
     app = Application(DB_FILENAME, list_mahal)
     DATABASE = 'posts.db'
     CONNECTION_DB = sqlite3.connect(DATABASE)
+    """
     print('Start of geting detials of service')
     app.run(CONNECTION_DB)
     print('End of geting detials of service')
+    """
     while True:
         try:
             print('Start of geting detials of service')
