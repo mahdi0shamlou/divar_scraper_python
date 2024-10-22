@@ -195,6 +195,12 @@ class GetDataFull:
                             print(x)
                     if z['widget_type'] == 'UNEXPANDABLE_ROW':
                         self.Data_full['UNEXPANDABLE_ROW'].append({z['data']['title'].replace('\u200c', ' '):z['data']['value'].replace('\u200c', ' ')})
+                        if z['data']['title'] == 'متراژ':
+                            try:
+                                self.Data_full['meter'] = int(z['data']['value'])
+                            except Exception as e:
+                                if "متر" in z['data']['value']:
+                                    self.Data_full['meter'] = int(z['data']['value'][:-3])
                     if z['widget_type'] == 'GROUP_FEATURE_ROW':
                         if 'items' in z['data']:
                             for i in z['data']['items']:
@@ -297,6 +303,12 @@ class GetDataFull:
                             print(x)
                     if z['widget_type'] == 'UNEXPANDABLE_ROW':
                         self.Data_full['UNEXPANDABLE_ROW'].append({z['data']['title'].replace('\u200c', ' '):z['data']['value'].replace('\u200c', ' ')})
+                        if z['data']['title'] == 'متراژ':
+                            try:
+                                self.Data_full['meter'] = int(z['data']['value'])
+                            except Exception as e:
+                                if "متر" in z['data']['value']:
+                                    self.Data_full['meter'] = int(z['data']['value'][:-3])
                     if z['widget_type'] == 'GROUP_FEATURE_ROW':
                         if 'items' in z['data']:
                             for i in z['data']['items']:
