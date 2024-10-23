@@ -585,6 +585,17 @@ class GetDataFull:
                 InsertDataSharpiMelk.inser_data(self.Data_full, file_categor_id)
                 self.db_manager.update_token_for_new_post_sender(((self.Token,)))
                 print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+
+            elif x == 5:
+                print(f'\t this a sell file')
+                self.Data_full['types'] = int(str(x)+str(z))
+                self._get_from_posts()
+                self._get_from_personal_number()
+                self._get_from_posts_details()
+                file_categor_id = GetFileCategory.Get_category(x, self.Data_full['mahal_text'], z)
+                print(file_categor_id)
+                InsertDataSharpiMelk.inser_data(self.Data_full, file_categor_id)
+                self.db_manager.update_token_for_new_post_sender(((self.Token,)))
             else:
                 print('none')
                 self.db_manager.update_token_for_new_post_sender(((self.Token,)))
