@@ -421,7 +421,7 @@ class GetDataFull:
                 self._get_from_posts_details_rent()
                 InsertDataSharpiMelk.inser_data_rent(self.Data_full)
                 self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
-                
+
 
 
             elif x == 3:

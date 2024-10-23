@@ -91,7 +91,7 @@ if __name__ == '__main__':
     DATA_commercial_sell = '{"city_ids":["1","1764","1751","2"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"commercial-sell"}}}}}}'
     DATA_commercial_rent = '{"city_ids":["1","1764","1751","2"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"commercial-rent"}}}}}}'
     DATA_temporary_rent = '{"city_ids":["1","1764","1751","2"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"temporary-rent"}}}}}}'
-    DATA_real_estate_services = '{"city_ids":["1"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"real-estate-services"}}}}}}'
+    DATA_real_estate_services = '{"city_ids":["1","1764","1751","2"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"real-estate-services"}}}}}}'
     '''
     DATA_residential_sell = '{"city_ids":["1"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"residential-sell"}}}}}}'
     DATA_residential_rent = '{"city_ids":["1"],"source_view":"FILTER","search_data":{"form_data":{"data":{"business-type":{"str":{"value":"personal"}},"sort":{"str":{"value":"sort_date"}},"category":{"str":{"value":"residential-rent"}}}}}}'
@@ -124,7 +124,7 @@ if __name__ == '__main__':
             app.run(DATA_commercial_sell)
             app.run(DATA_commercial_rent)
             #app.run(DATA_temporary_rent)
-            #app.run(DATA_real_estate_services)
+            app.run(DATA_real_estate_services)
             print(f'this is len of db : {len(dbs.get_all_tokens())}')
         except Exception as e:
             print(f'this is Eception : {e}')
