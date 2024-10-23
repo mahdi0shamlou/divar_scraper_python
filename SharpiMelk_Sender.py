@@ -390,6 +390,14 @@ class GetDataFull:
             elif full_data['analytics']['cat3'] == 'industry-agriculture-business-rent':
                 z = 3
             return 4, z
+
+        if full_data['analytics']['cat2'] == 'real-estate-services':
+            if full_data['analytics']['cat3'] == 'partnership':
+                z = 1
+            elif full_data['analytics']['cat3'] == 'presell':
+                z = 2
+            return 5, z
+
         return 0, z
 
     def get_data(self):
@@ -434,6 +442,15 @@ class GetDataFull:
                 InsertDataSharpiMelk.inser_data_rent(self.Data_full)
                 self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
                 print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+            elif x == 5:
+                print(f'\t this a real-estate-services file')
+                self.Data_full['types'] = int(str(x) + str(z))
+                self._get_from_posts()
+                self._get_from_personal_number()
+                self._get_from_posts_details()
+                InsertDataSharpiMelk.inser_data_sell(self.Data_full)
+                self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
+
             else:
                 print('none')
                 self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
