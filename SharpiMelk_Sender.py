@@ -421,7 +421,7 @@ class GetDataFull:
                 self._get_from_posts_details_rent()
                 InsertDataSharpiMelk.inser_data_rent(self.Data_full)
                 self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
-                print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+                
 
 
             elif x == 3:
@@ -441,7 +441,7 @@ class GetDataFull:
                 self._get_from_posts_details_rent()
                 InsertDataSharpiMelk.inser_data_rent(self.Data_full)
                 self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
-                print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+
             elif x == 5:
                 print(f'\t this a real-estate-services file')
                 self.Data_full['types'] = int(str(x) + str(z))
@@ -450,7 +450,6 @@ class GetDataFull:
                 self._get_from_posts_details()
                 InsertDataSharpiMelk.inser_data_sell(self.Data_full)
                 self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
-
             else:
                 print('none')
                 self.db_manager.update_token_for_sharpi_melk(((self.Token,)))
