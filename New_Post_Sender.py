@@ -527,6 +527,13 @@ class GetDataFull:
             elif full_data['analytics']['cat3'] == 'industry-agriculture-business-rent':
                 z = 3
             return 4, z
+        if full_data['analytics']['cat2'] == 'real-estate-services':
+            if full_data['analytics']['cat3'] == 'partnership':
+                z = 1
+            elif full_data['analytics']['cat3'] == 'presell':
+                z = 2
+            return 5, z
+
         return 0, z
 
     def get_data(self):
@@ -555,7 +562,6 @@ class GetDataFull:
                 InsertDataSharpiMelk.inser_data(self.Data_full, file_categor_id)
                 self.db_manager.update_token_for_new_post_sender(((self.Token,)))
                 print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
-
 
             elif x == 3:
                 print(f'\t this a sell tejaryi file')
@@ -633,6 +639,7 @@ class GetFileCategory:
                 for i in rows:
                     if 'اجاره' in i[5] and 'اداری' in i[5]:
                         category_id = i[1]
+
             return category_id
 
 class Application:
